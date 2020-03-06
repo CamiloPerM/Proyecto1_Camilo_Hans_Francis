@@ -9,8 +9,8 @@
 #define Y_2    RD5
 #define Y_3    RD6
 #define Y_4    RD7
-#define Keypad_PORT          PORTD
-#define Keypad_PORT_Direction     TRISD 
+#define Keypad_PORT PORTD
+#define Keypad_PORT_Direction TRISD 
 
 char keypad_scanner(void);
 void InitKeypad(void);

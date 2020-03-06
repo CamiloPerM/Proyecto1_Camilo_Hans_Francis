@@ -2597,5 +2597,5 @@ char switch_press_scan(void){
 void InitKeypad(void){
             PORTD = 0x00;
             TRISD = 0xF0;
-            OPTION_REG &= 0x7F;
+            OPTION_REG &= 0xFF;
 }

@@ -4,6 +4,7 @@
  *
  * Created on 26 de febrero de 2020, 01:37 PM
  */
+ 
 #pragma config FOSC = INTRC_NOCLKOUT// Oscillator Selection bits (INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O function on RA7/OSC1/CLKIN)
 #pragma config WDTE = OFF       // Watchdog Timer Enable bit (WDT disabled and can be enabled by SWDTEN bit of the WDTCON register)
 #pragma config PWRTE = OFF      // Power-up Timer Enable bit (PWRT disabled)
@@ -33,26 +34,83 @@
 //-------define reloj
 #define _XTAL_FREQ 500000
 // --------------------------Prototipo de funciones-----------------------------
+
 void init(void);
 void PWMconf(void);
-
-
 
 //---------------------------VARIABLES-----------------------------------------
 uint8_t conteo = 0;
 uint8_t res = 0;
 uint8_t z;
 uint8_t numerito;
+uint8_t contraAct = 0;
+uint8_t cont = 0;
+uint8_t i = 0;
+uint8_t valor1 = 0;
+uint8_t valor2 = 0;
 int a;
+//char contrasena[]= {1+48,7+48,3+48,0+48,8+48};
+char contrasena[]= {49,55,51,48,56};
+char compara[]= {0,0,0,0,0};
 
 //-------------------------------INTERRUPCION-----------------------------------
-//-------------------------------INTERRUPCION-----------------------------------
 void __interrupt() interrupciones(void){
+    //--------------------- Interrupcion del I2C
+    /*if(PIR1bits.SSPIF == 1){ 
+
+        SSPCONbits.CKP = 0;
+       
+        if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
+            z = SSPBUF;                 // Read the previous value to clear the buffer
+            SSPCONbits.SSPOV = 0;       // Clear the overflow flag
+            SSPCONbits.WCOL = 0;        // Clear the collision bit
+            SSPCONbits.CKP = 1;         // Enables SCL (Clock)
+        }
+        //------------------Lee un dato----------------------------------------
+        if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
+            //__delay_us(7);
+            z = SSPBUF;                 // Lectura del SSBUF para limpiar el buffer y la bandera BF
+            //__delay_us(2);
+            PIR1bits.SSPIF = 0;         // Limpia bandera de interrupción recepción/transmisión SSP
+            SSPCONbits.CKP = 1;         // Habilita entrada de pulsos de reloj SCL
+            while(!SSPSTATbits.BF);     // Esperar a que la recepción se complete
+            PORTD = SSPBUF;             // Guardar en el PORTD el valor del buffer de recepción
+            __delay_us(250);
+        //------------------Escribe un dato----------------------------------------  
+            
+        }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
+            z = SSPBUF;
+            BF = 0;
+            //SSPBUF = PORTB;
+            SSPBUF = res;
+            SSPCONbits.CKP = 1;
+            __delay_us(250);
+            while(SSPSTATbits.BF);
+        }
+        if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
+            z = SSPBUF;
+            BF = 0;
+            //SSPBUF = PORTB;
+            SSPBUF = res;
+            SSPCONbits.CKP = 1;
+            __delay_us(250);
+            while(SSPSTATbits.BF);
+        }
+       
+        PIR1bits.SSPIF = 0;    
+    }*/
+    
+    
    // Interrupcion del ADC
    
     if (PIR1bits.ADIF){
         PIR1bits.ADIF = 0;
         res = ADRESH;
+        if (res < 155){
+            PORTEbits.RE2 = 1;
+        }else{
+            PORTEbits.RE2 = 0;
+        }
         ADCON0bits.GO_nDONE = 1; 
     }
    
@@ -64,18 +122,15 @@ void main(void) {
     funcAdc(2,0,0); //Inicia ADC
     PWMconf();
     Lcd_Init_8bits();  //Se inicializa la LCD en modo de 8bits
-    T1CON = 0x10;               //Initialize Timer Module
-    //InitKeypad();
-    // Dato 156 es el que se da
-    //Con un reloj de de 500Khz es valora cargar es de 156
+    InitKeypad();
     
     //---------------------Mensaje de Bienvenida----------------------------
     
     Lcd_Clear_8bits();              //Se limpia la LCD
-    Lcd_Set_Cursor_8bits(1,2);      //Se pone el cursor en el punto (1,2)  
-    Lcd_Write_String("Bienvenido, por",8);  //Se escribe una cadena  
+    Lcd_Set_Cursor_8bits(1,1);      //Se pone el cursor en el punto (1,2)  
+    Lcd_Write_String("Bienvenido Atte.",8);  //Se escribe una cadena
     Lcd_Set_Cursor_8bits(2,1);      //Se pone el cursor en el punto (2,3) 
-    Lcd_Write_String("Francis Sanabria",8);     //Se escribe una cadena
+    Lcd_Write_String("Familia Sanabria",8);     //Se escribe una cadena
     __delay_ms(3000);               //Se espera 5 segundos  
     Lcd_Clear_8bits();              //Se limpia la pantalla de la lCD
     
@@ -83,75 +138,102 @@ void main(void) {
     
 
     while(1){
-        //Lcd_Set_Cursor_8bits(1,2);      //Se pone el cursor en el punto (1,2)  
-        //Lcd_Write_String("Contraseña:",8);  //Se escribe una cadena
-        //Key = switch_press_scan();
-        //Lcd_Set_Cursor_8bits(2,1);
-        //Lcd_Write_String(Key,8);
+        Inicio:
+        Lcd_Set_Cursor_8bits(1,1);      //Se pone el cursor en el punto (1,2)  
+        Lcd_Write_String("Presione # para",8);  //Se escribe una cadena
+        Lcd_Set_Cursor_8bits(2,1);      //Se pone el cursor en el punto (2,3) 
+        Lcd_Write_String("iniciar",8);     //Se escribe una cadena
         
+        Presiona:
+        Key = switch_press_scan();
+        
+        if (Key == 35){
+            Intentelo: //SE reinicia la cuetna para que se ingrese la contrasena
+            
+            contraAct = 1;
+            cont = 0;
+            Lcd_Clear_8bits();
+            Lcd_Set_Cursor_8bits(1,1);      //Se pone el cursor en el punto (1,2)  
+            Lcd_Write_String("Contrasena:",8);  //Se escribe una cadena
+            
+            IngresarC:
+            
+            Key = switch_press_scan();
+            Lcd_Set_Cursor_8bits(2,cont + 1); //Va moviendo el cursor poco a poco
+            Lcd_Write_Char(Key,8);
+            cont ++;
+            
+            if (Key == 42){ //Si el usuario se confundio y quiere reiniciar la cuenta
+                goto Intentelo;
+            }
+            
+            compara[cont - 1] = Key; //Gurada en el arreglo cada tecla que se inicia
+            if (cont == 5){ //Si se llena el arreglo compara
+                __delay_ms(1000);
+                for (int i = 0; i < 5; i++) { //Compara los 5 valores 1 por 1
+                // Obtener elementos de ambos arreglos en misma posición o índice
+                    int valor1 = contrasena[i], valor2 = compara[i];
+
+        // Comparar ;)
+                    if (valor1 != valor2) { //Si al menos un valor no coincide la contrasena esta mala
+                        Lcd_Clear_8bits();
+                        Lcd_Set_Cursor_8bits(1,1);      //Se pone el cursor en el punto (1,2)  
+                        Lcd_Write_String("Contrasena mala",8);  //Se escribe una cadena
+                        
+                        Lcd_Set_Cursor_8bits(2,1);      //Se pone el cursor en el punto (1,2)  
+                        Lcd_Write_String("intentelo",8);  //Se escribe una cadena
+                        __delay_ms(3000);
+                        goto Intentelo;
+                        
+                    }
+                }
+                goto Bueno; //Si no tuvo errores en la comparacion se va a otro segmento
+                
+            }
+            
+            
+            
+            if (contraAct == 1){
+                goto IngresarC;
+            }
+            
+        } else {
+            goto Presiona;
+        } 
         //__delay_ms(1000);  
         //Lcd_Write_String("Funciona:",8);
-        if (res < 155){
-            PORTEbits.RE2 = 1;
-        }else{
-            PORTEbits.RE2 = 0;
-        }
-        PORTD = res;
+        Bueno: //muestra que funciono la contrasena
         
-        // ------------------- USO DEL SENSOR DISTANCIA ------------------------
-        TMR1H = 0;                //Sets the Initial Value of Timer
-        TMR1L = 0;                //Sets the Initial Value of Timer
-
-        RA4 = 1;                  //TRIGGER HIGH
-        __delay_us(10);           //10uS Delay 
-        RA4 = 0;                  //TRIGGER LOW
-
-        while(!RA1);              //Waiting for Echo
-        TMR1ON = 1;               //Timer Starts
-        while(RA1);               //Waiting for Echo goes LOW
-        TMR1ON = 0;               //Timer Stops
-
-        a = (TMR1L | (TMR1H<<8)); //Reads Timer Value
-        a = a/58.82;              //Converts Time to Distance
-        a = a + 1;                //Distance Calibration
-        if(a>=2 && a<=400)        //Check whether the result is valid or not
-        { 
-          Lcd_Clear_8bits();
-          Lcd_Set_Cursor_8bits(1,1);
-          Lcd_Write_String("Distance = ",8);
-          
-          numerito = a%10 + 48;
-          Lcd_Set_Cursor_8bits(1,14);
-          Lcd_Write_Char(numerito,8);
-
-          a = a/10;
-          numerito = a%10 + 48;
-          Lcd_Set_Cursor_8bits(1,13);
-          Lcd_Write_Char(numerito,8);
-
-          a = a/10;
-          numerito = a%10 + 48;
-          Lcd_Set_Cursor_8bits(1,12);
-          Lcd_Write_Char(numerito,8);
-
-          Lcd_Set_Cursor_8bits(1,15);
-          Lcd_Write_String("cm",8);
-        }  
-        else
-        {
-          Lcd_Clear_8bits();
-          Lcd_Set_Cursor_8bits(1,1);
-          Lcd_Write_String("Out of Range",8);
+        Lcd_Clear_8bits();
+        Lcd_Set_Cursor_8bits(1,1);      //Se pone el cursor en el punto (1,2)  
+        Lcd_Write_String("Acceso brindado",8);  //Se escribe una cadena
+        Lcd_Set_Cursor_8bits(2,1);      //Se pone el cursor en el punto (1,2)  
+        Lcd_Write_String("Introduzca llave",8);  //Se escribe una cadena
+        //Ahora el usuario puede ingresar la llave
+        while (PORTEbits.RE2 == 0){
+            Key = keypad_scanner();
+            if (Key == 42){ //Si olvido la llave puede apachar *  para reiniciar la contrasena
+                goto Intentelo;
+            }
         }
-        __delay_ms(400);
+        Lcd_Clear_8bits();
+        Lcd_Set_Cursor_8bits(1,1);      //Se pone el cursor en el punto (1,2)  
+        Lcd_Write_String("Abriendo puerta",8);  //Se escribe una cadena
+        Lcd_Set_Cursor_8bits(2,1);      //Se pone el cursor en el punto (1,2)  
+        Lcd_Write_String("Bienvenido :)",8);  //Se escribe una cadena
         
+        CCPR1L = 15; //Abre la puerta
+        __delay_ms(5000);
+        Lcd_Clear_8bits();
+        CCPR1L = 6; //Cierra la puerta
+        goto Inicio;
     }
     
     return;
 }
 
-
 //------------------------FUNCION PARA INICIALIZAR PUERTOS----------------------
+
 void init(void){
     // Definiendo entradas y salidas
     TRISB = 0;          // Puerto B como salida
@@ -201,4 +283,3 @@ void PWMconf(void){
     
     TRISCbits.TRISC2 = 0;
 }
-

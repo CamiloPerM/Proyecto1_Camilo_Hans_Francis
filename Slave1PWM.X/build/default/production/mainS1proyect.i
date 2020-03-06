@@ -13,6 +13,7 @@
 
 
 
+
 #pragma config FOSC = INTRC_NOCLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -2513,7 +2514,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 2 3
-# 22 "mainS1proyect.c" 2
+# 23 "mainS1proyect.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c90\\stdint.h" 3
@@ -2648,7 +2649,7 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 23 "mainS1proyect.c" 2
+# 24 "mainS1proyect.c" 2
 
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c90\\stdio.h" 1 3
@@ -2748,7 +2749,7 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 #pragma printf_check(sprintf) const
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
-# 25 "mainS1proyect.c" 2
+# 26 "mainS1proyect.c" 2
 
 
 
@@ -2763,7 +2764,7 @@ extern int printf(const char *, ...);
 
 
 void initOsc(uint8_t frec);
-# 28 "mainS1proyect.c" 2
+# 29 "mainS1proyect.c" 2
 
 # 1 "./I2C.h" 1
 # 20 "./I2C.h"
@@ -2813,7 +2814,7 @@ unsigned short I2C_Master_Read(unsigned short a);
 
 
 void I2C_Slave_Init(uint8_t address);
-# 29 "mainS1proyect.c" 2
+# 30 "mainS1proyect.c" 2
 
 # 1 "./LCD.h" 1
 # 15 "./LCD.h"
@@ -2832,19 +2833,20 @@ void Lcd_Cmd_8bits(unsigned char comando);
 void Lcd_Clear_8bits(void);
 void Lcd_Set_Cursor_8bits(unsigned char y, unsigned char x);
 void Lcd_Init_8bits(void);
-# 30 "mainS1proyect.c" 2
+# 31 "mainS1proyect.c" 2
 
 # 1 "./KEYPAD.h" 1
 # 15 "./KEYPAD.h"
 char keypad_scanner(void);
 void InitKeypad(void);
 char switch_press_scan(void);
-# 31 "mainS1proyect.c" 2
+# 32 "mainS1proyect.c" 2
 
 # 1 "./ADCconfi.h" 1
 # 21 "./ADCconfi.h"
 void funcAdc(uint8_t divD,uint8_t anaP,uint8_t just);
-# 32 "mainS1proyect.c" 2
+# 33 "mainS1proyect.c" 2
+
 
 
 
@@ -2853,22 +2855,31 @@ void init(void);
 void PWMconf(void);
 
 
-
-
 uint8_t conteo = 0;
 uint8_t res = 0;
 uint8_t z;
 uint8_t numerito;
+uint8_t contraAct = 0;
+uint8_t cont = 0;
+uint8_t i = 0;
+uint8_t valor1 = 0;
+uint8_t valor2 = 0;
 int a;
 
+char contrasena[]= {49,55,51,48,56};
+char compara[]= {0,0,0,0,0};
 
 
 void __attribute__((picinterrupt(""))) interrupciones(void){
-
-
+# 106 "mainS1proyect.c"
     if (PIR1bits.ADIF){
         PIR1bits.ADIF = 0;
         res = ADRESH;
+        if (res < 155){
+            PORTEbits.RE2 = 1;
+        }else{
+            PORTEbits.RE2 = 0;
+        }
         ADCON0bits.GO_nDONE = 1;
     }
 
@@ -2880,18 +2891,15 @@ void main(void) {
     funcAdc(2,0,0);
     PWMconf();
     Lcd_Init_8bits();
-    T1CON = 0x10;
-
-
-
+    InitKeypad();
 
 
 
     Lcd_Clear_8bits();
-    Lcd_Set_Cursor_8bits(1,2);
-    Lcd_Write_String("Bienvenido, por",8);
+    Lcd_Set_Cursor_8bits(1,1);
+    Lcd_Write_String("Bienvenido Atte.",8);
     Lcd_Set_Cursor_8bits(2,1);
-    Lcd_Write_String("Francis Sanabria",8);
+    Lcd_Write_String("Familia Sanabria",8);
     _delay((unsigned long)((3000)*(500000/4000.0)));
     Lcd_Clear_8bits();
 
@@ -2899,61 +2907,95 @@ void main(void) {
 
 
     while(1){
-# 94 "mainS1proyect.c"
-        if (res < 155){
-            PORTEbits.RE2 = 1;
-        }else{
-            PORTEbits.RE2 = 0;
+        Inicio:
+        Lcd_Set_Cursor_8bits(1,1);
+        Lcd_Write_String("Presione # para",8);
+        Lcd_Set_Cursor_8bits(2,1);
+        Lcd_Write_String("iniciar",8);
+
+        Presiona:
+        Key = switch_press_scan();
+
+        if (Key == 35){
+            Intentelo:
+
+            contraAct = 1;
+            cont = 0;
+            Lcd_Clear_8bits();
+            Lcd_Set_Cursor_8bits(1,1);
+            Lcd_Write_String("Contrasena:",8);
+
+            IngresarC:
+
+            Key = switch_press_scan();
+            Lcd_Set_Cursor_8bits(2,cont + 1);
+            Lcd_Write_Char(Key,8);
+            cont ++;
+
+            if (Key == 42){
+                goto Intentelo;
+            }
+
+            compara[cont - 1] = Key;
+            if (cont == 5){
+                _delay((unsigned long)((1000)*(500000/4000.0)));
+                for (int i = 0; i < 5; i++) {
+
+                    int valor1 = contrasena[i], valor2 = compara[i];
+
+
+                    if (valor1 != valor2) {
+                        Lcd_Clear_8bits();
+                        Lcd_Set_Cursor_8bits(1,1);
+                        Lcd_Write_String("Contrasena mala",8);
+
+                        Lcd_Set_Cursor_8bits(2,1);
+                        Lcd_Write_String("intentelo",8);
+                        _delay((unsigned long)((3000)*(500000/4000.0)));
+                        goto Intentelo;
+
+                    }
+                }
+                goto Bueno;
+
+            }
+
+
+
+            if (contraAct == 1){
+                goto IngresarC;
+            }
+
+        } else {
+            goto Presiona;
         }
-        PORTD = res;
 
 
-        TMR1H = 0;
-        TMR1L = 0;
+        Bueno:
 
-        RA4 = 1;
-        _delay((unsigned long)((10)*(500000/4000000.0)));
-        RA4 = 0;
+        Lcd_Clear_8bits();
+        Lcd_Set_Cursor_8bits(1,1);
+        Lcd_Write_String("Acceso brindado",8);
+        Lcd_Set_Cursor_8bits(2,1);
+        Lcd_Write_String("Introduzca llave",8);
 
-        while(!RA1);
-        TMR1ON = 1;
-        while(RA1);
-        TMR1ON = 0;
-
-        a = (TMR1L | (TMR1H<<8));
-        a = a/58.82;
-        a = a + 1;
-        if(a>=2 && a<=400)
-        {
-          Lcd_Clear_8bits();
-          Lcd_Set_Cursor_8bits(1,1);
-          Lcd_Write_String("Distance = ",8);
-
-          numerito = a%10 + 48;
-          Lcd_Set_Cursor_8bits(1,14);
-          Lcd_Write_Char(numerito,8);
-
-          a = a/10;
-          numerito = a%10 + 48;
-          Lcd_Set_Cursor_8bits(1,13);
-          Lcd_Write_Char(numerito,8);
-
-          a = a/10;
-          numerito = a%10 + 48;
-          Lcd_Set_Cursor_8bits(1,12);
-          Lcd_Write_Char(numerito,8);
-
-          Lcd_Set_Cursor_8bits(1,15);
-          Lcd_Write_String("cm",8);
+        while (PORTEbits.RE2 == 0){
+            Key = keypad_scanner();
+            if (Key == 42){
+                goto Intentelo;
+            }
         }
-        else
-        {
-          Lcd_Clear_8bits();
-          Lcd_Set_Cursor_8bits(1,1);
-          Lcd_Write_String("Out of Range",8);
-        }
-        _delay((unsigned long)((400)*(500000/4000.0)));
+        Lcd_Clear_8bits();
+        Lcd_Set_Cursor_8bits(1,1);
+        Lcd_Write_String("Abriendo puerta",8);
+        Lcd_Set_Cursor_8bits(2,1);
+        Lcd_Write_String("Bienvenido :)",8);
 
+        CCPR1L = 15;
+        _delay((unsigned long)((5000)*(500000/4000.0)));
+        Lcd_Clear_8bits();
+        CCPR1L = 6;
+        goto Inicio;
     }
 
     return;

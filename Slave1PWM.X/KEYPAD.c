@@ -97,5 +97,5 @@ char switch_press_scan(void){                       // Get key from user
 void InitKeypad(void){
             Keypad_PORT = 0x00;        // Set Keypad port pin values zero
             Keypad_PORT_Direction = 0xF0;      // Last 4 pins input, First 4 pins output        
-            OPTION_REG &= 0x7F;
+            OPTION_REG &= 0xFF;
 }
