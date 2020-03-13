@@ -145,8 +145,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 927: extern volatile unsigned char CCPR1L __attribute__((address(0x015)));
 [v _CCPR1L `Vuc ~T0 @X0 0 e@21 ]
 [p mainexit ]
-"38 mainS1proyect.c
-[; ;mainS1proyect.c: 38: void init(void);
+"38 Prueba2.c
+[; ;Prueba2.c: 38: void init(void);
 [v _init `(v ~T0 @X0 0 ef ]
 "8 ./OsciladorConf.h
 [; ;./OsciladorConf.h: 8: void initOsc(uint8_t frec);
@@ -154,8 +154,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "21 ./ADCconfi.h
 [; ;./ADCconfi.h: 21: void funcAdc(uint8_t divD,uint8_t anaP,uint8_t just);
 [v _funcAdc `(v ~T0 @X0 0 ef3`uc`uc`uc ]
-"39 mainS1proyect.c
-[; ;mainS1proyect.c: 39: void PWMconf(void);
+"39 Prueba2.c
+[; ;Prueba2.c: 39: void PWMconf(void);
 [v _PWMconf `(v ~T0 @X0 0 ef ]
 "29 ./LCD.h
 [; ;./LCD.h: 29: void Lcd_Init_8bits(void);
@@ -163,8 +163,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "16 ./KEYPAD.h
 [; ;./KEYPAD.h: 16: void InitKeypad(void);
 [v _InitKeypad `(v ~T0 @X0 0 ef ]
-"40 mainS1proyect.c
-[; ;mainS1proyect.c: 40: void initTMR0(void);
+"40 Prueba2.c
+[; ;Prueba2.c: 40: void initTMR0(void);
 [v _initTMR0 `(v ~T0 @X0 0 ef ]
 "64 ./I2C.h
 [; ;./I2C.h: 64: void I2C_Slave_Init(uint8_t address);
@@ -282,7 +282,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1346
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1346: extern volatile unsigned char OPTION_REG __attribute__((address(0x081)));
 [v _OPTION_REG `Vuc ~T0 @X0 0 e@129 ]
-"8 mainS1proyect.c
+"8 Prueba2.c
 [p x FOSC = INTRC_NOCLKOUT ]
 "9
 [p x WDTE = OFF ]
@@ -295,7 +295,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13
 [p x CPD = OFF ]
 "14
-[p x BOREN = OFF ]
+[p x BOREN = ON ]
 "15
 [p x IESO = OFF ]
 "16
@@ -540,65 +540,65 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"42 mainS1proyect.c
-[; ;mainS1proyect.c: 42: uint8_t conteo = 0;
+"42 Prueba2.c
+[; ;Prueba2.c: 42: uint8_t conteo = 0;
 [v _conteo `uc ~T0 @X0 1 e ]
 [i _conteo
 -> -> 0 `i `uc
 ]
 "43
-[; ;mainS1proyect.c: 43: uint8_t res = 0;
+[; ;Prueba2.c: 43: uint8_t res = 0;
 [v _res `uc ~T0 @X0 1 e ]
 [i _res
 -> -> 0 `i `uc
 ]
 "44
-[; ;mainS1proyect.c: 44: uint8_t z;
+[; ;Prueba2.c: 44: uint8_t z;
 [v _z `uc ~T0 @X0 1 e ]
 "45
-[; ;mainS1proyect.c: 45: uint8_t numerito;
+[; ;Prueba2.c: 45: uint8_t numerito;
 [v _numerito `uc ~T0 @X0 1 e ]
 "46
-[; ;mainS1proyect.c: 46: uint8_t contraAct = 0;
+[; ;Prueba2.c: 46: uint8_t contraAct = 0;
 [v _contraAct `uc ~T0 @X0 1 e ]
 [i _contraAct
 -> -> 0 `i `uc
 ]
 "47
-[; ;mainS1proyect.c: 47: uint8_t cont = 0;
+[; ;Prueba2.c: 47: uint8_t cont = 0;
 [v _cont `uc ~T0 @X0 1 e ]
 [i _cont
 -> -> 0 `i `uc
 ]
 "48
-[; ;mainS1proyect.c: 48: uint8_t i = 0;
+[; ;Prueba2.c: 48: uint8_t i = 0;
 [v _i `uc ~T0 @X0 1 e ]
 [i _i
 -> -> 0 `i `uc
 ]
 "49
-[; ;mainS1proyect.c: 49: uint8_t valor1 = 0;
+[; ;Prueba2.c: 49: uint8_t valor1 = 0;
 [v _valor1 `uc ~T0 @X0 1 e ]
 [i _valor1
 -> -> 0 `i `uc
 ]
 "50
-[; ;mainS1proyect.c: 50: uint8_t valor2 = 0;
+[; ;Prueba2.c: 50: uint8_t valor2 = 0;
 [v _valor2 `uc ~T0 @X0 1 e ]
 [i _valor2
 -> -> 0 `i `uc
 ]
 "51
-[; ;mainS1proyect.c: 51: uint8_t Abierto = 0;
+[; ;Prueba2.c: 51: uint8_t Abierto = 0;
 [v _Abierto `uc ~T0 @X0 1 e ]
 [i _Abierto
 -> -> 0 `i `uc
 ]
 "52
-[; ;mainS1proyect.c: 52: int a;
+[; ;Prueba2.c: 52: int a;
 [v _a `i ~T0 @X0 1 e ]
 "54
-[; ;mainS1proyect.c: 54: char contrasena[]= {49,55,51,48,56};
+[; ;Prueba2.c: 54: char contrasena[]= {49,55,51,48,56};
 [v _contrasena `uc ~T0 @X0 -> 5 `i e ]
 [i _contrasena
 :U ..
@@ -610,7 +610,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 "55
-[; ;mainS1proyect.c: 55: char compara[]= {0,0,0,0,0};
+[; ;Prueba2.c: 55: char compara[]= {0,0,0,0,0};
 [v _compara `uc ~T0 @X0 -> 5 `i e ]
 [i _compara
 :U ..
@@ -623,329 +623,329 @@ Version 4.0 HI-TECH Software Intermediate Code
 ]
 [v $root$_interrupciones `(v ~T0 @X0 0 e ]
 "58
-[; ;mainS1proyect.c: 58: void __attribute__((picinterrupt(""))) interrupciones(void){
+[; ;Prueba2.c: 58: void __attribute__((picinterrupt(""))) interrupciones(void){
 [v _interrupciones `(v ~T1 @X0 1 ef ]
 {
 [e :U _interrupciones ]
 [f ]
 "60
-[; ;mainS1proyect.c: 60:     if(PIR1bits.SSPIF == 1){
+[; ;Prueba2.c: 60:     if(PIR1bits.SSPIF == 1){
 [e $ ! == -> . . _PIR1bits 0 3 `i -> 1 `i 140  ]
 {
 "62
-[; ;mainS1proyect.c: 62:         SSPCONbits.CKP = 0;
+[; ;Prueba2.c: 62:         SSPCONbits.CKP = 0;
 [e = . . _SSPCONbits 0 1 -> -> 0 `i `uc ]
 "64
-[; ;mainS1proyect.c: 64:         if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
+[; ;Prueba2.c: 64:         if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
 [e $ ! || != -> . . _SSPCONbits 0 3 `i -> 0 `i != -> . . _SSPCONbits 0 4 `i -> 0 `i 141  ]
 {
 "65
-[; ;mainS1proyect.c: 65:             z = SSPBUF;
+[; ;Prueba2.c: 65:             z = SSPBUF;
 [e = _z _SSPBUF ]
 "66
-[; ;mainS1proyect.c: 66:             SSPCONbits.SSPOV = 0;
+[; ;Prueba2.c: 66:             SSPCONbits.SSPOV = 0;
 [e = . . _SSPCONbits 0 3 -> -> 0 `i `uc ]
 "67
-[; ;mainS1proyect.c: 67:             SSPCONbits.WCOL = 0;
+[; ;Prueba2.c: 67:             SSPCONbits.WCOL = 0;
 [e = . . _SSPCONbits 0 4 -> -> 0 `i `uc ]
 "68
-[; ;mainS1proyect.c: 68:             SSPCONbits.CKP = 1;
+[; ;Prueba2.c: 68:             SSPCONbits.CKP = 1;
 [e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
 "69
-[; ;mainS1proyect.c: 69:         }
+[; ;Prueba2.c: 69:         }
 }
 [e :U 141 ]
 "71
-[; ;mainS1proyect.c: 71:         if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
+[; ;Prueba2.c: 71:         if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
 [e $ ! && ! != -> . . _SSPSTATbits 0 5 `i -> 0 `i ! != -> . . _SSPSTATbits 0 2 `i -> 0 `i 142  ]
 {
 "73
-[; ;mainS1proyect.c: 73:             z = SSPBUF;
+[; ;Prueba2.c: 73:             z = SSPBUF;
 [e = _z _SSPBUF ]
 "75
-[; ;mainS1proyect.c: 75:             PIR1bits.SSPIF = 0;
+[; ;Prueba2.c: 75:             PIR1bits.SSPIF = 0;
 [e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
 "76
-[; ;mainS1proyect.c: 76:             SSPCONbits.CKP = 1;
+[; ;Prueba2.c: 76:             SSPCONbits.CKP = 1;
 [e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
 "77
-[; ;mainS1proyect.c: 77:             while(!SSPSTATbits.BF);
+[; ;Prueba2.c: 77:             while(!SSPSTATbits.BF);
 [e $U 143  ]
 [e :U 144 ]
 [e :U 143 ]
 [e $ ! != -> . . _SSPSTATbits 0 0 `i -> 0 `i 144  ]
 [e :U 145 ]
 "78
-[; ;mainS1proyect.c: 78:             PORTD = SSPBUF;
+[; ;Prueba2.c: 78:             PORTD = SSPBUF;
 [e = _PORTD _SSPBUF ]
 "79
-[; ;mainS1proyect.c: 79:             _delay((unsigned long)((250)*(500000/4000000.0)));
+[; ;Prueba2.c: 79:             _delay((unsigned long)((250)*(500000/4000000.0)));
 [e ( __delay (1 -> * -> -> 250 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
 "82
-[; ;mainS1proyect.c: 82:         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
+[; ;Prueba2.c: 82:         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
 }
 [e $U 146  ]
 [e :U 142 ]
 [e $ ! && ! != -> . . _SSPSTATbits 0 5 `i -> 0 `i != -> . . _SSPSTATbits 0 2 `i -> 0 `i 147  ]
 {
 "83
-[; ;mainS1proyect.c: 83:             z = SSPBUF;
+[; ;Prueba2.c: 83:             z = SSPBUF;
 [e = _z _SSPBUF ]
 "84
-[; ;mainS1proyect.c: 84:             BF = 0;
+[; ;Prueba2.c: 84:             BF = 0;
 [e = _BF -> -> 0 `i `b ]
 "86
-[; ;mainS1proyect.c: 86:             SSPBUF = Abierto;
-[e = _SSPBUF _Abierto ]
+[; ;Prueba2.c: 86:             SSPBUF = res;
+[e = _SSPBUF _res ]
 "87
-[; ;mainS1proyect.c: 87:             SSPCONbits.CKP = 1;
+[; ;Prueba2.c: 87:             SSPCONbits.CKP = 1;
 [e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
 "88
-[; ;mainS1proyect.c: 88:             _delay((unsigned long)((250)*(500000/4000000.0)));
+[; ;Prueba2.c: 88:             _delay((unsigned long)((250)*(500000/4000000.0)));
 [e ( __delay (1 -> * -> -> 250 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
 "89
-[; ;mainS1proyect.c: 89:             while(SSPSTATbits.BF);
+[; ;Prueba2.c: 89:             while(SSPSTATbits.BF);
 [e $U 148  ]
 [e :U 149 ]
 [e :U 148 ]
 [e $ != -> . . _SSPSTATbits 0 0 `i -> 0 `i 149  ]
 [e :U 150 ]
 "90
-[; ;mainS1proyect.c: 90:         }
+[; ;Prueba2.c: 90:         }
 }
 [e :U 147 ]
 [e :U 146 ]
 "91
-[; ;mainS1proyect.c: 91:         PIR1bits.SSPIF = 0;
+[; ;Prueba2.c: 91:         PIR1bits.SSPIF = 0;
 [e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
 "92
-[; ;mainS1proyect.c: 92:     }
+[; ;Prueba2.c: 92:     }
 }
 [e :U 140 ]
 "96
-[; ;mainS1proyect.c: 96:     if (PIR1bits.ADIF){
+[; ;Prueba2.c: 96:     if (PIR1bits.ADIF){
 [e $ ! != -> . . _PIR1bits 0 6 `i -> 0 `i 151  ]
 {
 "97
-[; ;mainS1proyect.c: 97:         PIR1bits.ADIF = 0;
+[; ;Prueba2.c: 97:         PIR1bits.ADIF = 0;
 [e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
 "98
-[; ;mainS1proyect.c: 98:         res = ADRESH;
+[; ;Prueba2.c: 98:         res = ADRESH;
 [e = _res _ADRESH ]
 "99
-[; ;mainS1proyect.c: 99:         if (res < 155){
+[; ;Prueba2.c: 99:         if (res < 155){
 [e $ ! < -> _res `i -> 155 `i 152  ]
 {
 "100
-[; ;mainS1proyect.c: 100:             PORTEbits.RE2 = 1;
+[; ;Prueba2.c: 100:             PORTEbits.RE2 = 1;
 [e = . . _PORTEbits 0 2 -> -> 1 `i `uc ]
 "101
-[; ;mainS1proyect.c: 101:         }else{
+[; ;Prueba2.c: 101:         }else{
 }
 [e $U 153  ]
 [e :U 152 ]
 {
 "102
-[; ;mainS1proyect.c: 102:             PORTEbits.RE2 = 0;
+[; ;Prueba2.c: 102:             PORTEbits.RE2 = 0;
 [e = . . _PORTEbits 0 2 -> -> 0 `i `uc ]
 "103
-[; ;mainS1proyect.c: 103:         }
+[; ;Prueba2.c: 103:         }
 }
 [e :U 153 ]
 "104
-[; ;mainS1proyect.c: 104:         ADCON0bits.GO_nDONE = 1;
+[; ;Prueba2.c: 104:         ADCON0bits.GO_nDONE = 1;
 [e = . . _ADCON0bits 0 1 -> -> 1 `i `uc ]
 "105
-[; ;mainS1proyect.c: 105:     }
+[; ;Prueba2.c: 105:     }
 }
 [e :U 151 ]
 "107
-[; ;mainS1proyect.c: 107:     if (INTCONbits.TMR0IF ){
+[; ;Prueba2.c: 107:     if (INTCONbits.TMR0IF ){
 [e $ ! != -> . . _INTCONbits 1 1 `i -> 0 `i 154  ]
 {
 "108
-[; ;mainS1proyect.c: 108:         INTCONbits.TMR0IF = 0;
+[; ;Prueba2.c: 108:         INTCONbits.TMR0IF = 0;
 [e = . . _INTCONbits 1 1 -> -> 0 `i `uc ]
 "109
-[; ;mainS1proyect.c: 109:         TMR0 = 200;
-[e = _TMR0 -> -> 200 `i `uc ]
+[; ;Prueba2.c: 109:         TMR0 = 61;
+[e = _TMR0 -> -> 61 `i `uc ]
 "111
-[; ;mainS1proyect.c: 111:         if (PORTAbits.RA1 == 1){
+[; ;Prueba2.c: 111:         if (PORTAbits.RA1 == 1){
 [e $ ! == -> . . _PORTAbits 0 1 `i -> 1 `i 155  ]
 {
 "112
-[; ;mainS1proyect.c: 112:             CCPR1L = 15;
+[; ;Prueba2.c: 112:             CCPR1L = 15;
 [e = _CCPR1L -> -> 15 `i `uc ]
 "113
-[; ;mainS1proyect.c: 113:             Abierto = 1;
+[; ;Prueba2.c: 113:             Abierto = 1;
 [e = _Abierto -> -> 1 `i `uc ]
 "114
-[; ;mainS1proyect.c: 114:         } else if (PORTAbits.RA2 == 1){
+[; ;Prueba2.c: 114:         } else if (PORTAbits.RA2 == 1){
 }
 [e $U 156  ]
 [e :U 155 ]
 [e $ ! == -> . . _PORTAbits 0 2 `i -> 1 `i 157  ]
 {
 "115
-[; ;mainS1proyect.c: 115:             CCPR1L = 6;
+[; ;Prueba2.c: 115:             CCPR1L = 6;
 [e = _CCPR1L -> -> 6 `i `uc ]
 "116
-[; ;mainS1proyect.c: 116:             Abierto = 0;
+[; ;Prueba2.c: 116:             Abierto = 0;
 [e = _Abierto -> -> 0 `i `uc ]
 "117
-[; ;mainS1proyect.c: 117:         }
+[; ;Prueba2.c: 117:         }
 }
 [e :U 157 ]
 [e :U 156 ]
 "120
-[; ;mainS1proyect.c: 120:     }
+[; ;Prueba2.c: 120:     }
 }
 [e :U 154 ]
 "123
-[; ;mainS1proyect.c: 123: }
+[; ;Prueba2.c: 123: }
 [e :UE 139 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
 "125
-[; ;mainS1proyect.c: 125: void main(void) {
+[; ;Prueba2.c: 125: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
 "126
-[; ;mainS1proyect.c: 126:     init();
+[; ;Prueba2.c: 126:     init();
 [e ( _init ..  ]
 "127
-[; ;mainS1proyect.c: 127:     initOsc(3);
+[; ;Prueba2.c: 127:     initOsc(3);
 [e ( _initOsc (1 -> -> 3 `i `uc ]
 "128
-[; ;mainS1proyect.c: 128:     funcAdc(2,0,0);
+[; ;Prueba2.c: 128:     funcAdc(2,0,0);
 [e ( _funcAdc (3 , , -> -> 2 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
 "129
-[; ;mainS1proyect.c: 129:     PWMconf();
+[; ;Prueba2.c: 129:     PWMconf();
 [e ( _PWMconf ..  ]
 "130
-[; ;mainS1proyect.c: 130:     Lcd_Init_8bits();
+[; ;Prueba2.c: 130:     Lcd_Init_8bits();
 [e ( _Lcd_Init_8bits ..  ]
 "131
-[; ;mainS1proyect.c: 131:     InitKeypad();
+[; ;Prueba2.c: 131:     InitKeypad();
 [e ( _InitKeypad ..  ]
 "132
-[; ;mainS1proyect.c: 132:     initTMR0();
+[; ;Prueba2.c: 132:     initTMR0();
 [e ( _initTMR0 ..  ]
 "133
-[; ;mainS1proyect.c: 133:     I2C_Slave_Init(0x70);
+[; ;Prueba2.c: 133:     I2C_Slave_Init(0x70);
 [e ( _I2C_Slave_Init (1 -> -> 112 `i `uc ]
 "137
-[; ;mainS1proyect.c: 137:     Lcd_Clear_8bits();
+[; ;Prueba2.c: 137:     Lcd_Clear_8bits();
 [e ( _Lcd_Clear_8bits ..  ]
 "138
-[; ;mainS1proyect.c: 138:     Lcd_Set_Cursor_8bits(1,1);
+[; ;Prueba2.c: 138:     Lcd_Set_Cursor_8bits(1,1);
 [e ( _Lcd_Set_Cursor_8bits (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
 "139
-[; ;mainS1proyect.c: 139:     Lcd_Write_String("Bienvenido Atte.",8);
+[; ;Prueba2.c: 139:     Lcd_Write_String("Bienvenido Atte.",8);
 [e ( _Lcd_Write_String (2 , :s 1C -> 8 `i ]
 "140
-[; ;mainS1proyect.c: 140:     Lcd_Set_Cursor_8bits(2,1);
+[; ;Prueba2.c: 140:     Lcd_Set_Cursor_8bits(2,1);
 [e ( _Lcd_Set_Cursor_8bits (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
 "141
-[; ;mainS1proyect.c: 141:     Lcd_Write_String("Familia Sanabria",8);
+[; ;Prueba2.c: 141:     Lcd_Write_String("Familia Sanabria",8);
 [e ( _Lcd_Write_String (2 , :s 2C -> 8 `i ]
 "142
-[; ;mainS1proyect.c: 142:     _delay((unsigned long)((3000)*(500000/4000.0)));
+[; ;Prueba2.c: 142:     _delay((unsigned long)((3000)*(500000/4000.0)));
 [e ( __delay (1 -> * -> -> 3000 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
 "143
-[; ;mainS1proyect.c: 143:     Lcd_Clear_8bits();
+[; ;Prueba2.c: 143:     Lcd_Clear_8bits();
 [e ( _Lcd_Clear_8bits ..  ]
 "146
-[; ;mainS1proyect.c: 146:     char Key = 'n';
+[; ;Prueba2.c: 146:     char Key = 'n';
 [v _Key `uc ~T0 @X0 1 a ]
 [e = _Key -> -> 110 `ui `uc ]
 "149
-[; ;mainS1proyect.c: 149:     while(1){
+[; ;Prueba2.c: 149:     while(1){
 [e :U 160 ]
 {
 "150
-[; ;mainS1proyect.c: 150:         Inicio:
+[; ;Prueba2.c: 150:         Inicio:
 [e :U 162 ]
 "151
-[; ;mainS1proyect.c: 151:         Lcd_Set_Cursor_8bits(1,1);
+[; ;Prueba2.c: 151:         Lcd_Set_Cursor_8bits(1,1);
 [e ( _Lcd_Set_Cursor_8bits (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
 "152
-[; ;mainS1proyect.c: 152:         Lcd_Write_String("Presione # para",8);
+[; ;Prueba2.c: 152:         Lcd_Write_String("Presione # para",8);
 [e ( _Lcd_Write_String (2 , :s 3C -> 8 `i ]
 "153
-[; ;mainS1proyect.c: 153:         Lcd_Set_Cursor_8bits(2,1);
+[; ;Prueba2.c: 153:         Lcd_Set_Cursor_8bits(2,1);
 [e ( _Lcd_Set_Cursor_8bits (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
 "154
-[; ;mainS1proyect.c: 154:         Lcd_Write_String("iniciar",8);
+[; ;Prueba2.c: 154:         Lcd_Write_String("iniciar",8);
 [e ( _Lcd_Write_String (2 , :s 4C -> 8 `i ]
 "156
-[; ;mainS1proyect.c: 156:         Presiona:
+[; ;Prueba2.c: 156:         Presiona:
 [e :U 163 ]
 "157
-[; ;mainS1proyect.c: 157:         Key = switch_press_scan();
+[; ;Prueba2.c: 157:         Key = switch_press_scan();
 [e = _Key ( _switch_press_scan ..  ]
 "159
-[; ;mainS1proyect.c: 159:         if (Key == 35){
+[; ;Prueba2.c: 159:         if (Key == 35){
 [e $ ! == -> _Key `i -> 35 `i 164  ]
 {
 "160
-[; ;mainS1proyect.c: 160:             Intentelo:
+[; ;Prueba2.c: 160:             Intentelo:
 [e :U 165 ]
 "162
-[; ;mainS1proyect.c: 162:             contraAct = 1;
+[; ;Prueba2.c: 162:             contraAct = 1;
 [e = _contraAct -> -> 1 `i `uc ]
 "163
-[; ;mainS1proyect.c: 163:             cont = 0;
+[; ;Prueba2.c: 163:             cont = 0;
 [e = _cont -> -> 0 `i `uc ]
 "164
-[; ;mainS1proyect.c: 164:             Lcd_Clear_8bits();
+[; ;Prueba2.c: 164:             Lcd_Clear_8bits();
 [e ( _Lcd_Clear_8bits ..  ]
 "165
-[; ;mainS1proyect.c: 165:             Lcd_Set_Cursor_8bits(1,1);
+[; ;Prueba2.c: 165:             Lcd_Set_Cursor_8bits(1,1);
 [e ( _Lcd_Set_Cursor_8bits (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
 "166
-[; ;mainS1proyect.c: 166:             Lcd_Write_String("Ingrese clave:",8);
+[; ;Prueba2.c: 166:             Lcd_Write_String("Ingrese clave:",8);
 [e ( _Lcd_Write_String (2 , :s 5C -> 8 `i ]
 "168
-[; ;mainS1proyect.c: 168:             IngresarC:
+[; ;Prueba2.c: 168:             IngresarC:
 [e :U 166 ]
 "170
-[; ;mainS1proyect.c: 170:             Key = switch_press_scan();
+[; ;Prueba2.c: 170:             Key = switch_press_scan();
 [e = _Key ( _switch_press_scan ..  ]
 "171
-[; ;mainS1proyect.c: 171:             Lcd_Set_Cursor_8bits(2,cont + 1);
+[; ;Prueba2.c: 171:             Lcd_Set_Cursor_8bits(2,cont + 1);
 [e ( _Lcd_Set_Cursor_8bits (2 , -> -> 2 `i `uc -> + -> _cont `i -> 1 `i `uc ]
 "172
-[; ;mainS1proyect.c: 172:             Lcd_Write_Char(Key,8);
+[; ;Prueba2.c: 172:             Lcd_Write_Char(Key,8);
 [e ( _Lcd_Write_Char (2 , _Key -> 8 `i ]
 "173
-[; ;mainS1proyect.c: 173:             cont ++;
+[; ;Prueba2.c: 173:             cont ++;
 [e ++ _cont -> -> 1 `i `uc ]
 "175
-[; ;mainS1proyect.c: 175:             if (Key == 42){
+[; ;Prueba2.c: 175:             if (Key == 42){
 [e $ ! == -> _Key `i -> 42 `i 167  ]
 {
 "176
-[; ;mainS1proyect.c: 176:                 goto Intentelo;
+[; ;Prueba2.c: 176:                 goto Intentelo;
 [e $U 165  ]
 "177
-[; ;mainS1proyect.c: 177:             }
+[; ;Prueba2.c: 177:             }
 }
 [e :U 167 ]
 "179
-[; ;mainS1proyect.c: 179:             compara[cont - 1] = Key;
+[; ;Prueba2.c: 179:             compara[cont - 1] = Key;
 [e = *U + &U _compara * -> -> - -> _cont `i -> 1 `i `ui `ux -> -> # *U &U _compara `ui `ux _Key ]
 "180
-[; ;mainS1proyect.c: 180:             if (cont == 5){
+[; ;Prueba2.c: 180:             if (cont == 5){
 [e $ ! == -> _cont `i -> 5 `i 168  ]
 {
 "181
-[; ;mainS1proyect.c: 181:                 _delay((unsigned long)((1000)*(500000/4000.0)));
+[; ;Prueba2.c: 181:                 _delay((unsigned long)((1000)*(500000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
 "182
-[; ;mainS1proyect.c: 182:                 for (int i = 0; i < 5; i++) {
+[; ;Prueba2.c: 182:                 for (int i = 0; i < 5; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -954,311 +954,311 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 169 ]
 {
 "184
-[; ;mainS1proyect.c: 184:                     int valor1 = contrasena[i], valor2 = compara[i];
+[; ;Prueba2.c: 184:                     int valor1 = contrasena[i], valor2 = compara[i];
 [v _valor1 `i ~T0 @X0 1 a ]
 [e = _valor1 -> *U + &U _contrasena * -> -> _i `ui `ux -> -> # *U &U _contrasena `ui `ux `i ]
 [v _valor2 `i ~T0 @X0 1 a ]
 [e = _valor2 -> *U + &U _compara * -> -> _i `ui `ux -> -> # *U &U _compara `ui `ux `i ]
 "187
-[; ;mainS1proyect.c: 187:                     if (valor1 != valor2) {
+[; ;Prueba2.c: 187:                     if (valor1 != valor2) {
 [e $ ! != _valor1 _valor2 172  ]
 {
 "188
-[; ;mainS1proyect.c: 188:                         Lcd_Clear_8bits();
+[; ;Prueba2.c: 188:                         Lcd_Clear_8bits();
 [e ( _Lcd_Clear_8bits ..  ]
 "189
-[; ;mainS1proyect.c: 189:                         Lcd_Set_Cursor_8bits(1,1);
+[; ;Prueba2.c: 189:                         Lcd_Set_Cursor_8bits(1,1);
 [e ( _Lcd_Set_Cursor_8bits (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
 "190
-[; ;mainS1proyect.c: 190:                         Lcd_Write_String("Contrasena mala",8);
+[; ;Prueba2.c: 190:                         Lcd_Write_String("Contrasena mala",8);
 [e ( _Lcd_Write_String (2 , :s 6C -> 8 `i ]
 "192
-[; ;mainS1proyect.c: 192:                         Lcd_Set_Cursor_8bits(2,1);
+[; ;Prueba2.c: 192:                         Lcd_Set_Cursor_8bits(2,1);
 [e ( _Lcd_Set_Cursor_8bits (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
 "193
-[; ;mainS1proyect.c: 193:                         Lcd_Write_String("intentelo",8);
+[; ;Prueba2.c: 193:                         Lcd_Write_String("intentelo",8);
 [e ( _Lcd_Write_String (2 , :s 7C -> 8 `i ]
 "194
-[; ;mainS1proyect.c: 194:                         _delay((unsigned long)((3000)*(500000/4000.0)));
+[; ;Prueba2.c: 194:                         _delay((unsigned long)((3000)*(500000/4000.0)));
 [e ( __delay (1 -> * -> -> 3000 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
 "195
-[; ;mainS1proyect.c: 195:                         goto Intentelo;
+[; ;Prueba2.c: 195:                         goto Intentelo;
 [e $U 165  ]
 "197
-[; ;mainS1proyect.c: 197:                     }
+[; ;Prueba2.c: 197:                     }
 }
 [e :U 172 ]
 "198
-[; ;mainS1proyect.c: 198:                 }
+[; ;Prueba2.c: 198:                 }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 5 `i 169  ]
 [e :U 170 ]
 }
 "199
-[; ;mainS1proyect.c: 199:                 goto Bueno;
+[; ;Prueba2.c: 199:                 goto Bueno;
 [e $U 173  ]
 "201
-[; ;mainS1proyect.c: 201:             }
+[; ;Prueba2.c: 201:             }
 }
 [e :U 168 ]
 "205
-[; ;mainS1proyect.c: 205:             if (contraAct == 1){
+[; ;Prueba2.c: 205:             if (contraAct == 1){
 [e $ ! == -> _contraAct `i -> 1 `i 174  ]
 {
 "206
-[; ;mainS1proyect.c: 206:                 goto IngresarC;
+[; ;Prueba2.c: 206:                 goto IngresarC;
 [e $U 166  ]
 "207
-[; ;mainS1proyect.c: 207:             }
+[; ;Prueba2.c: 207:             }
 }
 [e :U 174 ]
 "209
-[; ;mainS1proyect.c: 209:         } else {
+[; ;Prueba2.c: 209:         } else {
 }
 [e $U 175  ]
 [e :U 164 ]
 {
 "210
-[; ;mainS1proyect.c: 210:             goto Presiona;
+[; ;Prueba2.c: 210:             goto Presiona;
 [e $U 163  ]
 "211
-[; ;mainS1proyect.c: 211:         }
+[; ;Prueba2.c: 211:         }
 }
 [e :U 175 ]
 "213
-[; ;mainS1proyect.c: 213:         Bueno:
+[; ;Prueba2.c: 213:         Bueno:
 [e :U 173 ]
 "215
-[; ;mainS1proyect.c: 215:         Lcd_Clear_8bits();
+[; ;Prueba2.c: 215:         Lcd_Clear_8bits();
 [e ( _Lcd_Clear_8bits ..  ]
 "216
-[; ;mainS1proyect.c: 216:         Lcd_Set_Cursor_8bits(1,1);
+[; ;Prueba2.c: 216:         Lcd_Set_Cursor_8bits(1,1);
 [e ( _Lcd_Set_Cursor_8bits (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
 "217
-[; ;mainS1proyect.c: 217:         Lcd_Write_String("Acceso brindado,",8);
+[; ;Prueba2.c: 217:         Lcd_Write_String("Acceso brindado,",8);
 [e ( _Lcd_Write_String (2 , :s 8C -> 8 `i ]
 "218
-[; ;mainS1proyect.c: 218:         Lcd_Set_Cursor_8bits(2,1);
+[; ;Prueba2.c: 218:         Lcd_Set_Cursor_8bits(2,1);
 [e ( _Lcd_Set_Cursor_8bits (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
 "219
-[; ;mainS1proyect.c: 219:         Lcd_Write_String("Introduzca llave",8);
+[; ;Prueba2.c: 219:         Lcd_Write_String("Introduzca llave",8);
 [e ( _Lcd_Write_String (2 , :s 9C -> 8 `i ]
 "221
-[; ;mainS1proyect.c: 221:         while (PORTEbits.RE2 == 0){
+[; ;Prueba2.c: 221:         while (PORTEbits.RE2 == 0){
 [e $U 176  ]
 [e :U 177 ]
 {
 "222
-[; ;mainS1proyect.c: 222:             Key = keypad_scanner();
+[; ;Prueba2.c: 222:             Key = keypad_scanner();
 [e = _Key ( _keypad_scanner ..  ]
 "223
-[; ;mainS1proyect.c: 223:             if (Key == 42){
+[; ;Prueba2.c: 223:             if (Key == 42){
 [e $ ! == -> _Key `i -> 42 `i 179  ]
 {
 "224
-[; ;mainS1proyect.c: 224:                 goto Intentelo;
+[; ;Prueba2.c: 224:                 goto Intentelo;
 [e $U 165  ]
 "225
-[; ;mainS1proyect.c: 225:             }
+[; ;Prueba2.c: 225:             }
 }
 [e :U 179 ]
 "226
-[; ;mainS1proyect.c: 226:         }
+[; ;Prueba2.c: 226:         }
 }
 [e :U 176 ]
 "221
-[; ;mainS1proyect.c: 221:         while (PORTEbits.RE2 == 0){
+[; ;Prueba2.c: 221:         while (PORTEbits.RE2 == 0){
 [e $ == -> . . _PORTEbits 0 2 `i -> 0 `i 177  ]
 [e :U 178 ]
 "227
-[; ;mainS1proyect.c: 227:         Lcd_Clear_8bits();
+[; ;Prueba2.c: 227:         Lcd_Clear_8bits();
 [e ( _Lcd_Clear_8bits ..  ]
 "228
-[; ;mainS1proyect.c: 228:         Lcd_Set_Cursor_8bits(1,1);
+[; ;Prueba2.c: 228:         Lcd_Set_Cursor_8bits(1,1);
 [e ( _Lcd_Set_Cursor_8bits (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
 "229
-[; ;mainS1proyect.c: 229:         Lcd_Write_String("Abriendo puerta",8);
+[; ;Prueba2.c: 229:         Lcd_Write_String("Abriendo puerta",8);
 [e ( _Lcd_Write_String (2 , :s 10C -> 8 `i ]
 "230
-[; ;mainS1proyect.c: 230:         Lcd_Set_Cursor_8bits(2,1);
+[; ;Prueba2.c: 230:         Lcd_Set_Cursor_8bits(2,1);
 [e ( _Lcd_Set_Cursor_8bits (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
 "231
-[; ;mainS1proyect.c: 231:         Lcd_Write_String("Bienvenido",8);
+[; ;Prueba2.c: 231:         Lcd_Write_String("Bienvenido",8);
 [e ( _Lcd_Write_String (2 , :s 11C -> 8 `i ]
 "233
-[; ;mainS1proyect.c: 233:         CCPR1L = 15;
+[; ;Prueba2.c: 233:         CCPR1L = 15;
 [e = _CCPR1L -> -> 15 `i `uc ]
 "234
-[; ;mainS1proyect.c: 234:         Abierto = 1;
+[; ;Prueba2.c: 234:         Abierto = 1;
 [e = _Abierto -> -> 1 `i `uc ]
 "236
-[; ;mainS1proyect.c: 236:         _delay((unsigned long)((5000)*(500000/4000.0)));
+[; ;Prueba2.c: 236:         _delay((unsigned long)((5000)*(500000/4000.0)));
 [e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
 "237
-[; ;mainS1proyect.c: 237:         Lcd_Clear_8bits();
+[; ;Prueba2.c: 237:         Lcd_Clear_8bits();
 [e ( _Lcd_Clear_8bits ..  ]
 "238
-[; ;mainS1proyect.c: 238:         CCPR1L = 6;
+[; ;Prueba2.c: 238:         CCPR1L = 6;
 [e = _CCPR1L -> -> 6 `i `uc ]
 "239
-[; ;mainS1proyect.c: 239:         Abierto = 0;
+[; ;Prueba2.c: 239:         Abierto = 0;
 [e = _Abierto -> -> 0 `i `uc ]
 "240
-[; ;mainS1proyect.c: 240:         goto Inicio;
+[; ;Prueba2.c: 240:         goto Inicio;
 [e $U 162  ]
 "241
-[; ;mainS1proyect.c: 241:     }
+[; ;Prueba2.c: 241:     }
 }
 [e :U 159 ]
 [e $U 160  ]
 [e :U 161 ]
 "243
-[; ;mainS1proyect.c: 243:     return;
+[; ;Prueba2.c: 243:     return;
 [e $UE 158  ]
 "244
-[; ;mainS1proyect.c: 244: }
+[; ;Prueba2.c: 244: }
 [e :UE 158 ]
 }
 "248
-[; ;mainS1proyect.c: 248: void init(void){
+[; ;Prueba2.c: 248: void init(void){
 [v _init `(v ~T0 @X0 1 ef ]
 {
 [e :U _init ]
 [f ]
 "250
-[; ;mainS1proyect.c: 250:     TRISB = 0;
+[; ;Prueba2.c: 250:     TRISB = 0;
 [e = _TRISB -> -> 0 `i `uc ]
 "251
-[; ;mainS1proyect.c: 251:     TRISA = 0x0F;
+[; ;Prueba2.c: 251:     TRISA = 0x0F;
 [e = _TRISA -> -> 15 `i `uc ]
 "253
-[; ;mainS1proyect.c: 253:     TRISD = 0;
+[; ;Prueba2.c: 253:     TRISD = 0;
 [e = _TRISD -> -> 0 `i `uc ]
 "254
-[; ;mainS1proyect.c: 254:     TRISC = 0;
+[; ;Prueba2.c: 254:     TRISC = 0;
 [e = _TRISC -> -> 0 `i `uc ]
 "255
-[; ;mainS1proyect.c: 255:     TRISE = 0;
+[; ;Prueba2.c: 255:     TRISE = 0;
 [e = _TRISE -> -> 0 `i `uc ]
 "256
-[; ;mainS1proyect.c: 256:     ANSEL = 0;
+[; ;Prueba2.c: 256:     ANSEL = 0;
 [e = _ANSEL -> -> 0 `i `uc ]
 "257
-[; ;mainS1proyect.c: 257:     ANSELH = 0;
+[; ;Prueba2.c: 257:     ANSELH = 0;
 [e = _ANSELH -> -> 0 `i `uc ]
 "258
-[; ;mainS1proyect.c: 258:     ANSELbits.ANS0 = 1;
+[; ;Prueba2.c: 258:     ANSELbits.ANS0 = 1;
 [e = . . _ANSELbits 0 0 -> -> 1 `i `uc ]
 "260
-[; ;mainS1proyect.c: 260:     PORTA = 0;
+[; ;Prueba2.c: 260:     PORTA = 0;
 [e = _PORTA -> -> 0 `i `uc ]
 "261
-[; ;mainS1proyect.c: 261:     PORTB = 0;
+[; ;Prueba2.c: 261:     PORTB = 0;
 [e = _PORTB -> -> 0 `i `uc ]
 "262
-[; ;mainS1proyect.c: 262:     PORTD = 0;
+[; ;Prueba2.c: 262:     PORTD = 0;
 [e = _PORTD -> -> 0 `i `uc ]
 "263
-[; ;mainS1proyect.c: 263:     PORTC = 0;
+[; ;Prueba2.c: 263:     PORTC = 0;
 [e = _PORTC -> -> 0 `i `uc ]
 "264
-[; ;mainS1proyect.c: 264:     PORTE = 0;
+[; ;Prueba2.c: 264:     PORTE = 0;
 [e = _PORTE -> -> 0 `i `uc ]
 "266
-[; ;mainS1proyect.c: 266:     return;
+[; ;Prueba2.c: 266:     return;
 [e $UE 180  ]
 "267
-[; ;mainS1proyect.c: 267: }
+[; ;Prueba2.c: 267: }
 [e :UE 180 ]
 }
 "269
-[; ;mainS1proyect.c: 269: void PWMconf(void){
+[; ;Prueba2.c: 269: void PWMconf(void){
 [v _PWMconf `(v ~T0 @X0 1 ef ]
 {
 [e :U _PWMconf ]
 [f ]
 "271
-[; ;mainS1proyect.c: 271:     TRISCbits.TRISC2 = 1;
+[; ;Prueba2.c: 271:     TRISCbits.TRISC2 = 1;
 [e = . . _TRISCbits 0 2 -> -> 1 `i `uc ]
 "272
-[; ;mainS1proyect.c: 272:     PR2 = 155;
+[; ;Prueba2.c: 272:     PR2 = 155;
 [e = _PR2 -> -> 155 `i `uc ]
 "273
-[; ;mainS1proyect.c: 273:     CCP1CONbits.P1M1 = 0;
+[; ;Prueba2.c: 273:     CCP1CONbits.P1M1 = 0;
 [e = . . _CCP1CONbits 1 7 -> -> 0 `i `uc ]
 "274
-[; ;mainS1proyect.c: 274:     CCP1CONbits.P1M0 = 0;
+[; ;Prueba2.c: 274:     CCP1CONbits.P1M0 = 0;
 [e = . . _CCP1CONbits 1 6 -> -> 0 `i `uc ]
 "276
-[; ;mainS1proyect.c: 276:     CCP1CONbits.CCP1M0 = 0;
+[; ;Prueba2.c: 276:     CCP1CONbits.CCP1M0 = 0;
 [e = . . _CCP1CONbits 1 0 -> -> 0 `i `uc ]
 "277
-[; ;mainS1proyect.c: 277:     CCP1CONbits.CCP1M1 = 0;
+[; ;Prueba2.c: 277:     CCP1CONbits.CCP1M1 = 0;
 [e = . . _CCP1CONbits 1 1 -> -> 0 `i `uc ]
 "278
-[; ;mainS1proyect.c: 278:     CCP1CONbits.CCP1M2 = 1;
+[; ;Prueba2.c: 278:     CCP1CONbits.CCP1M2 = 1;
 [e = . . _CCP1CONbits 1 2 -> -> 1 `i `uc ]
 "279
-[; ;mainS1proyect.c: 279:     CCP1CONbits.CCP1M3 = 1;
+[; ;Prueba2.c: 279:     CCP1CONbits.CCP1M3 = 1;
 [e = . . _CCP1CONbits 1 3 -> -> 1 `i `uc ]
 "281
-[; ;mainS1proyect.c: 281:     CCPR1L = 6;
+[; ;Prueba2.c: 281:     CCPR1L = 6;
 [e = _CCPR1L -> -> 6 `i `uc ]
 "282
-[; ;mainS1proyect.c: 282:     CCP1CONbits.DC1B0 = 1;
+[; ;Prueba2.c: 282:     CCP1CONbits.DC1B0 = 1;
 [e = . . _CCP1CONbits 1 4 -> -> 1 `i `uc ]
 "283
-[; ;mainS1proyect.c: 283:     CCP1CONbits.DC1B1 = 1;
+[; ;Prueba2.c: 283:     CCP1CONbits.DC1B1 = 1;
 [e = . . _CCP1CONbits 1 5 -> -> 1 `i `uc ]
 "285
-[; ;mainS1proyect.c: 285:     PIR1bits.TMR2IF = 0;
+[; ;Prueba2.c: 285:     PIR1bits.TMR2IF = 0;
 [e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
 "288
-[; ;mainS1proyect.c: 288:     T2CONbits.T2CKPS0 = 1;
+[; ;Prueba2.c: 288:     T2CONbits.T2CKPS0 = 1;
 [e = . . _T2CONbits 1 0 -> -> 1 `i `uc ]
 "289
-[; ;mainS1proyect.c: 289:     T2CONbits.T2CKPS1 = 1;
+[; ;Prueba2.c: 289:     T2CONbits.T2CKPS1 = 1;
 [e = . . _T2CONbits 1 1 -> -> 1 `i `uc ]
 "291
-[; ;mainS1proyect.c: 291:     T2CONbits.TMR2ON = 1;
+[; ;Prueba2.c: 291:     T2CONbits.TMR2ON = 1;
 [e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
 "293
-[; ;mainS1proyect.c: 293:     PIR1bits.TMR2IF = 0;
+[; ;Prueba2.c: 293:     PIR1bits.TMR2IF = 0;
 [e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
 "295
-[; ;mainS1proyect.c: 295:     TRISCbits.TRISC2 = 0;
+[; ;Prueba2.c: 295:     TRISCbits.TRISC2 = 0;
 [e = . . _TRISCbits 0 2 -> -> 0 `i `uc ]
 "296
-[; ;mainS1proyect.c: 296: }
+[; ;Prueba2.c: 296: }
 [e :UE 181 ]
 }
 "298
-[; ;mainS1proyect.c: 298: void initTMR0(void){
+[; ;Prueba2.c: 298: void initTMR0(void){
 [v _initTMR0 `(v ~T0 @X0 1 ef ]
 {
 [e :U _initTMR0 ]
 [f ]
 "299
-[; ;mainS1proyect.c: 299:     OPTION_REG = 0x85;
+[; ;Prueba2.c: 299:     OPTION_REG = 0x85;
 [e = _OPTION_REG -> -> 133 `i `uc ]
 "300
-[; ;mainS1proyect.c: 300:     TMR0 = 200;
-[e = _TMR0 -> -> 200 `i `uc ]
+[; ;Prueba2.c: 300:     TMR0 = 62;
+[e = _TMR0 -> -> 62 `i `uc ]
 "302
-[; ;mainS1proyect.c: 302:     INTCONbits.GIE = 1;
+[; ;Prueba2.c: 302:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
 "303
-[; ;mainS1proyect.c: 303:     INTCONbits.T0IE = 1;
+[; ;Prueba2.c: 303:     INTCONbits.T0IE = 1;
 [e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
 "304
-[; ;mainS1proyect.c: 304:     INTCONbits.T0IF = 0;
+[; ;Prueba2.c: 304:     INTCONbits.T0IF = 0;
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
 "306
-[; ;mainS1proyect.c: 306:     return;
+[; ;Prueba2.c: 306:     return;
 [e $UE 182  ]
 "307
-[; ;mainS1proyect.c: 307: }
+[; ;Prueba2.c: 307: }
 [e :UE 182 ]
 }
 [a 4C 105 110 105 99 105 97 114 0 ]

@@ -1,4 +1,4 @@
-# 1 "mainS1proyect.c"
+# 1 "Prueba2.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "mainS1proyect.c" 2
+# 1 "Prueba2.c" 2
 
 
 
@@ -20,7 +20,7 @@
 #pragma config MCLRE = ON
 #pragma config CP = OFF
 #pragma config CPD = OFF
-#pragma config BOREN = OFF
+#pragma config BOREN = ON
 #pragma config IESO = OFF
 #pragma config FCMEN = OFF
 #pragma config LVP = OFF
@@ -2514,7 +2514,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 2 3
-# 23 "mainS1proyect.c" 2
+# 23 "Prueba2.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c90\\stdint.h" 3
@@ -2649,7 +2649,7 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 24 "mainS1proyect.c" 2
+# 24 "Prueba2.c" 2
 
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c90\\stdio.h" 1 3
@@ -2749,7 +2749,7 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 #pragma printf_check(sprintf) const
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
-# 26 "mainS1proyect.c" 2
+# 26 "Prueba2.c" 2
 
 
 
@@ -2764,7 +2764,7 @@ extern int printf(const char *, ...);
 
 
 void initOsc(uint8_t frec);
-# 29 "mainS1proyect.c" 2
+# 29 "Prueba2.c" 2
 
 # 1 "./I2C.h" 1
 # 20 "./I2C.h"
@@ -2814,7 +2814,7 @@ unsigned short I2C_Master_Read(unsigned short a);
 
 
 void I2C_Slave_Init(uint8_t address);
-# 30 "mainS1proyect.c" 2
+# 30 "Prueba2.c" 2
 
 # 1 "./LCD.h" 1
 # 15 "./LCD.h"
@@ -2835,19 +2835,19 @@ void Lcd_Set_Cursor_8bits(unsigned char y, unsigned char x);
 void Lcd_Init_8bits(void);
 void Lcd_Shift_Right_8bits(void);
 void Lcd_Shift_Left_8bits(void);
-# 31 "mainS1proyect.c" 2
+# 31 "Prueba2.c" 2
 
 # 1 "./KEYPAD.h" 1
 # 15 "./KEYPAD.h"
 char keypad_scanner(void);
 void InitKeypad(void);
 char switch_press_scan(void);
-# 32 "mainS1proyect.c" 2
+# 32 "Prueba2.c" 2
 
 # 1 "./ADCconfi.h" 1
 # 21 "./ADCconfi.h"
 void funcAdc(uint8_t divD,uint8_t anaP,uint8_t just);
-# 33 "mainS1proyect.c" 2
+# 33 "Prueba2.c" 2
 
 
 
@@ -2901,7 +2901,7 @@ void __attribute__((picinterrupt(""))) interrupciones(void){
             z = SSPBUF;
             BF = 0;
 
-            SSPBUF = Abierto;
+            SSPBUF = res;
             SSPCONbits.CKP = 1;
             _delay((unsigned long)((250)*(500000/4000000.0)));
             while(SSPSTATbits.BF);
@@ -2924,7 +2924,7 @@ void __attribute__((picinterrupt(""))) interrupciones(void){
 
     if (INTCONbits.TMR0IF ){
         INTCONbits.TMR0IF = 0;
-        TMR0 = 200;
+        TMR0 = 61;
 
         if (PORTAbits.RA1 == 1){
             CCPR1L = 15;
@@ -3115,7 +3115,7 @@ void PWMconf(void){
 
 void initTMR0(void){
     OPTION_REG = 0x85;
-    TMR0 = 200;
+    TMR0 = 62;
 
     INTCONbits.GIE = 1;
     INTCONbits.T0IE = 1;

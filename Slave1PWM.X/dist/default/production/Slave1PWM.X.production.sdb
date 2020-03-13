@@ -43,21 +43,21 @@
 [v _Lcd_Set_Cursor_8bits Lcd_Set_Cursor_8bits `(v  1 e 1 0 ]
 "193
 [v _Lcd_Init_8bits Lcd_Init_8bits `(v  1 e 1 0 ]
-"60 C:\Users\Dibujo CAD\Documents\GitHub\Proyecto1Digital2\Slave1PWM.X\mainS1proyect.c
+"58 C:\Users\Dibujo CAD\Documents\GitHub\Proyecto1Digital2\Slave1PWM.X\mainS1proyect.c
 [v _interrupciones interrupciones `II(v  1 e 1 0 ]
-"123
+"125
 [v _main main `(v  1 e 1 0 ]
-"246
+"248
 [v _init init `(v  1 e 1 0 ]
-"267
+"269
 [v _PWMconf PWMconf `(v  1 e 1 0 ]
-"296
+"298
 [v _initTMR0 initTMR0 `(v  1 e 1 0 ]
 "59 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h
 [v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
 "166
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
-[s S257 . 1 `uc 1 RA0 1 0 :1:0 
+[s S258 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -67,11 +67,11 @@
 `uc 1 RA7 1 0 :1:7 
 ]
 "183
-[u S266 . 1 `S257 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES266  1 e 1 @5 ]
+[u S267 . 1 `S258 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES267  1 e 1 @5 ]
 "228
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
-[s S696 . 1 `uc 1 RB0 1 0 :1:0 
+[s S695 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -81,23 +81,23 @@
 `uc 1 RB7 1 0 :1:7 
 ]
 "245
-[u S705 . 1 `S696 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES705  1 e 1 @6 ]
+[u S704 . 1 `S695 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES704  1 e 1 @6 ]
 "290
 [v _PORTC PORTC `VEuc  1 e 1 @7 ]
 "352
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
 "414
 [v _PORTE PORTE `VEuc  1 e 1 @9 ]
-[s S165 . 1 `uc 1 RE0 1 0 :1:0 
+[s S166 . 1 `uc 1 RE0 1 0 :1:0 
 `uc 1 RE1 1 0 :1:1 
 `uc 1 RE2 1 0 :1:2 
 `uc 1 RE3 1 0 :1:3 
 ]
 "427
-[u S170 . 1 `S165 1 . 1 0 ]
-[v _PORTEbits PORTEbits `VES170  1 e 1 @9 ]
-[s S224 . 1 `uc 1 RBIF 1 0 :1:0 
+[u S171 . 1 `S166 1 . 1 0 ]
+[v _PORTEbits PORTEbits `VES171  1 e 1 @9 ]
+[s S225 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -107,13 +107,13 @@
 `uc 1 GIE 1 0 :1:7 
 ]
 "482
-[s S233 . 1 `uc 1 . 1 0 :2:0 
+[s S234 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 TMR0IE 1 0 :1:5 
 ]
-[u S238 . 1 `S224 1 . 1 0 `S233 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES238  1 e 1 @11 ]
+[u S239 . 1 `S225 1 . 1 0 `S234 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES239  1 e 1 @11 ]
 [s S22 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
@@ -182,13 +182,13 @@
 [v _CCP1CONbits CCP1CONbits `VES418  1 e 1 @23 ]
 "1238
 [v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
-[s S178 . 1 `uc 1 ADON 1 0 :1:0 
+[s S179 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :4:2 
 `uc 1 ADCS 1 0 :2:6 
 ]
 "1276
-[s S183 . 1 `uc 1 . 1 0 :1:0 
+[s S184 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -197,14 +197,14 @@
 `uc 1 ADCS0 1 0 :1:6 
 `uc 1 ADCS1 1 0 :1:7 
 ]
-[s S192 . 1 `uc 1 . 1 0 :1:0 
+[s S193 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 nDONE 1 0 :1:1 
 ]
-[s S195 . 1 `uc 1 . 1 0 :1:0 
+[s S196 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_DONE 1 0 :1:1 
 ]
-[u S198 . 1 `S178 1 . 1 0 `S183 1 . 1 0 `S192 1 . 1 0 `S195 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES198  1 e 1 @31 ]
+[u S199 . 1 `S179 1 . 1 0 `S184 1 . 1 0 `S193 1 . 1 0 `S196 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES199  1 e 1 @31 ]
 "1346
 [v _OPTION_REG OPTION_REG `VEuc  1 e 1 @129 ]
 "1416
@@ -229,7 +229,7 @@
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
 "1664
 [v _TRISE TRISE `VEuc  1 e 1 @137 ]
-[s S840 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S839 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -238,25 +238,25 @@
 `uc 1 ADIE 1 0 :1:6 
 ]
 "1718
-[u S848 . 1 `S840 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES848  1 e 1 @140 ]
-[s S593 . 1 `uc 1 SCS 1 0 :1:0 
+[u S847 . 1 `S839 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES847  1 e 1 @140 ]
+[s S592 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 ]
 "1882
-[s S599 . 1 `uc 1 . 1 0 :4:0 
+[s S598 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IRCF0 1 0 :1:4 
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S604 . 1 `S593 1 . 1 0 `S599 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES604  1 e 1 @143 ]
+[u S603 . 1 `S592 1 . 1 0 `S598 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES603  1 e 1 @143 ]
 "1979
 [v _SSPCON2 SSPCON2 `VEuc  1 e 1 @145 ]
-[s S646 . 1 `uc 1 SEN 1 0 :1:0 
+[s S645 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -266,8 +266,8 @@
 `uc 1 GCEN 1 0 :1:7 
 ]
 "1996
-[u S655 . 1 `S646 1 . 1 0 ]
-[v _SSPCON2bits SSPCON2bits `VES655  1 e 1 @145 ]
+[u S654 . 1 `S645 1 . 1 0 ]
+[v _SSPCON2bits SSPCON2bits `VES654  1 e 1 @145 ]
 "2041
 [v _PR2 PR2 `VEuc  1 e 1 @146 ]
 "2048
@@ -317,18 +317,18 @@
 ]
 [u S108 . 1 `S68 1 . 1 0 `S77 1 . 1 0 `S82 1 . 1 0 `S88 1 . 1 0 `S93 1 . 1 0 `S98 1 . 1 0 `S103 1 . 1 0 ]
 [v _SSPSTATbits SSPSTATbits `VES108  1 e 1 @148 ]
-[s S814 . 1 `uc 1 . 1 0 :4:0 
+[s S813 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 VCFG0 1 0 :1:4 
 `uc 1 VCFG1 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 ADFM 1 0 :1:7 
 ]
 "2991
-[u S820 . 1 `S814 1 . 1 0 ]
-[v _ADCON1bits ADCON1bits `VES820  1 e 1 @159 ]
+[u S819 . 1 `S813 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES819  1 e 1 @159 ]
 "3387
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
-[s S353 . 1 `uc 1 ANS0 1 0 :1:0 
+[s S354 . 1 `uc 1 ANS0 1 0 :1:0 
 `uc 1 ANS1 1 0 :1:1 
 `uc 1 ANS2 1 0 :1:2 
 `uc 1 ANS3 1 0 :1:3 
@@ -338,8 +338,8 @@
 `uc 1 ANS7 1 0 :1:7 
 ]
 "3404
-[u S362 . 1 `S353 1 . 1 0 ]
-[v _ANSELbits ANSELbits `VES362  1 e 1 @392 ]
+[u S363 . 1 `S354 1 . 1 0 ]
+[v _ANSELbits ANSELbits `VES363  1 e 1 @392 ]
 "3449
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
 "3641
@@ -376,29 +376,27 @@
 [v _res res `uc  1 e 1 0 ]
 "44
 [v _z z `uc  1 e 1 0 ]
-"45
-[v _DUM DUM `uc  1 e 1 0 ]
-"47
+"46
 [v _contraAct contraAct `uc  1 e 1 0 ]
-"48
+"47
 [v _cont cont `uc  1 e 1 0 ]
-"52
+"51
 [v _Abierto Abierto `uc  1 e 1 0 ]
-"56
+"54
 [v _contrasena contrasena `[5]uc  1 e 5 0 ]
-"57
+"55
 [v _compara compara `[5]uc  1 e 5 0 ]
-"123
+"125
 [v _main main `(v  1 e 1 0 ]
 {
-"182
+"184
 [v main@valor2 valor2 `i  1 a 2 13 ]
 [v main@valor1 valor1 `i  1 a 2 11 ]
-"180
+"182
 [v main@i i `i  1 a 2 15 ]
-"144
+"146
 [v main@Key Key `uc  1 a 1 17 ]
-"242
+"244
 } 0
 "90 C:\Users\Dibujo CAD\Documents\GitHub\Proyecto1Digital2\Slave1PWM.X\KEYPAD.c
 [v _switch_press_scan switch_press_scan `(uc  1 e 1 0 ]
@@ -412,10 +410,10 @@
 {
 "89
 } 0
-"296 C:\Users\Dibujo CAD\Documents\GitHub\Proyecto1Digital2\Slave1PWM.X\mainS1proyect.c
+"298 C:\Users\Dibujo CAD\Documents\GitHub\Proyecto1Digital2\Slave1PWM.X\mainS1proyect.c
 [v _initTMR0 initTMR0 `(v  1 e 1 0 ]
 {
-"305
+"307
 } 0
 "9 C:\Users\Dibujo CAD\Documents\GitHub\Proyecto1Digital2\Slave1PWM.X\FuncionOscilador.c
 [v _initOsc initOsc `(v  1 e 1 0 ]
@@ -425,10 +423,10 @@
 [v initOsc@frec frec `uc  1 a 1 5 ]
 "60
 } 0
-"246 C:\Users\Dibujo CAD\Documents\GitHub\Proyecto1Digital2\Slave1PWM.X\mainS1proyect.c
+"248 C:\Users\Dibujo CAD\Documents\GitHub\Proyecto1Digital2\Slave1PWM.X\mainS1proyect.c
 [v _init init `(v  1 e 1 0 ]
 {
-"265
+"267
 } 0
 "9 C:\Users\Dibujo CAD\Documents\GitHub\Proyecto1Digital2\Slave1PWM.X\ADCconf.c
 [v _funcAdc funcAdc `(v  1 e 1 0 ]
@@ -440,10 +438,10 @@
 [v funcAdc@divD divD `uc  1 a 1 0 ]
 "81
 } 0
-"267 C:\Users\Dibujo CAD\Documents\GitHub\Proyecto1Digital2\Slave1PWM.X\mainS1proyect.c
+"269 C:\Users\Dibujo CAD\Documents\GitHub\Proyecto1Digital2\Slave1PWM.X\mainS1proyect.c
 [v _PWMconf PWMconf `(v  1 e 1 0 ]
 {
-"294
+"296
 } 0
 "127 C:\Users\Dibujo CAD\Documents\GitHub\Proyecto1Digital2\Slave1PWM.X\LCD.c
 [v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
@@ -524,8 +522,8 @@
 [v I2C_Slave_Init@address address `uc  1 a 1 3 ]
 "105
 } 0
-"60 C:\Users\Dibujo CAD\Documents\GitHub\Proyecto1Digital2\Slave1PWM.X\mainS1proyect.c
+"58 C:\Users\Dibujo CAD\Documents\GitHub\Proyecto1Digital2\Slave1PWM.X\mainS1proyect.c
 [v _interrupciones interrupciones `II(v  1 e 1 0 ]
 {
-"121
+"123
 } 0
