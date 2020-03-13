@@ -2833,6 +2833,8 @@ void Lcd_Cmd_8bits(unsigned char comando);
 void Lcd_Clear_8bits(void);
 void Lcd_Set_Cursor_8bits(unsigned char y, unsigned char x);
 void Lcd_Init_8bits(void);
+void Lcd_Shift_Right_8bits(void);
+void Lcd_Shift_Left_8bits(void);
 # 31 "mainS1proyect.c" 2
 
 # 1 "./KEYPAD.h" 1
@@ -2853,17 +2855,20 @@ void funcAdc(uint8_t divD,uint8_t anaP,uint8_t just);
 
 void init(void);
 void PWMconf(void);
-
+void initTMR0(void);
 
 uint8_t conteo = 0;
 uint8_t res = 0;
 uint8_t z;
+uint8_t DUM;
 uint8_t numerito;
 uint8_t contraAct = 0;
 uint8_t cont = 0;
 uint8_t i = 0;
 uint8_t valor1 = 0;
 uint8_t valor2 = 0;
+uint8_t Abierto = 0;
+
 int a;
 
 char contrasena[]= {49,55,51,48,56};
@@ -2871,7 +2876,39 @@ char compara[]= {0,0,0,0,0};
 
 
 void __attribute__((picinterrupt(""))) interrupciones(void){
-# 106 "mainS1proyect.c"
+        if(PIR1bits.SSPIF == 1){
+
+       SSPCONbits.CKP = 0;
+
+       if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
+           z = SSPBUF;
+           SSPCONbits.SSPOV = 0;
+           SSPCONbits.WCOL = 0;
+           SSPCONbits.CKP = 1;
+       }
+        if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
+            z = SSPBUF;
+            PIR1bits.SSPIF = 0;
+            SSPCONbits.CKP = 1;
+            while(!SSPSTATbits.BF);
+            DUM = SSPBUF;
+            _delay((unsigned long)((250)*(500000/4000000.0)));
+
+        }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
+           z = SSPBUF;
+           BF = 0;
+           SSPBUF = Abierto;
+           SSPCONbits.CKP = 1;
+           _delay((unsigned long)((250)*(500000/4000000.0)));
+           while(SSPSTATbits.BF);
+
+       }
+
+       PIR1bits.SSPIF = 0;
+
+    }
+
+
     if (PIR1bits.ADIF){
         PIR1bits.ADIF = 0;
         res = ADRESH;
@@ -2883,6 +2920,22 @@ void __attribute__((picinterrupt(""))) interrupciones(void){
         ADCON0bits.GO_nDONE = 1;
     }
 
+    if (INTCONbits.TMR0IF ){
+        INTCONbits.TMR0IF = 0;
+        TMR0 = 61;
+
+        if (PORTAbits.RA1 == 1){
+            CCPR1L = 15;
+            Abierto = 1;
+        } else if (PORTAbits.RA2 == 1){
+            CCPR1L = 6;
+            Abierto = 0;
+        }
+
+
+    }
+
+
 }
 
 void main(void) {
@@ -2892,6 +2945,8 @@ void main(void) {
     PWMconf();
     Lcd_Init_8bits();
     InitKeypad();
+    initTMR0();
+    I2C_Slave_Init(0x70);
 
 
 
@@ -2899,9 +2954,10 @@ void main(void) {
     Lcd_Set_Cursor_8bits(1,1);
     Lcd_Write_String("Bienvenido Atte.",8);
     Lcd_Set_Cursor_8bits(2,1);
-    Lcd_Write_String("Familia Sanabria",8);
+    Lcd_Write_String("Familia UVG",8);
     _delay((unsigned long)((3000)*(500000/4000.0)));
     Lcd_Clear_8bits();
+
 
     char Key = 'n';
 
@@ -2923,7 +2979,7 @@ void main(void) {
             cont = 0;
             Lcd_Clear_8bits();
             Lcd_Set_Cursor_8bits(1,1);
-            Lcd_Write_String("Contrasena:",8);
+            Lcd_Write_String("Ingrese clave:",8);
 
             IngresarC:
 
@@ -2970,12 +3026,11 @@ void main(void) {
             goto Presiona;
         }
 
-
         Bueno:
 
         Lcd_Clear_8bits();
         Lcd_Set_Cursor_8bits(1,1);
-        Lcd_Write_String("Acceso brindado",8);
+        Lcd_Write_String("Acceso brindado,",8);
         Lcd_Set_Cursor_8bits(2,1);
         Lcd_Write_String("Introduzca llave",8);
 
@@ -2989,12 +3044,15 @@ void main(void) {
         Lcd_Set_Cursor_8bits(1,1);
         Lcd_Write_String("Abriendo puerta",8);
         Lcd_Set_Cursor_8bits(2,1);
-        Lcd_Write_String("Bienvenido :)",8);
+        Lcd_Write_String("Bienvenido",8);
 
         CCPR1L = 15;
+        Abierto = 1;
+
         _delay((unsigned long)((5000)*(500000/4000.0)));
         Lcd_Clear_8bits();
         CCPR1L = 6;
+        Abierto = 0;
         goto Inicio;
     }
 
@@ -3051,4 +3109,15 @@ void PWMconf(void){
     PIR1bits.TMR2IF = 0;
 
     TRISCbits.TRISC2 = 0;
+}
+
+void initTMR0(void){
+    OPTION_REG = 0x85;
+    TMR0 = 62;
+
+    INTCONbits.GIE = 1;
+    INTCONbits.T0IE = 1;
+    INTCONbits.T0IF = 0;
+
+    return;
 }

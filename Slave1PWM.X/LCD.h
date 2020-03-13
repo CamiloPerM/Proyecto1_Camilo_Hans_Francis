@@ -27,5 +27,7 @@ void Lcd_Cmd_8bits(unsigned char comando); //Escribe comando a la LCD de 8 bits
 void Lcd_Clear_8bits(void); //Limpia pantalla de la LCD de 8 bits
 void Lcd_Set_Cursor_8bits(unsigned char y, unsigned char x); //Para moverse de cursor en la LCD de 8 bits.
 void Lcd_Init_8bits(void); //Inicializacion de la LCD de 8 bits
+void Lcd_Shift_Right_8bits(void);
+void Lcd_Shift_Left_8bits(void);
 
 

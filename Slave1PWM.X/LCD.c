@@ -163,6 +163,19 @@ void Lcd_Clear_8bits(void)
 	Lcd_Cmd_8bits(1);
 }
 
+void Lcd_Shift_Right_8bits(void)
+{
+	Lcd_Cmd_8bits(0x01);
+	Lcd_Cmd_8bits(0x0C);
+}
+
+void Lcd_Shift_Left_8bits(void)
+{
+	Lcd_Cmd_8bits(0x01);
+	Lcd_Cmd_8bits(0x08);
+}
+
+
 void Lcd_Set_Cursor_8bits(unsigned char y, unsigned char x)
 {
 	

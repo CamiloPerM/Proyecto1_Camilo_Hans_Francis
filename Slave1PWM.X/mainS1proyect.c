@@ -37,17 +37,20 @@
 
 void init(void);
 void PWMconf(void);
-
+void initTMR0(void);
 //---------------------------VARIABLES-----------------------------------------
 uint8_t conteo = 0;
 uint8_t res = 0;
 uint8_t z;
+uint8_t DUM;
 uint8_t numerito;
 uint8_t contraAct = 0;
 uint8_t cont = 0;
 uint8_t i = 0;
 uint8_t valor1 = 0;
 uint8_t valor2 = 0;
+uint8_t Abierto = 0;
+
 int a;
 //char contrasena[]= {1+48,7+48,3+48,0+48,8+48};
 char contrasena[]= {49,55,51,48,56};
@@ -55,52 +58,37 @@ char compara[]= {0,0,0,0,0};
 
 //-------------------------------INTERRUPCION-----------------------------------
 void __interrupt() interrupciones(void){
-    //--------------------- Interrupcion del I2C
-    /*if(PIR1bits.SSPIF == 1){ 
-
-        SSPCONbits.CKP = 0;
+        if(PIR1bits.SSPIF == 1){ //Revisa si ocurrio una interrupci?n del MSSP
+         
+       SSPCONbits.CKP = 0; //Apague el reloj
        
-        if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
-            z = SSPBUF;                 // Read the previous value to clear the buffer
-            SSPCONbits.SSPOV = 0;       // Clear the overflow flag
-            SSPCONbits.WCOL = 0;        // Clear the collision bit
-            SSPCONbits.CKP = 1;         // Enables SCL (Clock)
-        }
-        //------------------Lee un dato----------------------------------------
+       if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){ //Si ocurrio Overflow o Colisi?n
+           z = SSPBUF;              // Lea el valor anterior para limpiar el buffer
+           SSPCONbits.SSPOV = 0;       // Limpie la bandera de Overflow
+           SSPCONbits.WCOL = 0;        // Limpie el bit de colisi?n
+           SSPCONbits.CKP = 1;         // Active el reloj
+       }
         if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
-            //__delay_us(7);
-            z = SSPBUF;                 // Lectura del SSBUF para limpiar el buffer y la bandera BF
-            //__delay_us(2);
-            PIR1bits.SSPIF = 0;         // Limpia bandera de interrupción recepción/transmisión SSP
+            z = SSPBUF;              // Lectura del SSBUF para limpiar el buffer y la bandera BF
+            PIR1bits.SSPIF = 0;         // Limpia bandera de interrupci?n recepci?n/transmisi?n SSP
             SSPCONbits.CKP = 1;         // Habilita entrada de pulsos de reloj SCL
-            while(!SSPSTATbits.BF);     // Esperar a que la recepción se complete
-            PORTD = SSPBUF;             // Guardar en el PORTD el valor del buffer de recepción
+            while(!SSPSTATbits.BF);     // Esperar a que la recepci?n se complete
+            DUM = SSPBUF;               // Guardar en el PORTD el valor del buffer de recepci?n
             __delay_us(250);
-        //------------------Escribe un dato----------------------------------------  
             
         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
-            z = SSPBUF;
-            BF = 0;
-            //SSPBUF = PORTB;
-            SSPBUF = res;
-            SSPCONbits.CKP = 1;
-            __delay_us(250);
-            while(SSPSTATbits.BF);
-        }
-        if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
-            z = SSPBUF;
-            BF = 0;
-            //SSPBUF = PORTB;
-            SSPBUF = res;
-            SSPCONbits.CKP = 1;
-            __delay_us(250);
-            while(SSPSTATbits.BF);
-        }
+           z = SSPBUF;               //Lectura del SSBUF para limpiar el buffer y la bandera BF
+           BF = 0;                      //Limpie la bandera BF
+           SSPBUF = Abierto;              //Guarde en el buffer el valor de la variable
+           SSPCONbits.CKP = 1;          //Habilite la entrada de pulsos de reloj
+           __delay_us(250);             //Espere 250 us
+           while(SSPSTATbits.BF);       //Espere a que el envio se complete
+    
+       }
        
-        PIR1bits.SSPIF = 0;    
-    }*/
+       PIR1bits.SSPIF = 0;             //Apague la bandera de la interrupci?n 
     
-    
+    }   
    // Interrupcion del ADC
    
     if (PIR1bits.ADIF){
@@ -113,6 +101,22 @@ void __interrupt() interrupciones(void){
         }
         ADCON0bits.GO_nDONE = 1; 
     }
+    //-------------INTERRUP TMR0
+    if (INTCONbits.TMR0IF ){ 
+        INTCONbits.TMR0IF = 0;
+        TMR0		 = 61;
+        
+        if (PORTAbits.RA1 == 1){
+            CCPR1L = 15;
+            Abierto = 1;
+        } else if (PORTAbits.RA2 == 1){
+            CCPR1L = 6;
+            Abierto = 0;
+        }
+        
+    
+    }
+
    
 }
 //-----------------------------LOOP PRINCIPAL----------------------------------
@@ -123,6 +127,8 @@ void main(void) {
     PWMconf();
     Lcd_Init_8bits();  //Se inicializa la LCD en modo de 8bits
     InitKeypad();
+    initTMR0();
+    I2C_Slave_Init(0x70);
     
     //---------------------Mensaje de Bienvenida----------------------------
     
@@ -130,9 +136,10 @@ void main(void) {
     Lcd_Set_Cursor_8bits(1,1);      //Se pone el cursor en el punto (1,2)  
     Lcd_Write_String("Bienvenido Atte.",8);  //Se escribe una cadena
     Lcd_Set_Cursor_8bits(2,1);      //Se pone el cursor en el punto (2,3) 
-    Lcd_Write_String("Familia Sanabria",8);     //Se escribe una cadena
+    Lcd_Write_String("Familia UVG",8);     //Se escribe una cadena
     __delay_ms(3000);               //Se espera 5 segundos  
     Lcd_Clear_8bits();              //Se limpia la pantalla de la lCD
+    
     
     char Key = 'n';
     
@@ -154,7 +161,7 @@ void main(void) {
             cont = 0;
             Lcd_Clear_8bits();
             Lcd_Set_Cursor_8bits(1,1);      //Se pone el cursor en el punto (1,2)  
-            Lcd_Write_String("Contrasena:",8);  //Se escribe una cadena
+            Lcd_Write_String("Ingrese clave:",8);  //Se escribe una cadena
             
             IngresarC:
             
@@ -174,7 +181,7 @@ void main(void) {
                 // Obtener elementos de ambos arreglos en misma posición o índice
                     int valor1 = contrasena[i], valor2 = compara[i];
 
-        // Comparar ;)
+        // Comparar 
                     if (valor1 != valor2) { //Si al menos un valor no coincide la contrasena esta mala
                         Lcd_Clear_8bits();
                         Lcd_Set_Cursor_8bits(1,1);      //Se pone el cursor en el punto (1,2)  
@@ -200,13 +207,12 @@ void main(void) {
         } else {
             goto Presiona;
         } 
-        //__delay_ms(1000);  
-        //Lcd_Write_String("Funciona:",8);
+ 
         Bueno: //muestra que funciono la contrasena
         
         Lcd_Clear_8bits();
         Lcd_Set_Cursor_8bits(1,1);      //Se pone el cursor en el punto (1,2)  
-        Lcd_Write_String("Acceso brindado",8);  //Se escribe una cadena
+        Lcd_Write_String("Acceso brindado,",8);  //Se escribe una cadena
         Lcd_Set_Cursor_8bits(2,1);      //Se pone el cursor en el punto (1,2)  
         Lcd_Write_String("Introduzca llave",8);  //Se escribe una cadena
         //Ahora el usuario puede ingresar la llave
@@ -220,12 +226,15 @@ void main(void) {
         Lcd_Set_Cursor_8bits(1,1);      //Se pone el cursor en el punto (1,2)  
         Lcd_Write_String("Abriendo puerta",8);  //Se escribe una cadena
         Lcd_Set_Cursor_8bits(2,1);      //Se pone el cursor en el punto (1,2)  
-        Lcd_Write_String("Bienvenido :)",8);  //Se escribe una cadena
+        Lcd_Write_String("Bienvenido",8);  //Se escribe una cadena
         
         CCPR1L = 15; //Abre la puerta
+        Abierto = 1;
+        
         __delay_ms(5000);
         Lcd_Clear_8bits();
         CCPR1L = 6; //Cierra la puerta
+        Abierto = 0;
         goto Inicio;
     }
     
@@ -282,4 +291,15 @@ void PWMconf(void){
     PIR1bits.TMR2IF = 0;
     
     TRISCbits.TRISC2 = 0;
+}
+
+void initTMR0(void){
+    OPTION_REG	 = 0x85;
+    TMR0 = 62;     
+    
+    INTCONbits.GIE = 1;
+    INTCONbits.T0IE = 1;  //Habilitamos interrupcion del T0
+    INTCONbits.T0IF = 0; //Limpiamos la bandera de interrupcion del T0
+    
+    return;
 }

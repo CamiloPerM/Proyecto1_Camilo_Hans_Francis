@@ -12,6 +12,66 @@ Version 4.0 HI-TECH Software Intermediate Code
 "553
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 553: extern volatile PIR1bits_t PIR1bits __attribute__((address(0x00C)));
 [v _PIR1bits `VS18 ~T0 @X0 0 e@12 ]
+"856
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 856:     struct {
+[s S30 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S30 . SSPM CKP SSPEN SSPOV WCOL ]
+"863
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 863:     struct {
+[s S31 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S31 . SSPM0 SSPM1 SSPM2 SSPM3 ]
+"855
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 855: typedef union {
+[u S29 `S30 1 `S31 1 ]
+[n S29 . . . ]
+"870
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 870: extern volatile SSPCONbits_t SSPCONbits __attribute__((address(0x014)));
+[v _SSPCONbits `VS29 ~T0 @X0 0 e@20 ]
+"843
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 843: extern volatile unsigned char SSPBUF __attribute__((address(0x013)));
+[v _SSPBUF `Vuc ~T0 @X0 0 e@19 ]
+"2183
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 2183:     struct {
+[s S82 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S82 . BF UA R_nW S P D_nA CKE SMP ]
+"2193
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 2193:     struct {
+[s S83 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S83 . . R . D ]
+"2199
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 2199:     struct {
+[s S84 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S84 . . I2C_READ I2C_START I2C_STOP I2C_DATA ]
+"2206
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 2206:     struct {
+[s S85 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S85 . . nW . nA ]
+"2212
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 2212:     struct {
+[s S86 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S86 . . nWRITE . nADDRESS ]
+"2218
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 2218:     struct {
+[s S87 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S87 . . R_W . D_A ]
+"2224
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 2224:     struct {
+[s S88 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S88 . . READ_WRITE . DATA_ADDRESS ]
+"2182
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 2182: typedef union {
+[u S81 `S82 1 `S83 1 `S84 1 `S85 1 `S86 1 `S87 1 `S88 1 ]
+[n S81 . . . . . . . . ]
+"2231
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 2231: extern volatile SSPSTATbits_t SSPSTATbits __attribute__((address(0x094)));
+[v _SSPSTATbits `VS81 ~T0 @X0 0 e@148 ]
+[v F1256 `(v ~T0 @X0 1 tf1`ul ]
+"92 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic.h
+[v __delay `JF1256 ~T0 @X0 0 e ]
+[p i __delay ]
+"3641 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 3641: extern volatile __bit BF __attribute__((address(0x4A0)));
+[v _BF `Vb ~T0 @X0 0 e@1184 ]
 "1238
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1238: extern volatile unsigned char ADRESH __attribute__((address(0x01E)));
 [v _ADRESH `Vuc ~T0 @X0 0 e@30 ]
@@ -49,6 +109,38 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1276
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1276: extern volatile ADCON0bits_t ADCON0bits __attribute__((address(0x01F)));
 [v _ADCON0bits `VS44 ~T0 @X0 0 e@31 ]
+"465
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 465:     struct {
+[s S16 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S16 . RBIF INTF T0IF RBIE INTE T0IE PEIE GIE ]
+"475
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 475:     struct {
+[s S17 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S17 . . TMR0IF . TMR0IE ]
+"464
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 464: typedef union {
+[u S15 `S16 1 `S17 1 ]
+[n S15 . . . ]
+"482
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 482: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
+[v _INTCONbits `VS15 ~T0 @X0 0 e@11 ]
+"59
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 59: extern volatile unsigned char TMR0 __attribute__((address(0x001)));
+[v _TMR0 `Vuc ~T0 @X0 0 e@1 ]
+"172
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 172:     struct {
+[s S6 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S6 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
+"171
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 171: typedef union {
+[u S5 `S6 1 ]
+[n S5 . . ]
+"183
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 183: extern volatile PORTAbits_t PORTAbits __attribute__((address(0x005)));
+[v _PORTAbits `VS5 ~T0 @X0 0 e@5 ]
+"927
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 927: extern volatile unsigned char CCPR1L __attribute__((address(0x015)));
+[v _CCPR1L `Vuc ~T0 @X0 0 e@21 ]
 [p mainexit ]
 "38 mainS1proyect.c
 [; ;mainS1proyect.c: 38: void init(void);
@@ -68,6 +160,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "16 ./KEYPAD.h
 [; ;./KEYPAD.h: 16: void InitKeypad(void);
 [v _InitKeypad `(v ~T0 @X0 0 ef ]
+"40 mainS1proyect.c
+[; ;mainS1proyect.c: 40: void initTMR0(void);
+[v _initTMR0 `(v ~T0 @X0 0 ef ]
+"64 ./I2C.h
+[; ;./I2C.h: 64: void I2C_Slave_Init(uint8_t address);
+[v _I2C_Slave_Init `(v ~T0 @X0 0 ef1`uc ]
 "27 ./LCD.h
 [; ;./LCD.h: 27: void Lcd_Clear_8bits(void);
 [v _Lcd_Clear_8bits `(v ~T0 @X0 0 ef ]
@@ -77,10 +175,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "23
 [; ;./LCD.h: 23: void Lcd_Write_String(char *a,int modo);
 [v _Lcd_Write_String `(v ~T0 @X0 0 ef2`*uc`i ]
-[v F1256 `(v ~T0 @X0 1 tf1`ul ]
-"92 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic.h
-[v __delay `JF1256 ~T0 @X0 0 e ]
-[p i __delay ]
 "17 ./KEYPAD.h
 [; ;./KEYPAD.h: 17: char switch_press_scan(void);
 [v _switch_press_scan `(uc ~T0 @X0 0 ef ]
@@ -90,10 +184,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "15 ./KEYPAD.h
 [; ;./KEYPAD.h: 15: char keypad_scanner(void);
 [v _keypad_scanner `(uc ~T0 @X0 0 ef ]
-"927 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 927: extern volatile unsigned char CCPR1L __attribute__((address(0x015)));
-[v _CCPR1L `Vuc ~T0 @X0 0 e@21 ]
-"1478
+"1478 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1478: extern volatile unsigned char TRISB __attribute__((address(0x086)));
 [v _TRISB `Vuc ~T0 @X0 0 e@134 ]
 "1416
@@ -188,6 +279,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "793
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 793: extern volatile T2CONbits_t T2CONbits __attribute__((address(0x012)));
 [v _T2CONbits `VS26 ~T0 @X0 0 e@18 ]
+"1346
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1346: extern volatile unsigned char OPTION_REG __attribute__((address(0x081)));
+[v _OPTION_REG `Vuc ~T0 @X0 0 e@129 ]
 "8 mainS1proyect.c
 [p x FOSC = INTRC_NOCLKOUT ]
 "9
@@ -462,43 +556,52 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mainS1proyect.c: 44: uint8_t z;
 [v _z `uc ~T0 @X0 1 e ]
 "45
-[; ;mainS1proyect.c: 45: uint8_t numerito;
-[v _numerito `uc ~T0 @X0 1 e ]
+[; ;mainS1proyect.c: 45: uint8_t DUM;
+[v _DUM `uc ~T0 @X0 1 e ]
 "46
-[; ;mainS1proyect.c: 46: uint8_t contraAct = 0;
+[; ;mainS1proyect.c: 46: uint8_t numerito;
+[v _numerito `uc ~T0 @X0 1 e ]
+"47
+[; ;mainS1proyect.c: 47: uint8_t contraAct = 0;
 [v _contraAct `uc ~T0 @X0 1 e ]
 [i _contraAct
 -> -> 0 `i `uc
 ]
-"47
-[; ;mainS1proyect.c: 47: uint8_t cont = 0;
+"48
+[; ;mainS1proyect.c: 48: uint8_t cont = 0;
 [v _cont `uc ~T0 @X0 1 e ]
 [i _cont
 -> -> 0 `i `uc
 ]
-"48
-[; ;mainS1proyect.c: 48: uint8_t i = 0;
+"49
+[; ;mainS1proyect.c: 49: uint8_t i = 0;
 [v _i `uc ~T0 @X0 1 e ]
 [i _i
 -> -> 0 `i `uc
 ]
-"49
-[; ;mainS1proyect.c: 49: uint8_t valor1 = 0;
+"50
+[; ;mainS1proyect.c: 50: uint8_t valor1 = 0;
 [v _valor1 `uc ~T0 @X0 1 e ]
 [i _valor1
 -> -> 0 `i `uc
 ]
-"50
-[; ;mainS1proyect.c: 50: uint8_t valor2 = 0;
+"51
+[; ;mainS1proyect.c: 51: uint8_t valor2 = 0;
 [v _valor2 `uc ~T0 @X0 1 e ]
 [i _valor2
 -> -> 0 `i `uc
 ]
-"51
-[; ;mainS1proyect.c: 51: int a;
+"52
+[; ;mainS1proyect.c: 52: uint8_t Abierto = 0;
+[v _Abierto `uc ~T0 @X0 1 e ]
+[i _Abierto
+-> -> 0 `i `uc
+]
+"54
+[; ;mainS1proyect.c: 54: int a;
 [v _a `i ~T0 @X0 1 e ]
-"53
-[; ;mainS1proyect.c: 53: char contrasena[]= {49,55,51,48,56};
+"56
+[; ;mainS1proyect.c: 56: char contrasena[]= {49,55,51,48,56};
 [v _contrasena `uc ~T0 @X0 -> 5 `i e ]
 [i _contrasena
 :U ..
@@ -509,8 +612,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 56 `i `uc
 ..
 ]
-"54
-[; ;mainS1proyect.c: 54: char compara[]= {0,0,0,0,0};
+"57
+[; ;mainS1proyect.c: 57: char compara[]= {0,0,0,0,0};
 [v _compara `uc ~T0 @X0 -> 5 `i e ]
 [i _compara
 :U ..
@@ -522,477 +625,653 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v $root$_interrupciones `(v ~T0 @X0 0 e ]
-"57
-[; ;mainS1proyect.c: 57: void __attribute__((picinterrupt(""))) interrupciones(void){
+"60
+[; ;mainS1proyect.c: 60: void __attribute__((picinterrupt(""))) interrupciones(void){
 [v _interrupciones `(v ~T1 @X0 1 ef ]
 {
 [e :U _interrupciones ]
 [f ]
-"106
-[; ;mainS1proyect.c: 106:     if (PIR1bits.ADIF){
-[e $ ! != -> . . _PIR1bits 0 6 `i -> 0 `i 140  ]
+"61
+[; ;mainS1proyect.c: 61:         if(PIR1bits.SSPIF == 1){
+[e $ ! == -> . . _PIR1bits 0 3 `i -> 1 `i 140  ]
 {
-"107
-[; ;mainS1proyect.c: 107:         PIR1bits.ADIF = 0;
-[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
-"108
-[; ;mainS1proyect.c: 108:         res = ADRESH;
-[e = _res _ADRESH ]
-"109
-[; ;mainS1proyect.c: 109:         if (res < 155){
-[e $ ! < -> _res `i -> 155 `i 141  ]
+"63
+[; ;mainS1proyect.c: 63:        SSPCONbits.CKP = 0;
+[e = . . _SSPCONbits 0 1 -> -> 0 `i `uc ]
+"65
+[; ;mainS1proyect.c: 65:        if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
+[e $ ! || != -> . . _SSPCONbits 0 3 `i -> 0 `i != -> . . _SSPCONbits 0 4 `i -> 0 `i 141  ]
 {
-"110
-[; ;mainS1proyect.c: 110:             PORTEbits.RE2 = 1;
-[e = . . _PORTEbits 0 2 -> -> 1 `i `uc ]
-"111
-[; ;mainS1proyect.c: 111:         }else{
+"66
+[; ;mainS1proyect.c: 66:            z = SSPBUF;
+[e = _z _SSPBUF ]
+"67
+[; ;mainS1proyect.c: 67:            SSPCONbits.SSPOV = 0;
+[e = . . _SSPCONbits 0 3 -> -> 0 `i `uc ]
+"68
+[; ;mainS1proyect.c: 68:            SSPCONbits.WCOL = 0;
+[e = . . _SSPCONbits 0 4 -> -> 0 `i `uc ]
+"69
+[; ;mainS1proyect.c: 69:            SSPCONbits.CKP = 1;
+[e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
+"70
+[; ;mainS1proyect.c: 70:        }
 }
-[e $U 142  ]
 [e :U 141 ]
+"71
+[; ;mainS1proyect.c: 71:         if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
+[e $ ! && ! != -> . . _SSPSTATbits 0 5 `i -> 0 `i ! != -> . . _SSPSTATbits 0 2 `i -> 0 `i 142  ]
 {
-"112
-[; ;mainS1proyect.c: 112:             PORTEbits.RE2 = 0;
-[e = . . _PORTEbits 0 2 -> -> 0 `i `uc ]
-"113
-[; ;mainS1proyect.c: 113:         }
+"72
+[; ;mainS1proyect.c: 72:             z = SSPBUF;
+[e = _z _SSPBUF ]
+"73
+[; ;mainS1proyect.c: 73:             PIR1bits.SSPIF = 0;
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"74
+[; ;mainS1proyect.c: 74:             SSPCONbits.CKP = 1;
+[e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
+"75
+[; ;mainS1proyect.c: 75:             while(!SSPSTATbits.BF);
+[e $U 143  ]
+[e :U 144 ]
+[e :U 143 ]
+[e $ ! != -> . . _SSPSTATbits 0 0 `i -> 0 `i 144  ]
+[e :U 145 ]
+"76
+[; ;mainS1proyect.c: 76:             DUM = SSPBUF;
+[e = _DUM _SSPBUF ]
+"77
+[; ;mainS1proyect.c: 77:             _delay((unsigned long)((250)*(500000/4000000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
+"79
+[; ;mainS1proyect.c: 79:         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
 }
+[e $U 146  ]
 [e :U 142 ]
-"114
-[; ;mainS1proyect.c: 114:         ADCON0bits.GO_nDONE = 1;
-[e = . . _ADCON0bits 0 1 -> -> 1 `i `uc ]
-"115
-[; ;mainS1proyect.c: 115:     }
+[e $ ! && ! != -> . . _SSPSTATbits 0 5 `i -> 0 `i != -> . . _SSPSTATbits 0 2 `i -> 0 `i 147  ]
+{
+"80
+[; ;mainS1proyect.c: 80:            z = SSPBUF;
+[e = _z _SSPBUF ]
+"81
+[; ;mainS1proyect.c: 81:            BF = 0;
+[e = _BF -> -> 0 `i `b ]
+"82
+[; ;mainS1proyect.c: 82:            SSPBUF = Abierto;
+[e = _SSPBUF _Abierto ]
+"83
+[; ;mainS1proyect.c: 83:            SSPCONbits.CKP = 1;
+[e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
+"84
+[; ;mainS1proyect.c: 84:            _delay((unsigned long)((250)*(500000/4000000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 500000 `l `d .4000000.0 `ul ]
+"85
+[; ;mainS1proyect.c: 85:            while(SSPSTATbits.BF);
+[e $U 148  ]
+[e :U 149 ]
+[e :U 148 ]
+[e $ != -> . . _SSPSTATbits 0 0 `i -> 0 `i 149  ]
+[e :U 150 ]
+"87
+[; ;mainS1proyect.c: 87:        }
+}
+[e :U 147 ]
+[e :U 146 ]
+"89
+[; ;mainS1proyect.c: 89:        PIR1bits.SSPIF = 0;
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"91
+[; ;mainS1proyect.c: 91:     }
 }
 [e :U 140 ]
-"117
-[; ;mainS1proyect.c: 117: }
+"94
+[; ;mainS1proyect.c: 94:     if (PIR1bits.ADIF){
+[e $ ! != -> . . _PIR1bits 0 6 `i -> 0 `i 151  ]
+{
+"95
+[; ;mainS1proyect.c: 95:         PIR1bits.ADIF = 0;
+[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
+"96
+[; ;mainS1proyect.c: 96:         res = ADRESH;
+[e = _res _ADRESH ]
+"97
+[; ;mainS1proyect.c: 97:         if (res < 155){
+[e $ ! < -> _res `i -> 155 `i 152  ]
+{
+"98
+[; ;mainS1proyect.c: 98:             PORTEbits.RE2 = 1;
+[e = . . _PORTEbits 0 2 -> -> 1 `i `uc ]
+"99
+[; ;mainS1proyect.c: 99:         }else{
+}
+[e $U 153  ]
+[e :U 152 ]
+{
+"100
+[; ;mainS1proyect.c: 100:             PORTEbits.RE2 = 0;
+[e = . . _PORTEbits 0 2 -> -> 0 `i `uc ]
+"101
+[; ;mainS1proyect.c: 101:         }
+}
+[e :U 153 ]
+"102
+[; ;mainS1proyect.c: 102:         ADCON0bits.GO_nDONE = 1;
+[e = . . _ADCON0bits 0 1 -> -> 1 `i `uc ]
+"103
+[; ;mainS1proyect.c: 103:     }
+}
+[e :U 151 ]
+"105
+[; ;mainS1proyect.c: 105:     if (INTCONbits.TMR0IF ){
+[e $ ! != -> . . _INTCONbits 1 1 `i -> 0 `i 154  ]
+{
+"106
+[; ;mainS1proyect.c: 106:         INTCONbits.TMR0IF = 0;
+[e = . . _INTCONbits 1 1 -> -> 0 `i `uc ]
+"107
+[; ;mainS1proyect.c: 107:         TMR0 = 61;
+[e = _TMR0 -> -> 61 `i `uc ]
+"109
+[; ;mainS1proyect.c: 109:         if (PORTAbits.RA1 == 1){
+[e $ ! == -> . . _PORTAbits 0 1 `i -> 1 `i 155  ]
+{
+"110
+[; ;mainS1proyect.c: 110:             CCPR1L = 15;
+[e = _CCPR1L -> -> 15 `i `uc ]
+"111
+[; ;mainS1proyect.c: 111:             Abierto = 1;
+[e = _Abierto -> -> 1 `i `uc ]
+"112
+[; ;mainS1proyect.c: 112:         } else if (PORTAbits.RA2 == 1){
+}
+[e $U 156  ]
+[e :U 155 ]
+[e $ ! == -> . . _PORTAbits 0 2 `i -> 1 `i 157  ]
+{
+"113
+[; ;mainS1proyect.c: 113:             CCPR1L = 6;
+[e = _CCPR1L -> -> 6 `i `uc ]
+"114
+[; ;mainS1proyect.c: 114:             Abierto = 0;
+[e = _Abierto -> -> 0 `i `uc ]
+"115
+[; ;mainS1proyect.c: 115:         }
+}
+[e :U 157 ]
+[e :U 156 ]
+"118
+[; ;mainS1proyect.c: 118:     }
+}
+[e :U 154 ]
+"121
+[; ;mainS1proyect.c: 121: }
 [e :UE 139 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"119
-[; ;mainS1proyect.c: 119: void main(void) {
+"123
+[; ;mainS1proyect.c: 123: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"120
-[; ;mainS1proyect.c: 120:     init();
-[e ( _init ..  ]
-"121
-[; ;mainS1proyect.c: 121:     initOsc(3);
-[e ( _initOsc (1 -> -> 3 `i `uc ]
-"122
-[; ;mainS1proyect.c: 122:     funcAdc(2,0,0);
-[e ( _funcAdc (3 , , -> -> 2 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-"123
-[; ;mainS1proyect.c: 123:     PWMconf();
-[e ( _PWMconf ..  ]
 "124
-[; ;mainS1proyect.c: 124:     Lcd_Init_8bits();
-[e ( _Lcd_Init_8bits ..  ]
+[; ;mainS1proyect.c: 124:     init();
+[e ( _init ..  ]
 "125
-[; ;mainS1proyect.c: 125:     InitKeypad();
-[e ( _InitKeypad ..  ]
+[; ;mainS1proyect.c: 125:     initOsc(3);
+[e ( _initOsc (1 -> -> 3 `i `uc ]
+"126
+[; ;mainS1proyect.c: 126:     funcAdc(2,0,0);
+[e ( _funcAdc (3 , , -> -> 2 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+"127
+[; ;mainS1proyect.c: 127:     PWMconf();
+[e ( _PWMconf ..  ]
+"128
+[; ;mainS1proyect.c: 128:     Lcd_Init_8bits();
+[e ( _Lcd_Init_8bits ..  ]
 "129
-[; ;mainS1proyect.c: 129:     Lcd_Clear_8bits();
-[e ( _Lcd_Clear_8bits ..  ]
+[; ;mainS1proyect.c: 129:     InitKeypad();
+[e ( _InitKeypad ..  ]
 "130
-[; ;mainS1proyect.c: 130:     Lcd_Set_Cursor_8bits(1,1);
-[e ( _Lcd_Set_Cursor_8bits (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+[; ;mainS1proyect.c: 130:     initTMR0();
+[e ( _initTMR0 ..  ]
 "131
-[; ;mainS1proyect.c: 131:     Lcd_Write_String("Bienvenido Atte.",8);
-[e ( _Lcd_Write_String (2 , :s 1C -> 8 `i ]
-"132
-[; ;mainS1proyect.c: 132:     Lcd_Set_Cursor_8bits(2,1);
-[e ( _Lcd_Set_Cursor_8bits (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
-"133
-[; ;mainS1proyect.c: 133:     Lcd_Write_String("Familia Sanabria",8);
-[e ( _Lcd_Write_String (2 , :s 2C -> 8 `i ]
-"134
-[; ;mainS1proyect.c: 134:     _delay((unsigned long)((3000)*(500000/4000.0)));
-[e ( __delay (1 -> * -> -> 3000 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
+[; ;mainS1proyect.c: 131:     I2C_Slave_Init(0x70);
+[e ( _I2C_Slave_Init (1 -> -> 112 `i `uc ]
 "135
 [; ;mainS1proyect.c: 135:     Lcd_Clear_8bits();
 [e ( _Lcd_Clear_8bits ..  ]
+"136
+[; ;mainS1proyect.c: 136:     Lcd_Set_Cursor_8bits(1,1);
+[e ( _Lcd_Set_Cursor_8bits (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
 "137
-[; ;mainS1proyect.c: 137:     char Key = 'n';
+[; ;mainS1proyect.c: 137:     Lcd_Write_String("Bienvenido Atte.",8);
+[e ( _Lcd_Write_String (2 , :s 1C -> 8 `i ]
+"138
+[; ;mainS1proyect.c: 138:     Lcd_Set_Cursor_8bits(2,1);
+[e ( _Lcd_Set_Cursor_8bits (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+"139
+[; ;mainS1proyect.c: 139:     Lcd_Write_String("Familia UVG",8);
+[e ( _Lcd_Write_String (2 , :s 2C -> 8 `i ]
+"140
+[; ;mainS1proyect.c: 140:     _delay((unsigned long)((3000)*(500000/4000.0)));
+[e ( __delay (1 -> * -> -> 3000 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
+"141
+[; ;mainS1proyect.c: 141:     Lcd_Clear_8bits();
+[e ( _Lcd_Clear_8bits ..  ]
+"144
+[; ;mainS1proyect.c: 144:     char Key = 'n';
 [v _Key `uc ~T0 @X0 1 a ]
 [e = _Key -> -> 110 `ui `uc ]
-"140
-[; ;mainS1proyect.c: 140:     while(1){
-[e :U 145 ]
-{
-"141
-[; ;mainS1proyect.c: 141:         Inicio:
-[e :U 147 ]
-"142
-[; ;mainS1proyect.c: 142:         Lcd_Set_Cursor_8bits(1,1);
-[e ( _Lcd_Set_Cursor_8bits (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"143
-[; ;mainS1proyect.c: 143:         Lcd_Write_String("Presione # para",8);
-[e ( _Lcd_Write_String (2 , :s 3C -> 8 `i ]
-"144
-[; ;mainS1proyect.c: 144:         Lcd_Set_Cursor_8bits(2,1);
-[e ( _Lcd_Set_Cursor_8bits (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
-"145
-[; ;mainS1proyect.c: 145:         Lcd_Write_String("iniciar",8);
-[e ( _Lcd_Write_String (2 , :s 4C -> 8 `i ]
 "147
-[; ;mainS1proyect.c: 147:         Presiona:
-[e :U 148 ]
+[; ;mainS1proyect.c: 147:     while(1){
+[e :U 160 ]
+{
 "148
-[; ;mainS1proyect.c: 148:         Key = switch_press_scan();
-[e = _Key ( _switch_press_scan ..  ]
-"150
-[; ;mainS1proyect.c: 150:         if (Key == 35){
-[e $ ! == -> _Key `i -> 35 `i 149  ]
-{
-"151
-[; ;mainS1proyect.c: 151:             Intentelo:
-[e :U 150 ]
-"153
-[; ;mainS1proyect.c: 153:             contraAct = 1;
-[e = _contraAct -> -> 1 `i `uc ]
-"154
-[; ;mainS1proyect.c: 154:             cont = 0;
-[e = _cont -> -> 0 `i `uc ]
-"155
-[; ;mainS1proyect.c: 155:             Lcd_Clear_8bits();
-[e ( _Lcd_Clear_8bits ..  ]
-"156
-[; ;mainS1proyect.c: 156:             Lcd_Set_Cursor_8bits(1,1);
+[; ;mainS1proyect.c: 148:         Inicio:
+[e :U 162 ]
+"149
+[; ;mainS1proyect.c: 149:         Lcd_Set_Cursor_8bits(1,1);
 [e ( _Lcd_Set_Cursor_8bits (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"157
-[; ;mainS1proyect.c: 157:             Lcd_Write_String("Contrasena:",8);
-[e ( _Lcd_Write_String (2 , :s 5C -> 8 `i ]
-"159
-[; ;mainS1proyect.c: 159:             IngresarC:
-[e :U 151 ]
-"161
-[; ;mainS1proyect.c: 161:             Key = switch_press_scan();
+"150
+[; ;mainS1proyect.c: 150:         Lcd_Write_String("Presione # para",8);
+[e ( _Lcd_Write_String (2 , :s 3C -> 8 `i ]
+"151
+[; ;mainS1proyect.c: 151:         Lcd_Set_Cursor_8bits(2,1);
+[e ( _Lcd_Set_Cursor_8bits (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+"152
+[; ;mainS1proyect.c: 152:         Lcd_Write_String("iniciar",8);
+[e ( _Lcd_Write_String (2 , :s 4C -> 8 `i ]
+"154
+[; ;mainS1proyect.c: 154:         Presiona:
+[e :U 163 ]
+"155
+[; ;mainS1proyect.c: 155:         Key = switch_press_scan();
 [e = _Key ( _switch_press_scan ..  ]
+"157
+[; ;mainS1proyect.c: 157:         if (Key == 35){
+[e $ ! == -> _Key `i -> 35 `i 164  ]
+{
+"158
+[; ;mainS1proyect.c: 158:             Intentelo:
+[e :U 165 ]
+"160
+[; ;mainS1proyect.c: 160:             contraAct = 1;
+[e = _contraAct -> -> 1 `i `uc ]
+"161
+[; ;mainS1proyect.c: 161:             cont = 0;
+[e = _cont -> -> 0 `i `uc ]
 "162
-[; ;mainS1proyect.c: 162:             Lcd_Set_Cursor_8bits(2,cont + 1);
-[e ( _Lcd_Set_Cursor_8bits (2 , -> -> 2 `i `uc -> + -> _cont `i -> 1 `i `uc ]
+[; ;mainS1proyect.c: 162:             Lcd_Clear_8bits();
+[e ( _Lcd_Clear_8bits ..  ]
 "163
-[; ;mainS1proyect.c: 163:             Lcd_Write_Char(Key,8);
-[e ( _Lcd_Write_Char (2 , _Key -> 8 `i ]
+[; ;mainS1proyect.c: 163:             Lcd_Set_Cursor_8bits(1,1);
+[e ( _Lcd_Set_Cursor_8bits (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
 "164
-[; ;mainS1proyect.c: 164:             cont ++;
-[e ++ _cont -> -> 1 `i `uc ]
+[; ;mainS1proyect.c: 164:             Lcd_Write_String("Ingrese clave:",8);
+[e ( _Lcd_Write_String (2 , :s 5C -> 8 `i ]
 "166
-[; ;mainS1proyect.c: 166:             if (Key == 42){
-[e $ ! == -> _Key `i -> 42 `i 152  ]
-{
-"167
-[; ;mainS1proyect.c: 167:                 goto Intentelo;
-[e $U 150  ]
+[; ;mainS1proyect.c: 166:             IngresarC:
+[e :U 166 ]
 "168
-[; ;mainS1proyect.c: 168:             }
-}
-[e :U 152 ]
+[; ;mainS1proyect.c: 168:             Key = switch_press_scan();
+[e = _Key ( _switch_press_scan ..  ]
+"169
+[; ;mainS1proyect.c: 169:             Lcd_Set_Cursor_8bits(2,cont + 1);
+[e ( _Lcd_Set_Cursor_8bits (2 , -> -> 2 `i `uc -> + -> _cont `i -> 1 `i `uc ]
 "170
-[; ;mainS1proyect.c: 170:             compara[cont - 1] = Key;
-[e = *U + &U _compara * -> -> - -> _cont `i -> 1 `i `ui `ux -> -> # *U &U _compara `ui `ux _Key ]
+[; ;mainS1proyect.c: 170:             Lcd_Write_Char(Key,8);
+[e ( _Lcd_Write_Char (2 , _Key -> 8 `i ]
 "171
-[; ;mainS1proyect.c: 171:             if (cont == 5){
-[e $ ! == -> _cont `i -> 5 `i 153  ]
-{
-"172
-[; ;mainS1proyect.c: 172:                 _delay((unsigned long)((1000)*(500000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
+[; ;mainS1proyect.c: 171:             cont ++;
+[e ++ _cont -> -> 1 `i `uc ]
 "173
-[; ;mainS1proyect.c: 173:                 for (int i = 0; i < 5; i++) {
+[; ;mainS1proyect.c: 173:             if (Key == 42){
+[e $ ! == -> _Key `i -> 42 `i 167  ]
+{
+"174
+[; ;mainS1proyect.c: 174:                 goto Intentelo;
+[e $U 165  ]
+"175
+[; ;mainS1proyect.c: 175:             }
+}
+[e :U 167 ]
+"177
+[; ;mainS1proyect.c: 177:             compara[cont - 1] = Key;
+[e = *U + &U _compara * -> -> - -> _cont `i -> 1 `i `ui `ux -> -> # *U &U _compara `ui `ux _Key ]
+"178
+[; ;mainS1proyect.c: 178:             if (cont == 5){
+[e $ ! == -> _cont `i -> 5 `i 168  ]
+{
+"179
+[; ;mainS1proyect.c: 179:                 _delay((unsigned long)((1000)*(500000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
+"180
+[; ;mainS1proyect.c: 180:                 for (int i = 0; i < 5; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 5 `i 154  ]
-[e $U 155  ]
-[e :U 154 ]
+[e $ < _i -> 5 `i 169  ]
+[e $U 170  ]
+[e :U 169 ]
 {
-"175
-[; ;mainS1proyect.c: 175:                     int valor1 = contrasena[i], valor2 = compara[i];
+"182
+[; ;mainS1proyect.c: 182:                     int valor1 = contrasena[i], valor2 = compara[i];
 [v _valor1 `i ~T0 @X0 1 a ]
 [e = _valor1 -> *U + &U _contrasena * -> -> _i `ui `ux -> -> # *U &U _contrasena `ui `ux `i ]
 [v _valor2 `i ~T0 @X0 1 a ]
 [e = _valor2 -> *U + &U _compara * -> -> _i `ui `ux -> -> # *U &U _compara `ui `ux `i ]
-"178
-[; ;mainS1proyect.c: 178:                     if (valor1 != valor2) {
-[e $ ! != _valor1 _valor2 157  ]
-{
-"179
-[; ;mainS1proyect.c: 179:                         Lcd_Clear_8bits();
-[e ( _Lcd_Clear_8bits ..  ]
-"180
-[; ;mainS1proyect.c: 180:                         Lcd_Set_Cursor_8bits(1,1);
-[e ( _Lcd_Set_Cursor_8bits (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"181
-[; ;mainS1proyect.c: 181:                         Lcd_Write_String("Contrasena mala",8);
-[e ( _Lcd_Write_String (2 , :s 6C -> 8 `i ]
-"183
-[; ;mainS1proyect.c: 183:                         Lcd_Set_Cursor_8bits(2,1);
-[e ( _Lcd_Set_Cursor_8bits (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
-"184
-[; ;mainS1proyect.c: 184:                         Lcd_Write_String("intentelo",8);
-[e ( _Lcd_Write_String (2 , :s 7C -> 8 `i ]
 "185
-[; ;mainS1proyect.c: 185:                         _delay((unsigned long)((3000)*(500000/4000.0)));
-[e ( __delay (1 -> * -> -> 3000 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
+[; ;mainS1proyect.c: 185:                     if (valor1 != valor2) {
+[e $ ! != _valor1 _valor2 172  ]
+{
 "186
-[; ;mainS1proyect.c: 186:                         goto Intentelo;
-[e $U 150  ]
+[; ;mainS1proyect.c: 186:                         Lcd_Clear_8bits();
+[e ( _Lcd_Clear_8bits ..  ]
+"187
+[; ;mainS1proyect.c: 187:                         Lcd_Set_Cursor_8bits(1,1);
+[e ( _Lcd_Set_Cursor_8bits (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
 "188
-[; ;mainS1proyect.c: 188:                     }
+[; ;mainS1proyect.c: 188:                         Lcd_Write_String("Contrasena mala",8);
+[e ( _Lcd_Write_String (2 , :s 6C -> 8 `i ]
+"190
+[; ;mainS1proyect.c: 190:                         Lcd_Set_Cursor_8bits(2,1);
+[e ( _Lcd_Set_Cursor_8bits (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+"191
+[; ;mainS1proyect.c: 191:                         Lcd_Write_String("intentelo",8);
+[e ( _Lcd_Write_String (2 , :s 7C -> 8 `i ]
+"192
+[; ;mainS1proyect.c: 192:                         _delay((unsigned long)((3000)*(500000/4000.0)));
+[e ( __delay (1 -> * -> -> 3000 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
+"193
+[; ;mainS1proyect.c: 193:                         goto Intentelo;
+[e $U 165  ]
+"195
+[; ;mainS1proyect.c: 195:                     }
 }
-[e :U 157 ]
-"189
-[; ;mainS1proyect.c: 189:                 }
+[e :U 172 ]
+"196
+[; ;mainS1proyect.c: 196:                 }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 5 `i 154  ]
-[e :U 155 ]
+[e $ < _i -> 5 `i 169  ]
+[e :U 170 ]
 }
-"190
-[; ;mainS1proyect.c: 190:                 goto Bueno;
-[e $U 158  ]
-"192
-[; ;mainS1proyect.c: 192:             }
-}
-[e :U 153 ]
-"196
-[; ;mainS1proyect.c: 196:             if (contraAct == 1){
-[e $ ! == -> _contraAct `i -> 1 `i 159  ]
-{
 "197
-[; ;mainS1proyect.c: 197:                 goto IngresarC;
-[e $U 151  ]
-"198
-[; ;mainS1proyect.c: 198:             }
+[; ;mainS1proyect.c: 197:                 goto Bueno;
+[e $U 173  ]
+"199
+[; ;mainS1proyect.c: 199:             }
+}
+[e :U 168 ]
+"203
+[; ;mainS1proyect.c: 203:             if (contraAct == 1){
+[e $ ! == -> _contraAct `i -> 1 `i 174  ]
+{
+"204
+[; ;mainS1proyect.c: 204:                 goto IngresarC;
+[e $U 166  ]
+"205
+[; ;mainS1proyect.c: 205:             }
+}
+[e :U 174 ]
+"207
+[; ;mainS1proyect.c: 207:         } else {
+}
+[e $U 175  ]
+[e :U 164 ]
+{
+"208
+[; ;mainS1proyect.c: 208:             goto Presiona;
+[e $U 163  ]
+"209
+[; ;mainS1proyect.c: 209:         }
+}
+[e :U 175 ]
+"211
+[; ;mainS1proyect.c: 211:         Bueno:
+[e :U 173 ]
+"213
+[; ;mainS1proyect.c: 213:         Lcd_Clear_8bits();
+[e ( _Lcd_Clear_8bits ..  ]
+"214
+[; ;mainS1proyect.c: 214:         Lcd_Set_Cursor_8bits(1,1);
+[e ( _Lcd_Set_Cursor_8bits (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+"215
+[; ;mainS1proyect.c: 215:         Lcd_Write_String("Acceso brindado,",8);
+[e ( _Lcd_Write_String (2 , :s 8C -> 8 `i ]
+"216
+[; ;mainS1proyect.c: 216:         Lcd_Set_Cursor_8bits(2,1);
+[e ( _Lcd_Set_Cursor_8bits (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+"217
+[; ;mainS1proyect.c: 217:         Lcd_Write_String("Introduzca llave",8);
+[e ( _Lcd_Write_String (2 , :s 9C -> 8 `i ]
+"219
+[; ;mainS1proyect.c: 219:         while (PORTEbits.RE2 == 0){
+[e $U 176  ]
+[e :U 177 ]
+{
+"220
+[; ;mainS1proyect.c: 220:             Key = keypad_scanner();
+[e = _Key ( _keypad_scanner ..  ]
+"221
+[; ;mainS1proyect.c: 221:             if (Key == 42){
+[e $ ! == -> _Key `i -> 42 `i 179  ]
+{
+"222
+[; ;mainS1proyect.c: 222:                 goto Intentelo;
+[e $U 165  ]
+"223
+[; ;mainS1proyect.c: 223:             }
+}
+[e :U 179 ]
+"224
+[; ;mainS1proyect.c: 224:         }
+}
+[e :U 176 ]
+"219
+[; ;mainS1proyect.c: 219:         while (PORTEbits.RE2 == 0){
+[e $ == -> . . _PORTEbits 0 2 `i -> 0 `i 177  ]
+[e :U 178 ]
+"225
+[; ;mainS1proyect.c: 225:         Lcd_Clear_8bits();
+[e ( _Lcd_Clear_8bits ..  ]
+"226
+[; ;mainS1proyect.c: 226:         Lcd_Set_Cursor_8bits(1,1);
+[e ( _Lcd_Set_Cursor_8bits (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+"227
+[; ;mainS1proyect.c: 227:         Lcd_Write_String("Abriendo puerta",8);
+[e ( _Lcd_Write_String (2 , :s 10C -> 8 `i ]
+"228
+[; ;mainS1proyect.c: 228:         Lcd_Set_Cursor_8bits(2,1);
+[e ( _Lcd_Set_Cursor_8bits (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+"229
+[; ;mainS1proyect.c: 229:         Lcd_Write_String("Bienvenido",8);
+[e ( _Lcd_Write_String (2 , :s 11C -> 8 `i ]
+"231
+[; ;mainS1proyect.c: 231:         CCPR1L = 15;
+[e = _CCPR1L -> -> 15 `i `uc ]
+"232
+[; ;mainS1proyect.c: 232:         Abierto = 1;
+[e = _Abierto -> -> 1 `i `uc ]
+"234
+[; ;mainS1proyect.c: 234:         _delay((unsigned long)((5000)*(500000/4000.0)));
+[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
+"235
+[; ;mainS1proyect.c: 235:         Lcd_Clear_8bits();
+[e ( _Lcd_Clear_8bits ..  ]
+"236
+[; ;mainS1proyect.c: 236:         CCPR1L = 6;
+[e = _CCPR1L -> -> 6 `i `uc ]
+"237
+[; ;mainS1proyect.c: 237:         Abierto = 0;
+[e = _Abierto -> -> 0 `i `uc ]
+"238
+[; ;mainS1proyect.c: 238:         goto Inicio;
+[e $U 162  ]
+"239
+[; ;mainS1proyect.c: 239:     }
 }
 [e :U 159 ]
-"200
-[; ;mainS1proyect.c: 200:         } else {
-}
 [e $U 160  ]
-[e :U 149 ]
-{
-"201
-[; ;mainS1proyect.c: 201:             goto Presiona;
-[e $U 148  ]
-"202
-[; ;mainS1proyect.c: 202:         }
-}
-[e :U 160 ]
-"205
-[; ;mainS1proyect.c: 205:         Bueno:
-[e :U 158 ]
-"207
-[; ;mainS1proyect.c: 207:         Lcd_Clear_8bits();
-[e ( _Lcd_Clear_8bits ..  ]
-"208
-[; ;mainS1proyect.c: 208:         Lcd_Set_Cursor_8bits(1,1);
-[e ( _Lcd_Set_Cursor_8bits (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"209
-[; ;mainS1proyect.c: 209:         Lcd_Write_String("Acceso brindado",8);
-[e ( _Lcd_Write_String (2 , :s 8C -> 8 `i ]
-"210
-[; ;mainS1proyect.c: 210:         Lcd_Set_Cursor_8bits(2,1);
-[e ( _Lcd_Set_Cursor_8bits (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
-"211
-[; ;mainS1proyect.c: 211:         Lcd_Write_String("Introduzca llave",8);
-[e ( _Lcd_Write_String (2 , :s 9C -> 8 `i ]
-"213
-[; ;mainS1proyect.c: 213:         while (PORTEbits.RE2 == 0){
-[e $U 161  ]
-[e :U 162 ]
-{
-"214
-[; ;mainS1proyect.c: 214:             Key = keypad_scanner();
-[e = _Key ( _keypad_scanner ..  ]
-"215
-[; ;mainS1proyect.c: 215:             if (Key == 42){
-[e $ ! == -> _Key `i -> 42 `i 164  ]
-{
-"216
-[; ;mainS1proyect.c: 216:                 goto Intentelo;
-[e $U 150  ]
-"217
-[; ;mainS1proyect.c: 217:             }
-}
-[e :U 164 ]
-"218
-[; ;mainS1proyect.c: 218:         }
-}
 [e :U 161 ]
-"213
-[; ;mainS1proyect.c: 213:         while (PORTEbits.RE2 == 0){
-[e $ == -> . . _PORTEbits 0 2 `i -> 0 `i 162  ]
-[e :U 163 ]
-"219
-[; ;mainS1proyect.c: 219:         Lcd_Clear_8bits();
-[e ( _Lcd_Clear_8bits ..  ]
-"220
-[; ;mainS1proyect.c: 220:         Lcd_Set_Cursor_8bits(1,1);
-[e ( _Lcd_Set_Cursor_8bits (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"221
-[; ;mainS1proyect.c: 221:         Lcd_Write_String("Abriendo puerta",8);
-[e ( _Lcd_Write_String (2 , :s 10C -> 8 `i ]
-"222
-[; ;mainS1proyect.c: 222:         Lcd_Set_Cursor_8bits(2,1);
-[e ( _Lcd_Set_Cursor_8bits (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
-"223
-[; ;mainS1proyect.c: 223:         Lcd_Write_String("Bienvenido :)",8);
-[e ( _Lcd_Write_String (2 , :s 11C -> 8 `i ]
-"225
-[; ;mainS1proyect.c: 225:         CCPR1L = 15;
-[e = _CCPR1L -> -> 15 `i `uc ]
-"226
-[; ;mainS1proyect.c: 226:         _delay((unsigned long)((5000)*(500000/4000.0)));
-[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 500000 `l `d .4000.0 `ul ]
-"227
-[; ;mainS1proyect.c: 227:         Lcd_Clear_8bits();
-[e ( _Lcd_Clear_8bits ..  ]
-"228
-[; ;mainS1proyect.c: 228:         CCPR1L = 6;
-[e = _CCPR1L -> -> 6 `i `uc ]
-"229
-[; ;mainS1proyect.c: 229:         goto Inicio;
-[e $U 147  ]
-"230
-[; ;mainS1proyect.c: 230:     }
+"241
+[; ;mainS1proyect.c: 241:     return;
+[e $UE 158  ]
+"242
+[; ;mainS1proyect.c: 242: }
+[e :UE 158 ]
 }
-[e :U 144 ]
-[e $U 145  ]
-[e :U 146 ]
-"232
-[; ;mainS1proyect.c: 232:     return;
-[e $UE 143  ]
-"233
-[; ;mainS1proyect.c: 233: }
-[e :UE 143 ]
-}
-"237
-[; ;mainS1proyect.c: 237: void init(void){
+"246
+[; ;mainS1proyect.c: 246: void init(void){
 [v _init `(v ~T0 @X0 1 ef ]
 {
 [e :U _init ]
 [f ]
-"239
-[; ;mainS1proyect.c: 239:     TRISB = 0;
+"248
+[; ;mainS1proyect.c: 248:     TRISB = 0;
 [e = _TRISB -> -> 0 `i `uc ]
-"240
-[; ;mainS1proyect.c: 240:     TRISA = 0x0F;
-[e = _TRISA -> -> 15 `i `uc ]
-"242
-[; ;mainS1proyect.c: 242:     TRISD = 0;
-[e = _TRISD -> -> 0 `i `uc ]
-"243
-[; ;mainS1proyect.c: 243:     TRISC = 0;
-[e = _TRISC -> -> 0 `i `uc ]
-"244
-[; ;mainS1proyect.c: 244:     TRISE = 0;
-[e = _TRISE -> -> 0 `i `uc ]
-"245
-[; ;mainS1proyect.c: 245:     ANSEL = 0;
-[e = _ANSEL -> -> 0 `i `uc ]
-"246
-[; ;mainS1proyect.c: 246:     ANSELH = 0;
-[e = _ANSELH -> -> 0 `i `uc ]
-"247
-[; ;mainS1proyect.c: 247:     ANSELbits.ANS0 = 1;
-[e = . . _ANSELbits 0 0 -> -> 1 `i `uc ]
 "249
-[; ;mainS1proyect.c: 249:     PORTA = 0;
-[e = _PORTA -> -> 0 `i `uc ]
-"250
-[; ;mainS1proyect.c: 250:     PORTB = 0;
-[e = _PORTB -> -> 0 `i `uc ]
+[; ;mainS1proyect.c: 249:     TRISA = 0x0F;
+[e = _TRISA -> -> 15 `i `uc ]
 "251
-[; ;mainS1proyect.c: 251:     PORTD = 0;
-[e = _PORTD -> -> 0 `i `uc ]
+[; ;mainS1proyect.c: 251:     TRISD = 0;
+[e = _TRISD -> -> 0 `i `uc ]
 "252
-[; ;mainS1proyect.c: 252:     PORTC = 0;
-[e = _PORTC -> -> 0 `i `uc ]
+[; ;mainS1proyect.c: 252:     TRISC = 0;
+[e = _TRISC -> -> 0 `i `uc ]
 "253
-[; ;mainS1proyect.c: 253:     PORTE = 0;
-[e = _PORTE -> -> 0 `i `uc ]
+[; ;mainS1proyect.c: 253:     TRISE = 0;
+[e = _TRISE -> -> 0 `i `uc ]
+"254
+[; ;mainS1proyect.c: 254:     ANSEL = 0;
+[e = _ANSEL -> -> 0 `i `uc ]
 "255
-[; ;mainS1proyect.c: 255:     return;
-[e $UE 165  ]
+[; ;mainS1proyect.c: 255:     ANSELH = 0;
+[e = _ANSELH -> -> 0 `i `uc ]
 "256
-[; ;mainS1proyect.c: 256: }
-[e :UE 165 ]
-}
+[; ;mainS1proyect.c: 256:     ANSELbits.ANS0 = 1;
+[e = . . _ANSELbits 0 0 -> -> 1 `i `uc ]
 "258
-[; ;mainS1proyect.c: 258: void PWMconf(void){
+[; ;mainS1proyect.c: 258:     PORTA = 0;
+[e = _PORTA -> -> 0 `i `uc ]
+"259
+[; ;mainS1proyect.c: 259:     PORTB = 0;
+[e = _PORTB -> -> 0 `i `uc ]
+"260
+[; ;mainS1proyect.c: 260:     PORTD = 0;
+[e = _PORTD -> -> 0 `i `uc ]
+"261
+[; ;mainS1proyect.c: 261:     PORTC = 0;
+[e = _PORTC -> -> 0 `i `uc ]
+"262
+[; ;mainS1proyect.c: 262:     PORTE = 0;
+[e = _PORTE -> -> 0 `i `uc ]
+"264
+[; ;mainS1proyect.c: 264:     return;
+[e $UE 180  ]
+"265
+[; ;mainS1proyect.c: 265: }
+[e :UE 180 ]
+}
+"267
+[; ;mainS1proyect.c: 267: void PWMconf(void){
 [v _PWMconf `(v ~T0 @X0 1 ef ]
 {
 [e :U _PWMconf ]
 [f ]
-"260
-[; ;mainS1proyect.c: 260:     TRISCbits.TRISC2 = 1;
+"269
+[; ;mainS1proyect.c: 269:     TRISCbits.TRISC2 = 1;
 [e = . . _TRISCbits 0 2 -> -> 1 `i `uc ]
-"261
-[; ;mainS1proyect.c: 261:     PR2 = 155;
-[e = _PR2 -> -> 155 `i `uc ]
-"262
-[; ;mainS1proyect.c: 262:     CCP1CONbits.P1M1 = 0;
-[e = . . _CCP1CONbits 1 7 -> -> 0 `i `uc ]
-"263
-[; ;mainS1proyect.c: 263:     CCP1CONbits.P1M0 = 0;
-[e = . . _CCP1CONbits 1 6 -> -> 0 `i `uc ]
-"265
-[; ;mainS1proyect.c: 265:     CCP1CONbits.CCP1M0 = 0;
-[e = . . _CCP1CONbits 1 0 -> -> 0 `i `uc ]
-"266
-[; ;mainS1proyect.c: 266:     CCP1CONbits.CCP1M1 = 0;
-[e = . . _CCP1CONbits 1 1 -> -> 0 `i `uc ]
-"267
-[; ;mainS1proyect.c: 267:     CCP1CONbits.CCP1M2 = 1;
-[e = . . _CCP1CONbits 1 2 -> -> 1 `i `uc ]
-"268
-[; ;mainS1proyect.c: 268:     CCP1CONbits.CCP1M3 = 1;
-[e = . . _CCP1CONbits 1 3 -> -> 1 `i `uc ]
 "270
-[; ;mainS1proyect.c: 270:     CCPR1L = 6;
-[e = _CCPR1L -> -> 6 `i `uc ]
+[; ;mainS1proyect.c: 270:     PR2 = 155;
+[e = _PR2 -> -> 155 `i `uc ]
 "271
-[; ;mainS1proyect.c: 271:     CCP1CONbits.DC1B0 = 1;
-[e = . . _CCP1CONbits 1 4 -> -> 1 `i `uc ]
+[; ;mainS1proyect.c: 271:     CCP1CONbits.P1M1 = 0;
+[e = . . _CCP1CONbits 1 7 -> -> 0 `i `uc ]
 "272
-[; ;mainS1proyect.c: 272:     CCP1CONbits.DC1B1 = 1;
-[e = . . _CCP1CONbits 1 5 -> -> 1 `i `uc ]
+[; ;mainS1proyect.c: 272:     CCP1CONbits.P1M0 = 0;
+[e = . . _CCP1CONbits 1 6 -> -> 0 `i `uc ]
 "274
-[; ;mainS1proyect.c: 274:     PIR1bits.TMR2IF = 0;
-[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
+[; ;mainS1proyect.c: 274:     CCP1CONbits.CCP1M0 = 0;
+[e = . . _CCP1CONbits 1 0 -> -> 0 `i `uc ]
+"275
+[; ;mainS1proyect.c: 275:     CCP1CONbits.CCP1M1 = 0;
+[e = . . _CCP1CONbits 1 1 -> -> 0 `i `uc ]
+"276
+[; ;mainS1proyect.c: 276:     CCP1CONbits.CCP1M2 = 1;
+[e = . . _CCP1CONbits 1 2 -> -> 1 `i `uc ]
 "277
-[; ;mainS1proyect.c: 277:     T2CONbits.T2CKPS0 = 1;
-[e = . . _T2CONbits 1 0 -> -> 1 `i `uc ]
-"278
-[; ;mainS1proyect.c: 278:     T2CONbits.T2CKPS1 = 1;
-[e = . . _T2CONbits 1 1 -> -> 1 `i `uc ]
+[; ;mainS1proyect.c: 277:     CCP1CONbits.CCP1M3 = 1;
+[e = . . _CCP1CONbits 1 3 -> -> 1 `i `uc ]
+"279
+[; ;mainS1proyect.c: 279:     CCPR1L = 6;
+[e = _CCPR1L -> -> 6 `i `uc ]
 "280
-[; ;mainS1proyect.c: 280:     T2CONbits.TMR2ON = 1;
-[e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
-"282
-[; ;mainS1proyect.c: 282:     PIR1bits.TMR2IF = 0;
+[; ;mainS1proyect.c: 280:     CCP1CONbits.DC1B0 = 1;
+[e = . . _CCP1CONbits 1 4 -> -> 1 `i `uc ]
+"281
+[; ;mainS1proyect.c: 281:     CCP1CONbits.DC1B1 = 1;
+[e = . . _CCP1CONbits 1 5 -> -> 1 `i `uc ]
+"283
+[; ;mainS1proyect.c: 283:     PIR1bits.TMR2IF = 0;
 [e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
-"284
-[; ;mainS1proyect.c: 284:     TRISCbits.TRISC2 = 0;
+"286
+[; ;mainS1proyect.c: 286:     T2CONbits.T2CKPS0 = 1;
+[e = . . _T2CONbits 1 0 -> -> 1 `i `uc ]
+"287
+[; ;mainS1proyect.c: 287:     T2CONbits.T2CKPS1 = 1;
+[e = . . _T2CONbits 1 1 -> -> 1 `i `uc ]
+"289
+[; ;mainS1proyect.c: 289:     T2CONbits.TMR2ON = 1;
+[e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
+"291
+[; ;mainS1proyect.c: 291:     PIR1bits.TMR2IF = 0;
+[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
+"293
+[; ;mainS1proyect.c: 293:     TRISCbits.TRISC2 = 0;
 [e = . . _TRISCbits 0 2 -> -> 0 `i `uc ]
-"285
-[; ;mainS1proyect.c: 285: }
-[e :UE 166 ]
+"294
+[; ;mainS1proyect.c: 294: }
+[e :UE 181 ]
+}
+"296
+[; ;mainS1proyect.c: 296: void initTMR0(void){
+[v _initTMR0 `(v ~T0 @X0 1 ef ]
+{
+[e :U _initTMR0 ]
+[f ]
+"297
+[; ;mainS1proyect.c: 297:     OPTION_REG = 0x85;
+[e = _OPTION_REG -> -> 133 `i `uc ]
+"298
+[; ;mainS1proyect.c: 298:     TMR0 = 62;
+[e = _TMR0 -> -> 62 `i `uc ]
+"300
+[; ;mainS1proyect.c: 300:     INTCONbits.GIE = 1;
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+"301
+[; ;mainS1proyect.c: 301:     INTCONbits.T0IE = 1;
+[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+"302
+[; ;mainS1proyect.c: 302:     INTCONbits.T0IF = 0;
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+"304
+[; ;mainS1proyect.c: 304:     return;
+[e $UE 182  ]
+"305
+[; ;mainS1proyect.c: 305: }
+[e :UE 182 ]
 }
 [a 4C 105 110 105 99 105 97 114 0 ]
 [a 7C 105 110 116 101 110 116 101 108 111 0 ]
-[a 8C 65 99 99 101 115 111 32 98 114 105 110 100 97 100 111 0 ]
+[a 11C 66 105 101 110 118 101 110 105 100 111 0 ]
 [a 9C 73 110 116 114 111 100 117 122 99 97 32 108 108 97 118 101 0 ]
 [a 10C 65 98 114 105 101 110 100 111 32 112 117 101 114 116 97 0 ]
 [a 3C 80 114 101 115 105 111 110 101 32 35 32 112 97 114 97 0 ]
 [a 6C 67 111 110 116 114 97 115 101 110 97 32 109 97 108 97 0 ]
-[a 2C 70 97 109 105 108 105 97 32 83 97 110 97 98 114 105 97 0 ]
-[a 5C 67 111 110 116 114 97 115 101 110 97 58 0 ]
+[a 2C 70 97 109 105 108 105 97 32 85 86 71 0 ]
+[a 5C 73 110 103 114 101 115 101 32 99 108 97 118 101 58 0 ]
 [a 1C 66 105 101 110 118 101 110 105 100 111 32 65 116 116 101 46 0 ]
-[a 11C 66 105 101 110 118 101 110 105 100 111 32 58 41 0 ]
+[a 8C 65 99 99 101 115 111 32 98 114 105 110 100 97 100 111 44 0 ]
