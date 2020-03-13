@@ -106,6 +106,13 @@ uint8_t TEMP_D1 = 0;
 uint8_t ESTADO_RUIDO = 0;
 
 
+//*********************************************************************************
+//                      SENSOR DE PUERTA
+//*********************************************************************************
+
+uint8_t ESTADO_PUERTA = 0;
+
+
 //**********************************************************************************
 //                      ESTADOS
 //*********************************************************************************
@@ -121,15 +128,18 @@ uint8_t ESTADOS = 0;
 
 void __interrupt()isr(void){
     if(RBIF==1){                                    //INTERRUPCIÓN PARA REALIZAR EL CONTADOR
-    RBIF=0;
+        RBIF=0;
         if(AntiB==0){
             if(PORTBbits.RB0==1){                   //REVISAR SI EL BOTON DE INCREMENTO FUE PRESIONADO
                 AntiB=1;
                 ESTADOS++;                      //INCREMENTAR EL CONTADOR
             }
             
-        }    
-        
+        }
+        if(ESTADOS > 4){
+            ESTADOS = 0;
+        }
+    
     }
     
     
@@ -161,11 +171,7 @@ void main(void) {
     while(1){
         
         AntiB = 0;
-        
-        if(ESTADOS >5){
-            ESTADOS = 0;
-        }
-        
+
 
         Update_Current_Date_Time();              //LEER LOS DATOS PROVENIENTES DEL RTC
         
@@ -239,6 +245,14 @@ void main(void) {
         ESTADO_RUIDO = I2C_Master_Read(0);      //GUARDAR DATOS PROVENIENTES DEL PIC DE TEMPERATURA
         I2C_Master_Stop();                      //DETENER COMUNICACIÓN
         __delay_ms(10);
+        
+        
+        //LECTURA SENSOR DE PUERTA
+        I2C_Master_Start();
+        I2C_Master_Write(0x71);                 //INICIAR COMUNICACIÓN CON EL SLAVE DE TEMPERATURA
+        ESTADO_PUERTA = I2C_Master_Read(0);      //GUARDAR DATOS PROVENIENTES DEL PIC DE TEMPERATURA
+        I2C_Master_Stop();                      //DETENER COMUNICACIÓN
+        __delay_ms(10);
 
         
     //****************************************************************************************
@@ -274,18 +288,6 @@ void main(void) {
             LCD_1CH(year_1 + 48);
             LCD_1CH(year_0 + 48);
             
-            /*
-            if(TRISCbits.TRISC2 == 1){                       //REVISAR SI SE PRESIONA EL BOTON DE ESTADOS
-                AntiB = 1;
-                __delay_ms(20);
-                
-                if(TRISCbits.TRISC2 == 0 & AntiB == 1){
-                    //AntiB = 0;
-                    ESTADOS = estados[1];                   //CAMBIAR DE ESTADO
-                }
-                
-            }
-            */
         }
         
         if(ESTADOS == 1){                      //ESTADO DE LUMINOSIDAD
@@ -319,24 +321,11 @@ void main(void) {
             LCD_1CH(ILUM_E_U + 48);                         //ENVIAR UNIDADES DEL ENTERO
             LCD_SET_CURSOR(2,6);
             LCD_1CH(DECIMAL1 + 48); 
-            
-            /*
-            if(TRISCbits.TRISC2 == 1){
-                AntiB = 1;
-                __delay_ms(20);
-                
-                if(TRISCbits.TRISC2 == 0 & AntiB == 1){
-                    //AntiB = 0;
-                    ESTADOS = estados[2];
-                }
-                
-            }
-            
-             */   
+              
         }
         
         
-        if(ESTADOS == 3){                  //ESTADO TEMPERATURA
+        if(ESTADOS == 2){                  //ESTADO TEMPERATURA
             CLEAR_LCD();
             LCD_SET_CURSOR(1,5);
             LCD_STRING("TEMPERATURA");
@@ -355,22 +344,10 @@ void main(void) {
             LCD_1CH(TEMP_D1 + 48);
             
             
-            
-            /*
-            if(TRISCbits.TRISC2 == 1){
-                AntiB = 1;
-                __delay_ms(20);
-                
-                if(TRISCbits.TRISC2 == 0 & AntiB == 1){
-                    //AntiB = 0;
-                    ESTADOS = estados[3];
-                }
-                
-            }
-           */     
+              
         }
         
-       if(ESTADOS == 4){                   //SENSOR DE RUIDO
+        if(ESTADOS == 3){                   //SENSOR DE RUIDO
            CLEAR_LCD();
            LCD_SET_CURSOR(1,5);
            LCD_STRING("ESTADO");
@@ -385,43 +362,26 @@ void main(void) {
                LCD_STRING("ON");
            }
            
-           /*
-           if(TRISCbits.TRISC2 == 1){
-               AntiB = 1;
-               __delay_ms(20);
-               
-               if(TRISCbits.TRISC2 == 0 & AntiB == 1){
-                   //AntiB = 0;
-                   ESTADOS = estados[4];
-                }
-               
-            } 
-           */
         }
         
         
-        if(ESTADOS == 5){
+        if(ESTADOS == 4){
             CLEAR_LCD();
             LCD_SET_CURSOR(1,5);
             LCD_STRING("ESTADO");
             
+            //ENVIO DE DATOS A LA LCD
             LCD_SET_CURSOR(2,5);
-            LCD_STRING("PEND");
             
-            /*
-            if(TRISCbits.TRISC2 == 1){
-                AntiB = 1;
-                __delay_ms(20);
-                
-                if(TRISCbits.TRISC2 == 0 & AntiB == 1){
-                    AntiB = 0;
-                    ESTADOS = estados[0];
-                }
-                
+            if(ESTADO_PUERTA == 0){
+                LCD_STRING("CERRADO");
             }
-            */
+            else{
+                LCD_STRING("ABIERTO");
+            }
+            
         }
-     
+                          
               
     }
     
