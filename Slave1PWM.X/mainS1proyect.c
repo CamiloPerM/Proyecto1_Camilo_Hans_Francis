@@ -11,7 +11,7 @@
 #pragma config MCLRE = ON       // RE3/MCLR pin function select bit (RE3/MCLR pin function is MCLR)
 #pragma config CP = OFF         // Code Protection bit (Program memory code protection is disabled)
 #pragma config CPD = OFF        // Data Code Protection bit (Data memory code protection is disabled)
-#pragma config BOREN = ON       // Brown Out Reset Selection bits (BOR enabled)
+#pragma config BOREN = OFF       // Brown Out Reset Selection bits (BOR enabled)
 #pragma config IESO = OFF       // Internal External Switchover bit (Internal/External Switchover mode is disabled)
 #pragma config FCMEN = OFF      // Fail-Safe Clock Monitor Enabled bit (Fail-Safe Clock Monitor is disabled)
 #pragma config LVP = OFF        // Low Voltage Programming Enable bit (RB3 pin has digital I/O, HV on MCLR must be used for programming)
@@ -42,7 +42,6 @@ void initTMR0(void);
 uint8_t conteo = 0;
 uint8_t res = 0;
 uint8_t z;
-uint8_t DUM;
 uint8_t numerito;
 uint8_t contraAct = 0;
 uint8_t cont = 0;
@@ -50,7 +49,6 @@ uint8_t i = 0;
 uint8_t valor1 = 0;
 uint8_t valor2 = 0;
 uint8_t Abierto = 0;
-
 int a;
 //char contrasena[]= {1+48,7+48,3+48,0+48,8+48};
 char contrasena[]= {49,55,51,48,56};
@@ -58,37 +56,41 @@ char compara[]= {0,0,0,0,0};
 
 //-------------------------------INTERRUPCION-----------------------------------
 void __interrupt() interrupciones(void){
-        if(PIR1bits.SSPIF == 1){ //Revisa si ocurrio una interrupci?n del MSSP
-         
-       SSPCONbits.CKP = 0; //Apague el reloj
+    //--------------------- Interrupcion del I2C
+    if(PIR1bits.SSPIF == 1){ 
+
+        SSPCONbits.CKP = 0;
        
-       if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){ //Si ocurrio Overflow o Colisi?n
-           z = SSPBUF;              // Lea el valor anterior para limpiar el buffer
-           SSPCONbits.SSPOV = 0;       // Limpie la bandera de Overflow
-           SSPCONbits.WCOL = 0;        // Limpie el bit de colisi?n
-           SSPCONbits.CKP = 1;         // Active el reloj
-       }
+        if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
+            z = SSPBUF;                 // Read the previous value to clear the buffer
+            SSPCONbits.SSPOV = 0;       // Clear the overflow flag
+            SSPCONbits.WCOL = 0;        // Clear the collision bit
+            SSPCONbits.CKP = 1;         // Enables SCL (Clock)
+        }
+        //------------------Lee un dato----------------------------------------
         if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
-            z = SSPBUF;              // Lectura del SSBUF para limpiar el buffer y la bandera BF
-            PIR1bits.SSPIF = 0;         // Limpia bandera de interrupci?n recepci?n/transmisi?n SSP
+            //__delay_us(7);
+            z = SSPBUF;                 // Lectura del SSBUF para limpiar el buffer y la bandera BF
+            //__delay_us(2);
+            PIR1bits.SSPIF = 0;         // Limpia bandera de interrupción recepción/transmisión SSP
             SSPCONbits.CKP = 1;         // Habilita entrada de pulsos de reloj SCL
-            while(!SSPSTATbits.BF);     // Esperar a que la recepci?n se complete
-            DUM = SSPBUF;               // Guardar en el PORTD el valor del buffer de recepci?n
+            while(!SSPSTATbits.BF);     // Esperar a que la recepción se complete
+            PORTD = SSPBUF;             // Guardar en el PORTD el valor del buffer de recepción
             __delay_us(250);
+        //------------------Escribe un dato----------------------------------------  
             
         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
-           z = SSPBUF;               //Lectura del SSBUF para limpiar el buffer y la bandera BF
-           BF = 0;                      //Limpie la bandera BF
-           SSPBUF = Abierto;              //Guarde en el buffer el valor de la variable
-           SSPCONbits.CKP = 1;          //Habilite la entrada de pulsos de reloj
-           __delay_us(250);             //Espere 250 us
-           while(SSPSTATbits.BF);       //Espere a que el envio se complete
+            z = SSPBUF;
+            BF = 0;
+            //SSPBUF = PORTB;
+            SSPBUF = Abierto;
+            SSPCONbits.CKP = 1;
+            __delay_us(250);
+            while(SSPSTATbits.BF);
+        }   
+        PIR1bits.SSPIF = 0;    
+    }
     
-       }
-       
-       PIR1bits.SSPIF = 0;             //Apague la bandera de la interrupci?n 
-    
-    }   
    // Interrupcion del ADC
    
     if (PIR1bits.ADIF){
@@ -104,7 +106,7 @@ void __interrupt() interrupciones(void){
     //-------------INTERRUP TMR0
     if (INTCONbits.TMR0IF ){ 
         INTCONbits.TMR0IF = 0;
-        TMR0		 = 61;
+        TMR0		 = 200;
         
         if (PORTAbits.RA1 == 1){
             CCPR1L = 15;
@@ -136,7 +138,7 @@ void main(void) {
     Lcd_Set_Cursor_8bits(1,1);      //Se pone el cursor en el punto (1,2)  
     Lcd_Write_String("Bienvenido Atte.",8);  //Se escribe una cadena
     Lcd_Set_Cursor_8bits(2,1);      //Se pone el cursor en el punto (2,3) 
-    Lcd_Write_String("Familia UVG",8);     //Se escribe una cadena
+    Lcd_Write_String("Familia Sanabria",8);     //Se escribe una cadena
     __delay_ms(3000);               //Se espera 5 segundos  
     Lcd_Clear_8bits();              //Se limpia la pantalla de la lCD
     
@@ -295,7 +297,7 @@ void PWMconf(void){
 
 void initTMR0(void){
     OPTION_REG	 = 0x85;
-    TMR0 = 62;     
+    TMR0 = 200;     
     
     INTCONbits.GIE = 1;
     INTCONbits.T0IE = 1;  //Habilitamos interrupcion del T0
