@@ -2718,6 +2718,8 @@ void UART_Read_Text(char *Output, unsigned int length);
 
 
 void init(void);
+void Enviar(uint8_t Venviar);
+uint8_t Recibir(void);
 
 
 uint8_t Valor1 = 0;
@@ -2729,18 +2731,12 @@ uint8_t Valor5 = 0;
 uint8_t dato = 0;
 uint8_t controla = 0;
 
-uint8_t cont = 0;
-int sensores[4];
-
 uint8_t z = 0;
 
 
 
 void __attribute__((picinterrupt(""))) interrupciones(void){
-    if(RCIF==1){
-
-    }
-# 77 "SubMasterProyect.c"
+# 74 "SubMasterProyect.c"
 }
 
 
@@ -2751,25 +2747,35 @@ void main(void) {
 
     while(1){
 
-       while(!UART_Data_Ready());
-       sensores[cont]= UART_Read();
-       cont++;
-       if (cont>3){cont=0;}
+        controla = UART_Read();
+        if (controla == 255){
+            Valor1 = UART_Read();
+        } else if (controla == 254){
+            Valor2 = UART_Read();
+        } else if (controla == 253){
+            Valor3 = UART_Read();
+        } else if (controla == 252){
+            Valor4 = UART_Read();
+        } else if (controla == 251){
+            Valor5 = UART_Read();
+        }
 
-        PORTA = sensores[0];
-        PORTB = sensores[1];
-        PORTD = sensores[2];
+
+
+        PORTA = Valor1;
+        PORTB = Valor2;
+        PORTD = Valor3;
 
 
 
-        if (sensores[3] == 1){
+        if (Valor4 == 1){
             PORTEbits.RE0 =1;
         }else {
             PORTEbits.RE0 =0;
         }
 
 
-        if (sensores[4] == 1){
+        if (Valor5 == 1){
             PORTEbits.RE1 =1;
         }else {
             PORTEbits.RE1 =0;
@@ -2810,6 +2816,22 @@ void init(void){
     PORTD = 0;
     PORTC = 0;
     PORTE = 0;
-# 159 "SubMasterProyect.c"
+# 166 "SubMasterProyect.c"
     return;
+}
+
+
+void Enviar(uint8_t Venviar){
+    TXREG = Venviar;
+    Esperar:
+    if (PIR1bits.TXIF == 0){
+        goto Esperar;
+        }
+}
+uint8_t Recibir(void){
+    if (PIR1bits.RCIF){
+            uint8_t dato = 0;
+            dato = RCREG;
+            return dato;
+        }
 }

@@ -15,7 +15,7 @@
 #pragma config FOSC = INTRC_NOCLKOUT// Oscillator Selection bits (INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O function on RA7/OSC1/CLKIN)
 #pragma config WDTE = OFF       // Watchdog Timer Enable bit (WDT disabled and can be enabled by SWDTEN bit of the WDTCON register)
 #pragma config PWRTE = OFF      // Power-up Timer Enable bit (PWRT disabled)
-#pragma config MCLRE = ON       // RE3/MCLR pin function select bit (RE3/MCLR pin function is MCLR)
+#pragma config MCLRE = OFF       // RE3/MCLR pin function select bit (RE3/MCLR pin function is MCLR)
 #pragma config CP = OFF         // Code Protection bit (Program memory code protection is disabled)
 #pragma config CPD = OFF        // Data Code Protection bit (Data memory code protection is disabled)
 #pragma config BOREN = ON       // Brown Out Reset Selection bits (BOR enabled)
@@ -43,6 +43,7 @@
 void init(void);
 void Enviar(uint8_t Venviar);
 uint8_t Recibir(void);
+void LucesApaga (uint8_t segundos,uint8_t bandera);
 
 //---------------------------VARIABLES-----------------------------------------
 uint8_t Valor1 = 0;
@@ -52,6 +53,10 @@ uint8_t Valor4 = 1;
 uint8_t Valor5 = 1;
 
 uint8_t controla = 255;
+
+// Variables a agregar
+uint8_t temporalSec = 0;
+uint8_t contador = 0;
 
 
 
@@ -71,19 +76,19 @@ void main(void) {
         //__delay_ms(100);
         Enviar(255);
         Enviar(Valor1);
-        __delay_ms(1);
+       //__delay_ms(1);
         
         Enviar(254);
         Enviar(Valor2);
-        __delay_ms(1);
+        //__delay_ms(1);
         
         Enviar(253);
         Enviar(Valor3);
-        __delay_ms(1);
+        //__delay_ms(1);
         
         Enviar(252);
         Enviar(Valor4);
-        __delay_ms(1);
+        //__delay_ms(1);
         
         Enviar(251);
         Enviar(Valor5);
@@ -94,7 +99,7 @@ void main(void) {
         // Las siguientes lineas de codigo que se encuentran comentadas era
         //solo para verificar que se mostrabam los cambios en el puerto luego de
         //un cambio en las variables
-        /*
+        
         Valor1 ++;
         Valor2 --;
         //Valor3 = Valor3 * 2;
@@ -115,7 +120,7 @@ void main(void) {
             Valor5 = 0;
         } else if (Valor5 == 0){
             Valor5 = 1;
-        }*/
+        }
         
         
     }
@@ -189,3 +194,22 @@ uint8_t Recibir(void){
         }
 }
 
+
+// Funcion (no olvidar colocar prototipo)
+
+void LucesApaga (uint8_t segundos,uint8_t bandera){
+    if (bandera == 0){
+        temporalSec = segundos;
+        contador = 0;
+    } else if (bandera == 1){
+        if (temporalSec != segundos){
+            contador ++;
+            temporalSec = segundos;
+            if (contador == 30){
+                contador = 0;
+                //COLOCAR RUTINA PARA APAGAR LUCES ACA
+            }
+            
+        }
+    }
+}

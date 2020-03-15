@@ -89,7 +89,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17
 [p x PWRTE = OFF ]
 "18
-[p x MCLRE = ON ]
+[p x MCLRE = OFF ]
 "19
 [p x CP = OFF ]
 "20
@@ -340,321 +340,380 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"48 MasterUart.c
-[; ;MasterUart.c: 48: uint8_t Valor1 = 0;
+"49 MasterUart.c
+[; ;MasterUart.c: 49: uint8_t Valor1 = 0;
 [v _Valor1 `uc ~T0 @X0 1 e ]
 [i _Valor1
 -> -> 0 `i `uc
 ]
-"49
-[; ;MasterUart.c: 49: uint8_t Valor2 = 0;
+"50
+[; ;MasterUart.c: 50: uint8_t Valor2 = 0;
 [v _Valor2 `uc ~T0 @X0 1 e ]
 [i _Valor2
 -> -> 0 `i `uc
 ]
-"50
-[; ;MasterUart.c: 50: uint8_t Valor3 = 15;
+"51
+[; ;MasterUart.c: 51: uint8_t Valor3 = 15;
 [v _Valor3 `uc ~T0 @X0 1 e ]
 [i _Valor3
 -> -> 15 `i `uc
 ]
-"51
-[; ;MasterUart.c: 51: uint8_t Valor4 = 1;
+"52
+[; ;MasterUart.c: 52: uint8_t Valor4 = 1;
 [v _Valor4 `uc ~T0 @X0 1 e ]
 [i _Valor4
 -> -> 1 `i `uc
 ]
-"52
-[; ;MasterUart.c: 52: uint8_t Valor5 = 1;
+"53
+[; ;MasterUart.c: 53: uint8_t Valor5 = 1;
 [v _Valor5 `uc ~T0 @X0 1 e ]
 [i _Valor5
 -> -> 1 `i `uc
 ]
-"54
-[; ;MasterUart.c: 54: uint8_t controla = 255;
+"55
+[; ;MasterUart.c: 55: uint8_t controla = 255;
 [v _controla `uc ~T0 @X0 1 e ]
 [i _controla
 -> -> 255 `i `uc
 ]
-[v $root$_interrupciones `(v ~T0 @X0 0 e ]
+"58
+[; ;MasterUart.c: 58: uint8_t temporalSec = 0;
+[v _temporalSec `uc ~T0 @X0 1 e ]
+[i _temporalSec
+-> -> 0 `i `uc
+]
 "59
-[; ;MasterUart.c: 59: void __attribute__((picinterrupt(""))) interrupciones(void){
+[; ;MasterUart.c: 59: uint8_t contador = 0;
+[v _contador `uc ~T0 @X0 1 e ]
+[i _contador
+-> -> 0 `i `uc
+]
+[v $root$_interrupciones `(v ~T0 @X0 0 e ]
+"64
+[; ;MasterUart.c: 64: void __attribute__((picinterrupt(""))) interrupciones(void){
 [v _interrupciones `(v ~T1 @X0 1 ef ]
 {
 [e :U _interrupciones ]
 [f ]
-"61
-[; ;MasterUart.c: 61: }
+"66
+[; ;MasterUart.c: 66: }
 [e :UE 138 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"64
-[; ;MasterUart.c: 64: void main(void) {
+"69
+[; ;MasterUart.c: 69: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"65
-[; ;MasterUart.c: 65:     init();
+"70
+[; ;MasterUart.c: 70:     init();
 [e ( _init ..  ]
-"66
-[; ;MasterUart.c: 66:     initOsc(7);
+"71
+[; ;MasterUart.c: 71:     initOsc(7);
 [e ( _initOsc (1 -> -> 7 `i `uc ]
-"67
-[; ;MasterUart.c: 67:     UART_Init(9600);
+"72
+[; ;MasterUart.c: 72:     UART_Init(9600);
 [e ( _UART_Init (1 -> -> 9600 `i `l ]
-"69
-[; ;MasterUart.c: 69:     while(1){
+"74
+[; ;MasterUart.c: 74:     while(1){
 [e :U 141 ]
 {
-"72
-[; ;MasterUart.c: 72:         Enviar(255);
-[e ( _Enviar (1 -> -> 255 `i `uc ]
-"73
-[; ;MasterUart.c: 73:         Enviar(Valor1);
-[e ( _Enviar (1 _Valor1 ]
-"74
-[; ;MasterUart.c: 74:         _delay((unsigned long)((1)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"76
-[; ;MasterUart.c: 76:         Enviar(254);
-[e ( _Enviar (1 -> -> 254 `i `uc ]
 "77
-[; ;MasterUart.c: 77:         Enviar(Valor2);
-[e ( _Enviar (1 _Valor2 ]
+[; ;MasterUart.c: 77:         Enviar(255);
+[e ( _Enviar (1 -> -> 255 `i `uc ]
 "78
-[; ;MasterUart.c: 78:         _delay((unsigned long)((1)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"80
-[; ;MasterUart.c: 80:         Enviar(253);
-[e ( _Enviar (1 -> -> 253 `i `uc ]
+[; ;MasterUart.c: 78:         Enviar(Valor1);
+[e ( _Enviar (1 _Valor1 ]
 "81
-[; ;MasterUart.c: 81:         Enviar(Valor3);
-[e ( _Enviar (1 _Valor3 ]
+[; ;MasterUart.c: 81:         Enviar(254);
+[e ( _Enviar (1 -> -> 254 `i `uc ]
 "82
-[; ;MasterUart.c: 82:         _delay((unsigned long)((1)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"84
-[; ;MasterUart.c: 84:         Enviar(252);
-[e ( _Enviar (1 -> -> 252 `i `uc ]
+[; ;MasterUart.c: 82:         Enviar(Valor2);
+[e ( _Enviar (1 _Valor2 ]
 "85
-[; ;MasterUart.c: 85:         Enviar(Valor4);
-[e ( _Enviar (1 _Valor4 ]
+[; ;MasterUart.c: 85:         Enviar(253);
+[e ( _Enviar (1 -> -> 253 `i `uc ]
 "86
-[; ;MasterUart.c: 86:         _delay((unsigned long)((1)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"88
-[; ;MasterUart.c: 88:         Enviar(251);
-[e ( _Enviar (1 -> -> 251 `i `uc ]
+[; ;MasterUart.c: 86:         Enviar(Valor3);
+[e ( _Enviar (1 _Valor3 ]
 "89
-[; ;MasterUart.c: 89:         Enviar(Valor5);
-[e ( _Enviar (1 _Valor5 ]
-"91
-[; ;MasterUart.c: 91:         _delay((unsigned long)((500)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;MasterUart.c: 89:         Enviar(252);
+[e ( _Enviar (1 -> -> 252 `i `uc ]
+"90
+[; ;MasterUart.c: 90:         Enviar(Valor4);
+[e ( _Enviar (1 _Valor4 ]
 "93
-[; ;MasterUart.c: 93:         Valor1 ++;
-[e ++ _Valor1 -> -> 1 `i `uc ]
+[; ;MasterUart.c: 93:         Enviar(251);
+[e ( _Enviar (1 -> -> 251 `i `uc ]
 "94
-[; ;MasterUart.c: 94:         Valor2 --;
+[; ;MasterUart.c: 94:         Enviar(Valor5);
+[e ( _Enviar (1 _Valor5 ]
+"96
+[; ;MasterUart.c: 96:         _delay((unsigned long)((500)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"103
+[; ;MasterUart.c: 103:         Valor1 ++;
+[e ++ _Valor1 -> -> 1 `i `uc ]
+"104
+[; ;MasterUart.c: 104:         Valor2 --;
 [e -- _Valor2 -> -> 1 `i `uc ]
-"97
-[; ;MasterUart.c: 97:         if (Valor3 == 15){
+"107
+[; ;MasterUart.c: 107:         if (Valor3 == 15){
 [e $ ! == -> _Valor3 `i -> 15 `i 143  ]
 {
-"98
-[; ;MasterUart.c: 98:             Valor3 = 240;
+"108
+[; ;MasterUart.c: 108:             Valor3 = 240;
 [e = _Valor3 -> -> 240 `i `uc ]
-"99
-[; ;MasterUart.c: 99:         } else if (Valor3 == 240){
+"109
+[; ;MasterUart.c: 109:         } else if (Valor3 == 240){
 }
 [e $U 144  ]
 [e :U 143 ]
 [e $ ! == -> _Valor3 `i -> 240 `i 145  ]
 {
-"100
-[; ;MasterUart.c: 100:             Valor3 = 15;
+"110
+[; ;MasterUart.c: 110:             Valor3 = 15;
 [e = _Valor3 -> -> 15 `i `uc ]
-"101
-[; ;MasterUart.c: 101:         }
+"111
+[; ;MasterUart.c: 111:         }
 }
 [e :U 145 ]
 [e :U 144 ]
-"103
-[; ;MasterUart.c: 103:         if (Valor4 == 1){
+"113
+[; ;MasterUart.c: 113:         if (Valor4 == 1){
 [e $ ! == -> _Valor4 `i -> 1 `i 146  ]
 {
-"104
-[; ;MasterUart.c: 104:             Valor4 = 0;
+"114
+[; ;MasterUart.c: 114:             Valor4 = 0;
 [e = _Valor4 -> -> 0 `i `uc ]
-"105
-[; ;MasterUart.c: 105:         } else if (Valor4 == 0){
+"115
+[; ;MasterUart.c: 115:         } else if (Valor4 == 0){
 }
 [e $U 147  ]
 [e :U 146 ]
 [e $ ! == -> _Valor4 `i -> 0 `i 148  ]
 {
-"106
-[; ;MasterUart.c: 106:             Valor4 = 1;
+"116
+[; ;MasterUart.c: 116:             Valor4 = 1;
 [e = _Valor4 -> -> 1 `i `uc ]
-"107
-[; ;MasterUart.c: 107:         }
+"117
+[; ;MasterUart.c: 117:         }
 }
 [e :U 148 ]
 [e :U 147 ]
-"109
-[; ;MasterUart.c: 109:         if (Valor5 == 1){
+"119
+[; ;MasterUart.c: 119:         if (Valor5 == 1){
 [e $ ! == -> _Valor5 `i -> 1 `i 149  ]
 {
-"110
-[; ;MasterUart.c: 110:             Valor5 = 0;
+"120
+[; ;MasterUart.c: 120:             Valor5 = 0;
 [e = _Valor5 -> -> 0 `i `uc ]
-"111
-[; ;MasterUart.c: 111:         } else if (Valor5 == 0){
+"121
+[; ;MasterUart.c: 121:         } else if (Valor5 == 0){
 }
 [e $U 150  ]
 [e :U 149 ]
 [e $ ! == -> _Valor5 `i -> 0 `i 151  ]
 {
-"112
-[; ;MasterUart.c: 112:             Valor5 = 1;
+"122
+[; ;MasterUart.c: 122:             Valor5 = 1;
 [e = _Valor5 -> -> 1 `i `uc ]
-"113
-[; ;MasterUart.c: 113:         }
+"123
+[; ;MasterUart.c: 123:         }
 }
 [e :U 151 ]
 [e :U 150 ]
-"116
-[; ;MasterUart.c: 116:     }
+"126
+[; ;MasterUart.c: 126:     }
 }
 [e :U 140 ]
 [e $U 141  ]
 [e :U 142 ]
-"119
-[; ;MasterUart.c: 119:     return;
+"129
+[; ;MasterUart.c: 129:     return;
 [e $UE 139  ]
-"120
-[; ;MasterUart.c: 120: }
+"130
+[; ;MasterUart.c: 130: }
 [e :UE 139 ]
 }
-"124
-[; ;MasterUart.c: 124: void init(void){
+"134
+[; ;MasterUart.c: 134: void init(void){
 [v _init `(v ~T0 @X0 1 ef ]
 {
 [e :U _init ]
 [f ]
-"126
-[; ;MasterUart.c: 126:     TRISA = 0;
+"136
+[; ;MasterUart.c: 136:     TRISA = 0;
 [e = _TRISA -> -> 0 `i `uc ]
-"127
-[; ;MasterUart.c: 127:     TRISB = 0;
+"137
+[; ;MasterUart.c: 137:     TRISB = 0;
 [e = _TRISB -> -> 0 `i `uc ]
-"128
-[; ;MasterUart.c: 128:     TRISD = 0;
-[e = _TRISD -> -> 0 `i `uc ]
-"129
-[; ;MasterUart.c: 129:     TRISC = 0;
-[e = _TRISC -> -> 0 `i `uc ]
-"130
-[; ;MasterUart.c: 130:     TRISE = 0;
-[e = _TRISE -> -> 0 `i `uc ]
-"133
-[; ;MasterUart.c: 133:     TRISCbits.TRISC7 = 1;
-[e = . . _TRISCbits 0 7 -> -> 1 `i `uc ]
-"134
-[; ;MasterUart.c: 134:     TRISCbits.TRISC6 = 1;
-[e = . . _TRISCbits 0 6 -> -> 1 `i `uc ]
 "138
-[; ;MasterUart.c: 138:     TRISCbits.TRISC5 = 0;
-[e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
+[; ;MasterUart.c: 138:     TRISD = 0;
+[e = _TRISD -> -> 0 `i `uc ]
 "139
-[; ;MasterUart.c: 139:     TRISCbits.TRISC4 = 1;
-[e = . . _TRISCbits 0 4 -> -> 1 `i `uc ]
+[; ;MasterUart.c: 139:     TRISC = 0;
+[e = _TRISC -> -> 0 `i `uc ]
 "140
-[; ;MasterUart.c: 140:     TRISCbits.TRISC3 = 1;
-[e = . . _TRISCbits 0 3 -> -> 1 `i `uc ]
+[; ;MasterUart.c: 140:     TRISE = 0;
+[e = _TRISE -> -> 0 `i `uc ]
 "143
-[; ;MasterUart.c: 143:     ANSEL = 0;
-[e = _ANSEL -> -> 0 `i `uc ]
+[; ;MasterUart.c: 143:     TRISCbits.TRISC7 = 1;
+[e = . . _TRISCbits 0 7 -> -> 1 `i `uc ]
 "144
-[; ;MasterUart.c: 144:     ANSELH = 0;
-[e = _ANSELH -> -> 0 `i `uc ]
-"147
-[; ;MasterUart.c: 147:     PORTA = 0;
-[e = _PORTA -> -> 0 `i `uc ]
+[; ;MasterUart.c: 144:     TRISCbits.TRISC6 = 1;
+[e = . . _TRISCbits 0 6 -> -> 1 `i `uc ]
 "148
-[; ;MasterUart.c: 148:     PORTB = 0;
-[e = _PORTB -> -> 0 `i `uc ]
+[; ;MasterUart.c: 148:     TRISCbits.TRISC5 = 0;
+[e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
 "149
-[; ;MasterUart.c: 149:     PORTD = 0;
-[e = _PORTD -> -> 0 `i `uc ]
+[; ;MasterUart.c: 149:     TRISCbits.TRISC4 = 1;
+[e = . . _TRISCbits 0 4 -> -> 1 `i `uc ]
 "150
-[; ;MasterUart.c: 150:     PORTC = 0;
+[; ;MasterUart.c: 150:     TRISCbits.TRISC3 = 1;
+[e = . . _TRISCbits 0 3 -> -> 1 `i `uc ]
+"153
+[; ;MasterUart.c: 153:     ANSEL = 0;
+[e = _ANSEL -> -> 0 `i `uc ]
+"154
+[; ;MasterUart.c: 154:     ANSELH = 0;
+[e = _ANSELH -> -> 0 `i `uc ]
+"157
+[; ;MasterUart.c: 157:     PORTA = 0;
+[e = _PORTA -> -> 0 `i `uc ]
+"158
+[; ;MasterUart.c: 158:     PORTB = 0;
+[e = _PORTB -> -> 0 `i `uc ]
+"159
+[; ;MasterUart.c: 159:     PORTD = 0;
+[e = _PORTD -> -> 0 `i `uc ]
+"160
+[; ;MasterUart.c: 160:     PORTC = 0;
 [e = _PORTC -> -> 0 `i `uc ]
-"151
-[; ;MasterUart.c: 151:     PORTE = 0;
+"161
+[; ;MasterUart.c: 161:     PORTE = 0;
 [e = _PORTE -> -> 0 `i `uc ]
-"168
-[; ;MasterUart.c: 168:     return;
+"178
+[; ;MasterUart.c: 178:     return;
 [e $UE 152  ]
-"169
-[; ;MasterUart.c: 169: }
+"179
+[; ;MasterUart.c: 179: }
 [e :UE 152 ]
 }
-"172
-[; ;MasterUart.c: 172: void Enviar(uint8_t Venviar){
+"182
+[; ;MasterUart.c: 182: void Enviar(uint8_t Venviar){
 [v _Enviar `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _Enviar ]
 [v _Venviar `uc ~T0 @X0 1 r1 ]
 [f ]
-"173
-[; ;MasterUart.c: 173:     TXREG = Venviar;
+"183
+[; ;MasterUart.c: 183:     TXREG = Venviar;
 [e = _TXREG _Venviar ]
-"174
-[; ;MasterUart.c: 174:     Esperar:
+"184
+[; ;MasterUart.c: 184:     Esperar:
 [e :U 154 ]
-"175
-[; ;MasterUart.c: 175:     if (PIR1bits.TXIF == 0){
+"185
+[; ;MasterUart.c: 185:     if (PIR1bits.TXIF == 0){
 [e $ ! == -> . . _PIR1bits 0 4 `i -> 0 `i 155  ]
 {
-"176
-[; ;MasterUart.c: 176:         goto Esperar;
+"186
+[; ;MasterUart.c: 186:         goto Esperar;
 [e $U 154  ]
-"177
-[; ;MasterUart.c: 177:         }
+"187
+[; ;MasterUart.c: 187:         }
 }
 [e :U 155 ]
-"178
-[; ;MasterUart.c: 178: }
+"188
+[; ;MasterUart.c: 188: }
 [e :UE 153 ]
 }
-"179
-[; ;MasterUart.c: 179: uint8_t Recibir(void){
+"189
+[; ;MasterUart.c: 189: uint8_t Recibir(void){
 [v _Recibir `(uc ~T0 @X0 1 ef ]
 {
 [e :U _Recibir ]
 [f ]
-"180
-[; ;MasterUart.c: 180:     if (PIR1bits.RCIF){
+"190
+[; ;MasterUart.c: 190:     if (PIR1bits.RCIF){
 [e $ ! != -> . . _PIR1bits 0 5 `i -> 0 `i 157  ]
 {
-"181
-[; ;MasterUart.c: 181:             uint8_t dato = 0;
+"191
+[; ;MasterUart.c: 191:             uint8_t dato = 0;
 [v _dato `uc ~T0 @X0 1 a ]
 [e = _dato -> -> 0 `i `uc ]
-"182
-[; ;MasterUart.c: 182:             dato = RCREG;
+"192
+[; ;MasterUart.c: 192:             dato = RCREG;
 [e = _dato _RCREG ]
-"183
-[; ;MasterUart.c: 183:             return dato;
+"193
+[; ;MasterUart.c: 193:             return dato;
 [e ) _dato ]
 [e $UE 156  ]
-"184
-[; ;MasterUart.c: 184:         }
+"194
+[; ;MasterUart.c: 194:         }
 }
 [e :U 157 ]
-"185
-[; ;MasterUart.c: 185: }
+"195
+[; ;MasterUart.c: 195: }
 [e :UE 156 ]
+}
+"200
+[; ;MasterUart.c: 200: void LucesApaga (uint8_t segundos,uint8_t bandera){
+[v _LucesApaga `(v ~T0 @X0 1 ef2`uc`uc ]
+{
+[e :U _LucesApaga ]
+[v _segundos `uc ~T0 @X0 1 r1 ]
+[v _bandera `uc ~T0 @X0 1 r2 ]
+[f ]
+"201
+[; ;MasterUart.c: 201:     if (bandera == 0){
+[e $ ! == -> _bandera `i -> 0 `i 159  ]
+{
+"202
+[; ;MasterUart.c: 202:         temporalSec = segundos;
+[e = _temporalSec _segundos ]
+"203
+[; ;MasterUart.c: 203:         contador = 0;
+[e = _contador -> -> 0 `i `uc ]
+"204
+[; ;MasterUart.c: 204:     } else if (bandera == 1){
+}
+[e $U 160  ]
+[e :U 159 ]
+[e $ ! == -> _bandera `i -> 1 `i 161  ]
+{
+"205
+[; ;MasterUart.c: 205:         if (temporalSec != segundos){
+[e $ ! != -> _temporalSec `i -> _segundos `i 162  ]
+{
+"206
+[; ;MasterUart.c: 206:             contador ++;
+[e ++ _contador -> -> 1 `i `uc ]
+"207
+[; ;MasterUart.c: 207:             temporalSec = segundos;
+[e = _temporalSec _segundos ]
+"208
+[; ;MasterUart.c: 208:             if (contador == 30){
+[e $ ! == -> _contador `i -> 30 `i 163  ]
+{
+"209
+[; ;MasterUart.c: 209:                 contador = 0;
+[e = _contador -> -> 0 `i `uc ]
+"211
+[; ;MasterUart.c: 211:             }
+}
+[e :U 163 ]
+"213
+[; ;MasterUart.c: 213:         }
+}
+[e :U 162 ]
+"214
+[; ;MasterUart.c: 214:     }
+}
+[e :U 161 ]
+[e :U 160 ]
+"215
+[; ;MasterUart.c: 215: }
+[e :UE 158 ]
 }

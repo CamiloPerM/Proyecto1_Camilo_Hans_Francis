@@ -11,7 +11,7 @@
 #pragma config FOSC = INTRC_NOCLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
-#pragma config MCLRE = ON
+#pragma config MCLRE = OFF
 #pragma config CP = OFF
 #pragma config CPD = OFF
 #pragma config BOREN = ON
@@ -2683,6 +2683,7 @@ void UART_Read_Text(char *Output, unsigned int length);
 void init(void);
 void Enviar(uint8_t Venviar);
 uint8_t Recibir(void);
+void LucesApaga (uint8_t segundos,uint8_t bandera);
 
 
 uint8_t Valor1 = 0;
@@ -2692,6 +2693,10 @@ uint8_t Valor4 = 1;
 uint8_t Valor5 = 1;
 
 uint8_t controla = 255;
+
+
+uint8_t temporalSec = 0;
+uint8_t contador = 0;
 
 
 
@@ -2711,24 +2716,29 @@ void main(void) {
 
         Enviar(255);
         Enviar(Valor1);
-        _delay((unsigned long)((1)*(8000000/4000.0)));
+
 
         Enviar(254);
         Enviar(Valor2);
-        _delay((unsigned long)((1)*(8000000/4000.0)));
+
 
         Enviar(253);
         Enviar(Valor3);
-        _delay((unsigned long)((1)*(8000000/4000.0)));
+
 
         Enviar(252);
         Enviar(Valor4);
-        _delay((unsigned long)((1)*(8000000/4000.0)));
+
 
         Enviar(251);
         Enviar(Valor5);
 
         _delay((unsigned long)((500)*(8000000/4000.0)));
+
+
+
+
+
 
         Valor1 ++;
         Valor2 --;
@@ -2789,7 +2799,7 @@ void init(void){
     PORTD = 0;
     PORTC = 0;
     PORTE = 0;
-# 168 "MasterUart.c"
+# 178 "MasterUart.c"
     return;
 }
 
@@ -2807,4 +2817,24 @@ uint8_t Recibir(void){
             dato = RCREG;
             return dato;
         }
+}
+
+
+
+
+void LucesApaga (uint8_t segundos,uint8_t bandera){
+    if (bandera == 0){
+        temporalSec = segundos;
+        contador = 0;
+    } else if (bandera == 1){
+        if (temporalSec != segundos){
+            contador ++;
+            temporalSec = segundos;
+            if (contador == 30){
+                contador = 0;
+
+            }
+
+        }
+    }
 }

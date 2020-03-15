@@ -60,9 +60,7 @@ uint8_t z = 0;
 
 //-------------------------------INTERRUPCION-----------------------------------
 void __interrupt() interrupciones(void){
-    if(RCIF==1){
-        
-    }
+
     //----------SPI-----------------------------
     /*if(SSPIF == 1){
         instruc = spiRead();
@@ -82,60 +80,22 @@ void main(void) {
     UART_Init(9600); 
     
     while(1){
-        // ------------------------ DATO 1 -------------------------------------
-        if (PIR1bits.RCIF){
-            controla = RCREG;
-        }
+        
+        controla = UART_Read();
         if (controla == 255){
-            //__delay_ms(10);
-            if (PIR1bits.RCIF){
-                Valor1 = RCREG;
-            }}
-        // ------------------------ DATO 2 -------------------------------------
-        if (PIR1bits.RCIF){
-            controla = RCREG;
+            Valor1 = UART_Read();
+        } else if (controla == 254){
+            Valor2 = UART_Read();
+        } else if (controla == 253){
+            Valor3 = UART_Read();
+        } else if (controla == 252){
+            Valor4 = UART_Read();
+        } else if (controla == 251){
+            Valor5 = UART_Read();
         }
-        if (controla == 254){
-            //__delay_ms(10);
-            if (PIR1bits.RCIF){
-                Valor2 = RCREG;
-            }}
-        
-        // ------------------------ DATO 3 -------------------------------------
-        
-        if (PIR1bits.RCIF){
-            controla = RCREG;
-        }
-        if (controla == 253){
-            //__delay_ms(10);
-            if (PIR1bits.RCIF){
-                Valor3 = RCREG;
-            }}
-        
-        // ------------------------ DATO 4 -------------------------------------
-        
-        if (PIR1bits.RCIF){
-            controla = RCREG;
-        }
-        if (controla == 252){
-            //__delay_ms(10);
-            if (PIR1bits.RCIF){
-                Valor4 = RCREG;
-            }}
-        
-        // ------------------------ DATO 5 -------------------------------------
-        
-        if (PIR1bits.RCIF){
-            controla = RCREG;
-        }
-        if (controla == 251){
-            //__delay_ms(10);
-            if (PIR1bits.RCIF){
-                Valor5 = RCREG;
-            }}
         //Las siguientes lineas de codigo que se encuentran comentadas se usaban
         //solo para verificar el funcionamiento del UART mostrando datos en el puerto
-        /*
+        
         PORTA = Valor1; 
         PORTB = Valor2;
         PORTD = Valor3;
@@ -153,7 +113,7 @@ void main(void) {
             PORTEbits.RE1 =1;
         }else {
             PORTEbits.RE1 =0;
-        }*/
+        }
 
     }
     

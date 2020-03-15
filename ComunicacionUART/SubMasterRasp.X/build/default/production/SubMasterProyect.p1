@@ -1,9 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [t ~ __interrupt . k ]
 [t T1 __interrupt ]
-"4175 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 4175: extern volatile __bit RCIF __attribute__((address(0x65)));
-[v _RCIF `Vb ~T0 @X0 0 e@101 ]
 [p mainexit ]
 "44 SubMasterProyect.c
 [; ;SubMasterProyect.c: 44: void init(void);
@@ -14,9 +11,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "4 ./USARTinit.h
 [; ;./USARTinit.h: 4: char UART_Init(const long int baudrate);
 [v _UART_Init `(uc ~T0 @X0 0 ef1`Cl ]
-"8
-[; ;./USARTinit.h: 8: char UART_Data_Ready(void);
-[v _UART_Data_Ready `(uc ~T0 @X0 0 ef ]
 "9
 [; ;./USARTinit.h: 9: char UART_Read(void);
 [v _UART_Read `(uc ~T0 @X0 0 ef ]
@@ -78,6 +72,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 "414
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 414: extern volatile unsigned char PORTE __attribute__((address(0x009)));
 [v _PORTE `Vuc ~T0 @X0 0 e@9 ]
+"1133
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1133: extern volatile unsigned char TXREG __attribute__((address(0x019)));
+[v _TXREG `Vuc ~T0 @X0 0 e@25 ]
+"543
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 543:     struct {
+[s S19 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S19 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF ]
+"542
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 542: typedef union {
+[u S18 `S19 1 ]
+[n S18 . . ]
+"553
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 553: extern volatile PIR1bits_t PIR1bits __attribute__((address(0x00C)));
+[v _PIR1bits `VS18 ~T0 @X0 0 e@12 ]
+"1140
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1140: extern volatile unsigned char RCREG __attribute__((address(0x01A)));
+[v _RCREG `Vuc ~T0 @X0 0 e@26 ]
 "15 SubMasterProyect.c
 [p x FOSC = INTRC_NOCLKOUT ]
 "16
@@ -336,245 +347,323 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"47 SubMasterProyect.c
-[; ;SubMasterProyect.c: 47: uint8_t Valor1 = 0;
+"49 SubMasterProyect.c
+[; ;SubMasterProyect.c: 49: uint8_t Valor1 = 0;
 [v _Valor1 `uc ~T0 @X0 1 e ]
 [i _Valor1
 -> -> 0 `i `uc
 ]
-"48
-[; ;SubMasterProyect.c: 48: uint8_t Valor2 = 0;
+"50
+[; ;SubMasterProyect.c: 50: uint8_t Valor2 = 0;
 [v _Valor2 `uc ~T0 @X0 1 e ]
 [i _Valor2
 -> -> 0 `i `uc
 ]
-"49
-[; ;SubMasterProyect.c: 49: uint8_t Valor3 = 0;
+"51
+[; ;SubMasterProyect.c: 51: uint8_t Valor3 = 0;
 [v _Valor3 `uc ~T0 @X0 1 e ]
 [i _Valor3
 -> -> 0 `i `uc
 ]
-"50
-[; ;SubMasterProyect.c: 50: uint8_t Valor4 = 0;
+"52
+[; ;SubMasterProyect.c: 52: uint8_t Valor4 = 0;
 [v _Valor4 `uc ~T0 @X0 1 e ]
 [i _Valor4
 -> -> 0 `i `uc
 ]
-"51
-[; ;SubMasterProyect.c: 51: uint8_t Valor5 = 0;
+"53
+[; ;SubMasterProyect.c: 53: uint8_t Valor5 = 0;
 [v _Valor5 `uc ~T0 @X0 1 e ]
 [i _Valor5
 -> -> 0 `i `uc
 ]
-"53
-[; ;SubMasterProyect.c: 53: uint8_t dato = 0;
+"55
+[; ;SubMasterProyect.c: 55: uint8_t dato = 0;
 [v _dato `uc ~T0 @X0 1 e ]
 [i _dato
 -> -> 0 `i `uc
 ]
-"54
-[; ;SubMasterProyect.c: 54: uint8_t controla = 0;
+"56
+[; ;SubMasterProyect.c: 56: uint8_t controla = 0;
 [v _controla `uc ~T0 @X0 1 e ]
 [i _controla
 -> -> 0 `i `uc
 ]
-"56
-[; ;SubMasterProyect.c: 56: uint8_t cont = 0;
-[v _cont `uc ~T0 @X0 1 e ]
-[i _cont
--> -> 0 `i `uc
-]
-"57
-[; ;SubMasterProyect.c: 57: int sensores[4];
-[v _sensores `i ~T0 @X0 -> 4 `i e ]
-"59
-[; ;SubMasterProyect.c: 59: uint8_t z = 0;
+"58
+[; ;SubMasterProyect.c: 58: uint8_t z = 0;
 [v _z `uc ~T0 @X0 1 e ]
 [i _z
 -> -> 0 `i `uc
 ]
 [v $root$_interrupciones `(v ~T0 @X0 0 e ]
-"63
-[; ;SubMasterProyect.c: 63: void __attribute__((picinterrupt(""))) interrupciones(void){
+"62
+[; ;SubMasterProyect.c: 62: void __attribute__((picinterrupt(""))) interrupciones(void){
 [v _interrupciones `(v ~T1 @X0 1 ef ]
 {
 [e :U _interrupciones ]
 [f ]
-"64
-[; ;SubMasterProyect.c: 64:     if(RCIF==1){
-[e $ ! == -> _RCIF `i -> 1 `i 139  ]
-{
-"66
-[; ;SubMasterProyect.c: 66:     }
-}
-[e :U 139 ]
-"77
-[; ;SubMasterProyect.c: 77: }
+"74
+[; ;SubMasterProyect.c: 74: }
 [e :UE 138 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"80
-[; ;SubMasterProyect.c: 80: void main(void) {
+"77
+[; ;SubMasterProyect.c: 77: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"81
-[; ;SubMasterProyect.c: 81:     init();
+"78
+[; ;SubMasterProyect.c: 78:     init();
 [e ( _init ..  ]
-"82
-[; ;SubMasterProyect.c: 82:     initOsc(7);
+"79
+[; ;SubMasterProyect.c: 79:     initOsc(7);
 [e ( _initOsc (1 -> -> 7 `i `uc ]
-"83
-[; ;SubMasterProyect.c: 83:     UART_Init(9600);
+"80
+[; ;SubMasterProyect.c: 80:     UART_Init(9600);
 [e ( _UART_Init (1 -> -> 9600 `i `l ]
+"82
+[; ;SubMasterProyect.c: 82:     while(1){
+[e :U 141 ]
+{
+"84
+[; ;SubMasterProyect.c: 84:         controla = UART_Read();
+[e = _controla -> ( _UART_Read ..  `uc ]
 "85
-[; ;SubMasterProyect.c: 85:     while(1){
-[e :U 142 ]
+[; ;SubMasterProyect.c: 85:         if (controla == 255){
+[e $ ! == -> _controla `i -> 255 `i 143  ]
 {
+"86
+[; ;SubMasterProyect.c: 86:             Valor1 = UART_Read();
+[e = _Valor1 -> ( _UART_Read ..  `uc ]
 "87
-[; ;SubMasterProyect.c: 87:        while(!UART_Data_Ready());
+[; ;SubMasterProyect.c: 87:         } else if (controla == 254){
+}
 [e $U 144  ]
-[e :U 145 ]
-[e :U 144 ]
-[e $ ! != -> ( _UART_Data_Ready ..  `i -> 0 `i 145  ]
-[e :U 146 ]
+[e :U 143 ]
+[e $ ! == -> _controla `i -> 254 `i 145  ]
+{
 "88
-[; ;SubMasterProyect.c: 88:        sensores[cont]= UART_Read();
-[e = *U + &U _sensores * -> _cont `ux -> -> # *U &U _sensores `ui `ux -> ( _UART_Read ..  `i ]
+[; ;SubMasterProyect.c: 88:             Valor2 = UART_Read();
+[e = _Valor2 -> ( _UART_Read ..  `uc ]
 "89
-[; ;SubMasterProyect.c: 89:        cont++;
-[e ++ _cont -> -> 1 `i `uc ]
+[; ;SubMasterProyect.c: 89:         } else if (controla == 253){
+}
+[e $U 146  ]
+[e :U 145 ]
+[e $ ! == -> _controla `i -> 253 `i 147  ]
+{
 "90
-[; ;SubMasterProyect.c: 90:        if (cont>3){cont=0;}
-[e $ ! > -> _cont `i -> 3 `i 147  ]
-{
-[e = _cont -> -> 0 `i `uc ]
+[; ;SubMasterProyect.c: 90:             Valor3 = UART_Read();
+[e = _Valor3 -> ( _UART_Read ..  `uc ]
+"91
+[; ;SubMasterProyect.c: 91:         } else if (controla == 252){
 }
+[e $U 148  ]
 [e :U 147 ]
+[e $ ! == -> _controla `i -> 252 `i 149  ]
+{
 "92
-[; ;SubMasterProyect.c: 92:         PORTA = sensores[0];
-[e = _PORTA -> *U + &U _sensores * -> -> -> 0 `i `ui `ux -> -> # *U &U _sensores `ui `ux `uc ]
+[; ;SubMasterProyect.c: 92:             Valor4 = UART_Read();
+[e = _Valor4 -> ( _UART_Read ..  `uc ]
 "93
-[; ;SubMasterProyect.c: 93:         PORTB = sensores[1];
-[e = _PORTB -> *U + &U _sensores * -> -> -> 1 `i `ui `ux -> -> # *U &U _sensores `ui `ux `uc ]
-"94
-[; ;SubMasterProyect.c: 94:         PORTD = sensores[2];
-[e = _PORTD -> *U + &U _sensores * -> -> -> 2 `i `ui `ux -> -> # *U &U _sensores `ui `ux `uc ]
-"98
-[; ;SubMasterProyect.c: 98:         if (sensores[3] == 1){
-[e $ ! == *U + &U _sensores * -> -> -> 3 `i `ui `ux -> -> # *U &U _sensores `ui `ux -> 1 `i 148  ]
-{
-"99
-[; ;SubMasterProyect.c: 99:             PORTEbits.RE0 =1;
-[e = . . _PORTEbits 0 0 -> -> 1 `i `uc ]
-"100
-[; ;SubMasterProyect.c: 100:         }else {
+[; ;SubMasterProyect.c: 93:         } else if (controla == 251){
 }
-[e $U 149  ]
-[e :U 148 ]
-{
-"101
-[; ;SubMasterProyect.c: 101:             PORTEbits.RE0 =0;
-[e = . . _PORTEbits 0 0 -> -> 0 `i `uc ]
-"102
-[; ;SubMasterProyect.c: 102:         }
-}
+[e $U 150  ]
 [e :U 149 ]
+[e $ ! == -> _controla `i -> 251 `i 151  ]
+{
+"94
+[; ;SubMasterProyect.c: 94:             Valor5 = UART_Read();
+[e = _Valor5 -> ( _UART_Read ..  `uc ]
+"95
+[; ;SubMasterProyect.c: 95:         }
+}
+[e :U 151 ]
+[e :U 150 ]
+[e :U 148 ]
+[e :U 146 ]
+[e :U 144 ]
+"99
+[; ;SubMasterProyect.c: 99:         PORTA = Valor1;
+[e = _PORTA _Valor1 ]
+"100
+[; ;SubMasterProyect.c: 100:         PORTB = Valor2;
+[e = _PORTB _Valor2 ]
+"101
+[; ;SubMasterProyect.c: 101:         PORTD = Valor3;
+[e = _PORTD _Valor3 ]
 "105
-[; ;SubMasterProyect.c: 105:         if (sensores[4] == 1){
-[e $ ! == *U + &U _sensores * -> -> -> 4 `i `ui `ux -> -> # *U &U _sensores `ui `ux -> 1 `i 150  ]
+[; ;SubMasterProyect.c: 105:         if (Valor4 == 1){
+[e $ ! == -> _Valor4 `i -> 1 `i 152  ]
 {
 "106
-[; ;SubMasterProyect.c: 106:             PORTEbits.RE1 =1;
-[e = . . _PORTEbits 0 1 -> -> 1 `i `uc ]
+[; ;SubMasterProyect.c: 106:             PORTEbits.RE0 =1;
+[e = . . _PORTEbits 0 0 -> -> 1 `i `uc ]
 "107
 [; ;SubMasterProyect.c: 107:         }else {
 }
-[e $U 151  ]
-[e :U 150 ]
+[e $U 153  ]
+[e :U 152 ]
 {
 "108
-[; ;SubMasterProyect.c: 108:             PORTEbits.RE1 =0;
-[e = . . _PORTEbits 0 1 -> -> 0 `i `uc ]
+[; ;SubMasterProyect.c: 108:             PORTEbits.RE0 =0;
+[e = . . _PORTEbits 0 0 -> -> 0 `i `uc ]
 "109
 [; ;SubMasterProyect.c: 109:         }
 }
-[e :U 151 ]
-"111
-[; ;SubMasterProyect.c: 111:     }
-}
-[e :U 141 ]
-[e $U 142  ]
-[e :U 143 ]
+[e :U 153 ]
+"112
+[; ;SubMasterProyect.c: 112:         if (Valor5 == 1){
+[e $ ! == -> _Valor5 `i -> 1 `i 154  ]
+{
 "113
-[; ;SubMasterProyect.c: 113:     return;
-[e $UE 140  ]
+[; ;SubMasterProyect.c: 113:             PORTEbits.RE1 =1;
+[e = . . _PORTEbits 0 1 -> -> 1 `i `uc ]
 "114
-[; ;SubMasterProyect.c: 114: }
-[e :UE 140 ]
+[; ;SubMasterProyect.c: 114:         }else {
 }
+[e $U 155  ]
+[e :U 154 ]
+{
+"115
+[; ;SubMasterProyect.c: 115:             PORTEbits.RE1 =0;
+[e = . . _PORTEbits 0 1 -> -> 0 `i `uc ]
+"116
+[; ;SubMasterProyect.c: 116:         }
+}
+[e :U 155 ]
 "118
-[; ;SubMasterProyect.c: 118: void init(void){
+[; ;SubMasterProyect.c: 118:     }
+}
+[e :U 140 ]
+[e $U 141  ]
+[e :U 142 ]
+"120
+[; ;SubMasterProyect.c: 120:     return;
+[e $UE 139  ]
+"121
+[; ;SubMasterProyect.c: 121: }
+[e :UE 139 ]
+}
+"125
+[; ;SubMasterProyect.c: 125: void init(void){
 [v _init `(v ~T0 @X0 1 ef ]
 {
 [e :U _init ]
 [f ]
-"120
-[; ;SubMasterProyect.c: 120:     TRISA = 0;
-[e = _TRISA -> -> 0 `i `uc ]
-"121
-[; ;SubMasterProyect.c: 121:     TRISB = 0;
-[e = _TRISB -> -> 0 `i `uc ]
-"122
-[; ;SubMasterProyect.c: 122:     TRISD = 0;
-[e = _TRISD -> -> 0 `i `uc ]
-"123
-[; ;SubMasterProyect.c: 123:     TRISC = 0;
-[e = _TRISC -> -> 0 `i `uc ]
-"124
-[; ;SubMasterProyect.c: 124:     TRISE = 0;
-[e = _TRISE -> -> 0 `i `uc ]
 "127
-[; ;SubMasterProyect.c: 127:     TRISCbits.TRISC7 = 1;
-[e = . . _TRISCbits 0 7 -> -> 1 `i `uc ]
+[; ;SubMasterProyect.c: 127:     TRISA = 0;
+[e = _TRISA -> -> 0 `i `uc ]
 "128
-[; ;SubMasterProyect.c: 128:     TRISCbits.TRISC6 = 1;
-[e = . . _TRISCbits 0 6 -> -> 1 `i `uc ]
-"132
-[; ;SubMasterProyect.c: 132:     TRISCbits.TRISC5 = 0;
-[e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
-"133
-[; ;SubMasterProyect.c: 133:     TRISCbits.TRISC4 = 1;
-[e = . . _TRISCbits 0 4 -> -> 1 `i `uc ]
+[; ;SubMasterProyect.c: 128:     TRISB = 0;
+[e = _TRISB -> -> 0 `i `uc ]
+"129
+[; ;SubMasterProyect.c: 129:     TRISD = 0;
+[e = _TRISD -> -> 0 `i `uc ]
+"130
+[; ;SubMasterProyect.c: 130:     TRISC = 0;
+[e = _TRISC -> -> 0 `i `uc ]
+"131
+[; ;SubMasterProyect.c: 131:     TRISE = 0;
+[e = _TRISE -> -> 0 `i `uc ]
 "134
-[; ;SubMasterProyect.c: 134:     TRISCbits.TRISC3 = 1;
-[e = . . _TRISCbits 0 3 -> -> 1 `i `uc ]
-"137
-[; ;SubMasterProyect.c: 137:     ANSEL = 0;
-[e = _ANSEL -> -> 0 `i `uc ]
-"138
-[; ;SubMasterProyect.c: 138:     ANSELH = 0;
-[e = _ANSELH -> -> 0 `i `uc ]
+[; ;SubMasterProyect.c: 134:     TRISCbits.TRISC7 = 1;
+[e = . . _TRISCbits 0 7 -> -> 1 `i `uc ]
+"135
+[; ;SubMasterProyect.c: 135:     TRISCbits.TRISC6 = 1;
+[e = . . _TRISCbits 0 6 -> -> 1 `i `uc ]
+"139
+[; ;SubMasterProyect.c: 139:     TRISCbits.TRISC5 = 0;
+[e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
+"140
+[; ;SubMasterProyect.c: 140:     TRISCbits.TRISC4 = 1;
+[e = . . _TRISCbits 0 4 -> -> 1 `i `uc ]
 "141
-[; ;SubMasterProyect.c: 141:     PORTA = 0;
-[e = _PORTA -> -> 0 `i `uc ]
-"142
-[; ;SubMasterProyect.c: 142:     PORTB = 0;
-[e = _PORTB -> -> 0 `i `uc ]
-"143
-[; ;SubMasterProyect.c: 143:     PORTD = 0;
-[e = _PORTD -> -> 0 `i `uc ]
+[; ;SubMasterProyect.c: 141:     TRISCbits.TRISC3 = 1;
+[e = . . _TRISCbits 0 3 -> -> 1 `i `uc ]
 "144
-[; ;SubMasterProyect.c: 144:     PORTC = 0;
-[e = _PORTC -> -> 0 `i `uc ]
+[; ;SubMasterProyect.c: 144:     ANSEL = 0;
+[e = _ANSEL -> -> 0 `i `uc ]
 "145
-[; ;SubMasterProyect.c: 145:     PORTE = 0;
+[; ;SubMasterProyect.c: 145:     ANSELH = 0;
+[e = _ANSELH -> -> 0 `i `uc ]
+"148
+[; ;SubMasterProyect.c: 148:     PORTA = 0;
+[e = _PORTA -> -> 0 `i `uc ]
+"149
+[; ;SubMasterProyect.c: 149:     PORTB = 0;
+[e = _PORTB -> -> 0 `i `uc ]
+"150
+[; ;SubMasterProyect.c: 150:     PORTD = 0;
+[e = _PORTD -> -> 0 `i `uc ]
+"151
+[; ;SubMasterProyect.c: 151:     PORTC = 0;
+[e = _PORTC -> -> 0 `i `uc ]
+"152
+[; ;SubMasterProyect.c: 152:     PORTE = 0;
 [e = _PORTE -> -> 0 `i `uc ]
-"159
-[; ;SubMasterProyect.c: 159:     return;
-[e $UE 152  ]
-"160
-[; ;SubMasterProyect.c: 160: }
-[e :UE 152 ]
+"166
+[; ;SubMasterProyect.c: 166:     return;
+[e $UE 156  ]
+"167
+[; ;SubMasterProyect.c: 167: }
+[e :UE 156 ]
+}
+"170
+[; ;SubMasterProyect.c: 170: void Enviar(uint8_t Venviar){
+[v _Enviar `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _Enviar ]
+[v _Venviar `uc ~T0 @X0 1 r1 ]
+[f ]
+"171
+[; ;SubMasterProyect.c: 171:     TXREG = Venviar;
+[e = _TXREG _Venviar ]
+"172
+[; ;SubMasterProyect.c: 172:     Esperar:
+[e :U 158 ]
+"173
+[; ;SubMasterProyect.c: 173:     if (PIR1bits.TXIF == 0){
+[e $ ! == -> . . _PIR1bits 0 4 `i -> 0 `i 159  ]
+{
+"174
+[; ;SubMasterProyect.c: 174:         goto Esperar;
+[e $U 158  ]
+"175
+[; ;SubMasterProyect.c: 175:         }
+}
+[e :U 159 ]
+"176
+[; ;SubMasterProyect.c: 176: }
+[e :UE 157 ]
+}
+"177
+[; ;SubMasterProyect.c: 177: uint8_t Recibir(void){
+[v _Recibir `(uc ~T0 @X0 1 ef ]
+{
+[e :U _Recibir ]
+[f ]
+"178
+[; ;SubMasterProyect.c: 178:     if (PIR1bits.RCIF){
+[e $ ! != -> . . _PIR1bits 0 5 `i -> 0 `i 161  ]
+{
+"179
+[; ;SubMasterProyect.c: 179:             uint8_t dato = 0;
+[v _dato `uc ~T0 @X0 1 a ]
+[e = _dato -> -> 0 `i `uc ]
+"180
+[; ;SubMasterProyect.c: 180:             dato = RCREG;
+[e = _dato _RCREG ]
+"181
+[; ;SubMasterProyect.c: 181:             return dato;
+[e ) _dato ]
+[e $UE 160  ]
+"182
+[; ;SubMasterProyect.c: 182:         }
+}
+[e :U 161 ]
+"183
+[; ;SubMasterProyect.c: 183: }
+[e :UE 160 ]
 }
